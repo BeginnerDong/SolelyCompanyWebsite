@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<title>纯粹科技</title>
 		<!-- custom-theme -->
-		<meta name="baidu-site-verification" content="z8EeuYl0nS" />
-		<meta name="keywords" content="纯粹科技">
-		<meta name="description" content="纯粹科技">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>纯粹科技-首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 		<link href="css/basic.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -18,70 +16,73 @@
 		<link href="seo/sitemap.html.txt">
 		<link href="seo/sitemap.txt">
 		<link href="seo/sitemap.xml">
-		<script src="js/browser.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="js/base.js" type="application/javascript"></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/rem.js"></script>
-		<script type="text/javascript " src="js/bootstrap.js"></script>
 	</head>
-	<body style="background:#fff;">
-		<div class="navigation">
+<body style="background:#fff;">
+<!--[if lte IE 8]>
+<p class="browserupgrade">您的浏览器版本老的可笑, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
+<![endif]-->
+	<header>
+		<nav class="navigation">
 			<div class="nav-main">
-				<div class="logo">
-					<image src="images/logo.png" />
-				</div>
+				<a class="logo">
+					<image src="images/logo.png" alt="回到首页"/>
+				</a>
 				<div class="nav-item ">
 					<div class="nav-item-text active">
-						网站首页
+						<a href="#">网站首页</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						小程序
+						<a href="smallProgram.html">小程序</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						网站开发
+						<a href="website.html">网站开发</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						APP开发
+						<a href="app.html">APP开发</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						精品案例
+						<a href="case.html">精品案例</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						新闻中心
+						<a href="news.html">新闻中心</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						技术博客
+						<a href="blog.html">技术博客</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						人才招聘
+						<a href="recruit.html">人才招聘</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						关于我们
+						<a href="about.html">关于我们</a>
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div class="banner">
+		</nav>
+	</header>
+		
+	<div class="container">
+		<div class="banner clearfix">
 			<image src="images/banner.png" />
-		</div>
+			<div class="banner-title">微信公众平台开发</div>
+			<div class="banner-small-title">更专注于行业特色 贴合用户使用习惯</div>
+		</div>	
 		<div class="menu">
 			<div class="menu-item" style="background-color:#F4AA50">
 				<div class="menu-item-left">
@@ -160,6 +161,8 @@
 				<p class="font16  margin-30 color-fff">优质的客服人员、技术工程师解决使用中的各种疑难问题。</p>
 			</div>
 		</div>
+		
+		
 		<div class="product">
 			<div class="product-title">
 				<p class="font40   color-333">产品，让客户充分放心</p>
@@ -241,9 +244,11 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="process">
 			<image src="images/icon11.png">
 		</div>
+		
 		<div class="partner">
 			<div class="partner-title">
 				<p class="font40   color-fff">超过500家优秀企业选择纯粹</p>
@@ -316,6 +321,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="infomation">
 			<div class="infomation-title">
 				<p class="font40   color-333">资讯，让客户更加了解</p>
@@ -326,64 +332,257 @@
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989 ">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989 ">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989 ">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989 ">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 				<div class="infomation-item margin-50">
 					<div class="infomation-item-time">
 						<p class="font50   color-4f4e4e">17</p>
-						<p class="font12   color-898989 margin-30">2019-05</p>
+						<p class="font12   color-898989 ">2019-05</p>
 					</div>
 					<div class="infomation-item-text">
 						<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-						<p class="font12   color-898989 margin-30 avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+						<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div class="contact">
+			<div class="contact-item">
+				<div class="contact-item-left">
+					<div class="contact-item-left-title">
+						<p class="font16 color-333">Contact us</p>
+						<div class="contact-item-left-text">
+							<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
+							<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
+							<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
+							<div class="button">
+								<div class="button-item">
+									<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+									<p style="margin-left: 0.1rem;">合作咨询</p>
+								</div>
+								<div class="button-item">
+									<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+									<p style="margin-left: 0.1rem;">技术服务</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="contact-item">
+				<div class="contact-item-left">
+					<div class="contact-item-left-title">
+						<p class="font16 color-333">Wechat</p>
+						<div class="contact-item-right-text">
+							<div class="qrcode">
+								<image src ="images/qrcode.png">
+								<image src ="images/qrcode.png">
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="map">
+		    <div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-content">
+			<div class="footer-item">
+				<p class="font16">服务领域</p>
+				<p class="font14 margin-16">官网建设</p>
+				<p class="font14 margin-12">网上商城</p>
+				<p class="font14 margin-12">互动营销</p>
+				<p class="font14 margin-12">品牌型网站</p>
+			</div>
+			<div class="footer-item">
+				<p class="font16">服务领域</p>
+				<p class="font14 margin-16">官网建设</p>
+				<p class="font14 margin-12">网上商城</p>
+				<p class="font14 margin-12">互动营销</p>
+				<p class="font14 margin-12">品牌型网站</p>
+			</div>
+			<div class="footer-item">
+				<p class="font16">服务领域</p>
+				<p class="font14 margin-16">官网建设</p>
+				<p class="font14 margin-12">网上商城</p>
+				<p class="font14 margin-12">互动营销</p>
+				<p class="font14 margin-12">品牌型网站</p>
+			</div>
+			<div class="footer-item">
+				<p class="font16">服务领域</p>
+				<p class="font14 margin-16">官网建设</p>
+				<p class="font14 margin-12">网上商城</p>
+				<p class="font14 margin-12">互动营销</p>
+				<p class="font14 margin-12">品牌型网站</p>
+			</div>
+			<div class="footer-item" style="border:none">
+				<p class="font16">官方微信</p>
+				<div class="footer-item-img">
+					<image src="images/img10.png">
+				</div>
+			</div>
+		</div>
+	</div>
+		<script src="js/browser.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		
+		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</body>
+	
+	<script type="text/javascript">
+	
+	    function initMap(){
+	        createMap();
+	        setMapEvent();
+	        addMapControl();
+	        addMarker();
+	    }
+	    
+	    function createMap(){
+	        var map = new BMap.Map("dituContent");
+
+	        var point = new BMap.Point(108.900502,34.24334);
+	        map.centerAndZoom(point,17);
+	        window.map = map;
+			
+		
+	    }
+	    
+	    function setMapEvent(){
+	        map.enableDragging();
+	        map.enableScrollWheelZoom();
+	        map.enableDoubleClickZoom();
+	        map.enableKeyboard();
+			map.setMapStyle({
+				styleJson:[
+					{
+						"featureType": "all",
+						"elementType": "all",
+						"stylers": {
+							"lightness": 10,
+							"saturation": -100
+						}
+					}
+				]
+			});
+	    }
+	    
+	    function addMapControl(){ 
+	    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	    map.addControl(ctrl_nav);
+	    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	    map.addControl(ctrl_ove);
+	    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	    map.addControl(ctrl_sca);
+		
+	    }
+		var markerArr = [{title:"纯粹云信息科技有限公司",content:"电话:18092651090",point:"108.900502|34.24334",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+	     ];
+	    
+	    function addMarker(){
+	        for(var i=0;i<markerArr.length;i++){
+	            var json = markerArr[i];
+	            var p0 = json.point.split("|")[0];
+	            var p1 = json.point.split("|")[1];
+	            var point = new BMap.Point(p0,p1);
+	            var iconImg = createIcon(json.icon);
+	            var marker = new BMap.Marker(point,{icon:iconImg});
+	            var iw = createInfoWindow(i);
+	            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+	            marker.setLabel(label);
+	            map.addOverlay(marker);
+	            label.setStyle({
+	                        borderColor:"transparent",
+	                        color:"#000",
+	                        cursor:"pointer",
+	            });
+	            
+	            (function(){
+	                var index = i;
+	                var _iw = createInfoWindow(i);
+	                var _marker = marker;
+	                _marker.addEventListener("click",function(){
+	                    this.openInfoWindow(_iw);
+	                });
+	                _iw.addEventListener("open",function(){
+	                    _marker.getLabel().hide();
+	                })
+	                _iw.addEventListener("close",function(){
+	                    _marker.getLabel().show();
+	                })
+	                label.addEventListener("click",function(){
+	                    _marker.openInfoWindow(_iw);
+	                })
+	                if(!!json.isOpen){
+	                    label.hide();
+	                    _marker.openInfoWindow(_iw);
+	                }
+	            })()
+	        }
+	    }
+	    function createInfoWindow(i){
+	        var json = markerArr[i];
+	        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+	        return iw;
+	    }
+	    function createIcon(json){
+	        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+	        return icon;
+	    }
+	    
+	    initMap();
+	</script>
 </html>
