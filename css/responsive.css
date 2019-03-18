@@ -1,10 +1,161 @@
 @media (min-width:1200px)and (max-width: 1360px){
-	.contain{
-	    width:1000px;
+	.nav-main{
+		width:90%
 	}
-	.contain_big{
-		width:1170px;
+	.nav-item {
+		font-size:0.16rem
 	}
+	.nav-item-text a{
+		height:0.4rem
+	}
+	.menu-item{
+		width:50%
+	}
+	.menu-item img{
+		width:60%;
+		height:60%
+	}
+	.about-us-left{
+	
+		padding:0.2rem 0.2rem 0.2rem 0.2rem ;
+		width: 60%;
+	}
+	.about-us-right{
+	
+		width:40%
+	}
+	.about-us-right-img{
+		padding: 0.7rem 0;
+		width:47%
+	}
+	.about-us-right-img img{
+		width:1.5rem;
+		height:1.5rem
+	}
+	.strengths{
+		padding: 1rem 0;
+		height:auto
+	}
+	.strengths-item{
+		margin: 3% 3%;
+		width:44%
+	}
+	.product{
+		padding: 0;
+	}
+	.product-item{
+		margin: 0 1%;
+		width:48%
+	}
+	.service{
+		padding: 0.5rem 0.2rem;
+	}
+	.partner{
+		padding: 0;
+	}
+	.partner-item{
+		width:28%;
+	}
+	.infomation{
+		padding: 0;
+	}
+	.infomation-item{
+		width:46%
+	}
+	.infomation-item-time{
+		width:25%
+	}
+	.infomation-item-text{
+		width:75%
+	}
+	.contact-item{
+		width:100%;
+		float: none;
+		padding: 0.2rem 0.5rem;
+	}
+	.contact-item-left{
+		width:100%;
+		text-align: center;
+	}
+	.contact{
+		padding: 0.2rem 0.2rem;
+		height:auto
+	}
+	.button{
+		margin: 0.2rem auto;
+	}
+	.footer-content{
+		width:90%
+	}
+	.wxprocess{
+		padding: 0.5rem 0.8rem;
+	}
+	.advantages{
+		padding: 0.5rem 0.8rem;
+	}
+	.advantages-title p{
+		font-size:0.2rem
+	}
+	.website{
+		padding: 0.5rem 0.8rem;
+	}
+	.website-process{
+		padding: 0.5rem 0.8rem;
+	}
+	.website-process-img{
+		width:1rem;
+		height:1rem;
+		line-height: 1rem;
+	}
+	
+	.website-process-img img{
+		width:0.5rem;
+		height:0.5rem;
+	}
+	.website-process-text{
+		width:1rem
+	}
+	.app-process{
+		padding: 0.5rem 0.8rem;
+		height:auto
+	}
+	.wecando{
+		
+		padding: 0.5rem 0.5rem;
+	}
+	.wecando-item{
+		width:40%
+
+	}
+	.wecando-item-img img{
+		width:0.5rem;
+		height:0.5rem
+	}
+	.wecando-item-content{
+		margin-left: 0.3rem;
+	}
+	.introduce-list{
+		padding: 0;
+	}
+		.major{
+		padding: 0.2rem 0.2rem;
+	}
+	.major-item-img {
+	
+		padding:17% 0;
+	}
+	.major-item-img img{
+		width:1rem;
+		height:1rem;
+	
+	}
+	.major-item-text{
+		padding: 0.3rem 0.3rem;
+	}
+	.recruit-list {
+		padding: 0.3rem 0.3rem;
+	}
+	
 }
 @media (max-width:1200px){
   .contain{
@@ -13,21 +164,320 @@
   .contain_big{
   	width:1170px;
   }
+  	.nav-main{
+  	width:90%
+  }
+  .nav-item {
+  	font-size:0.16rem
+  }
+  .nav-item-text a{
+  	height:0.4rem
+  }
+  .menu-item{
+  	width:50%
+  }
+  .menu-item img{
+  	width:60%;
+  	height:60%
+  }
+  .about-us-left{
+  
+  	padding:0.2rem 0.2rem 0.2rem 0.2rem ;
+  	width: 60%;
+  }
+  .about-us-right{
+  
+  	width:40%
+  }
+  .about-us-right-img{
+  	padding: 0.7rem 0;
+  	width:47%
+  }
+  .about-us-right-img img{
+  	width:1.5rem;
+  	height:1.5rem
+  }
+  .strengths{
+  	padding: 1rem 0;
+  	height:auto
+  }
+  .strengths-item{
+  	margin: 3% 3%;
+  	width:44%
+  }
+  .product{
+  	padding: 0;
+  }
+  .product-item{
+  	margin: 0 1%;
+  	width:48%
+  }
+  .service{
+  	padding: 0.5rem 0.2rem;
+  }
+  .partner{
+  	padding: 0;
+  }
+  .partner-item{
+  	width:28%;
+  }
+  .infomation{
+  	padding: 0;
+  }
+  .infomation-item{
+  	width:46%
+  }
+  .infomation-item-time{
+  	width:25%
+  }
+  .infomation-item-text{
+  	width:75%
+  }
+  .contact-item{
+  	width:100%;
+  	float: none;
+  	padding: 0.2rem 0.5rem;
+  }
+  .contact-item-left{
+  	width:100%;
+  	text-align: center;
+  }
+  .contact{
+  	padding: 0.2rem 0.2rem;
+  	height:auto
+  }
+  .button{
+  	margin: 0.2rem auto;
+  }
+  .footer-content{
+  	width:90%
+  }
+  .wxprocess{
+  	padding: 0.5rem 0.8rem;
+  }
+  .advantages{
+  	padding: 0.5rem 0.8rem;
+  }
+  .advantages-title p{
+  	font-size:0.2rem
+  }
+  .website{
+  	padding: 0.5rem 0.8rem;
+  }
+  .website-process{
+  	padding: 0.5rem 0.8rem;
+  }
+  .website-process-img{
+  	width:1rem;
+  	height:1rem;
+  	line-height: 1rem;
+  }
+  
+  .website-process-img img{
+  	width:0.5rem;
+  	height:0.5rem;
+  }
+  .website-process-text{
+  	width:1rem
+  }
+  .app-process{
+  	padding: 0.5rem 0.8rem;
+  	height:auto
+  }
+  .wecando{
+  	
+  	padding: 0.5rem 0.5rem;
+  }
+  .wecando-item{
+  	width:40%
+  
+  }
+  .wecando-item-img img{
+  	width:0.5rem;
+  	height:0.5rem
+  }
+  .wecando-item-content{
+  	margin-left: 0.3rem;
+  }
+  	.major{
+  	padding: 0.2rem 0.2rem;
+  }
+  .major-item-img {
+  
+  	padding:17% 0;
+  }
+  .major-item-img img{
+  	width:1rem;
+  	height:1rem;
+  
+  }
+  .major-item-text{
+  	padding: 0.3rem 0.3rem;
+  }
+  .recruit-list {
+  	padding: 0.3rem 0.3rem;
+  }
 }
 @media(max-width: 992px){
-	.contain{
-	    width:90%;
+	.nav-main{
+		width:90%
 	}
-	.contain_big{
-		width:96%;
+	.nav-item {
+		font-size:0.16rem
 	}
-	.navigate li{
-		text-align:center;
+	.nav-item-text a{
+		height:0.4rem
 	}
-	.navigate{
+	.menu-item{
+		width:50%
+	}
+	.menu-item img{
+		width:60%;
+		height:60%
+	}
+	.about-us-left{
+	
+		padding:0.2rem 0.2rem 0.2rem 0.2rem ;
+		width: 60%;
+	}
+	.about-us-right{
+	
+		width:40%
+	}
+	.about-us-right-img{
+		padding: 0.7rem 0;
+		width:47%
+	}
+	.about-us-right-img img{
+		width:1.5rem;
+		height:1.5rem
+	}
+	.strengths{
+		padding: 1rem 0;
+		height:auto
+	}
+	.strengths-item{
+		margin: 3% 3%;
+		width:44%
+	}
+	.product{
+		padding: 0;
+	}
+	.product-item{
+		margin: 0 1%;
+		width:48%
+	}
+	.service{
+		padding: 0.5rem 0.2rem;
+	}
+	.partner{
+		padding: 0;
+	}
+	.partner-item{
+		width:28%;
+	}
+	.infomation{
+		padding: 0;
+	}
+	.infomation-item{
+		width:46%
+	}
+	.infomation-item-time{
+		width:25%
+	}
+	.infomation-item-text{
+		width:75%
+	}
+	.contact-item{
 		width:100%;
+		float: none;
+		padding: 0.2rem 0.5rem;
 	}
+	.contact-item-left{
+		width:100%;
+		text-align: center;
+	}
+	.contact{
+		padding: 0.2rem 0.2rem;
+		height:auto
+	}
+	.button{
+		margin: 0.2rem auto;
+	}
+	.footer-content{
+		width:90%
+	}
+	.wxprocess{
+		padding: 0.5rem 0.8rem;
+	}
+	.advantages{
+		padding: 0.5rem 0.8rem;
+	}
+	.advantages-title p{
+		font-size:0.2rem
+	}
+	.website{
+		padding: 0.5rem 0.8rem;
+	}
+	.website-process{
+		padding: 0.5rem 0.8rem;
+	}
+	.website-process-img{
+		width:1rem;
+		height:1rem;
+		line-height: 1rem;
+	}
+	
+	.website-process-img img{
+		width:0.5rem;
+		height:0.5rem;
+	}
+	.website-process-text{
+		width:1rem
+	}
+	.app-process{
+		padding: 0.5rem 0.8rem;
+		height:auto
+	}
+	.wecando{
+		
+		padding: 0.5rem 0.5rem;
+	}
+	.wecando-item{
+		width:40%
 
+	}
+	.wecando-item-img img{
+		width:0.5rem;
+		height:0.5rem
+	}
+	.wecando-item-content{
+		margin-left: 0.3rem;
+	}
+	.introduce-list{
+		padding: 0;
+	}
+	.major{
+		padding: 0.2rem 0.2rem;
+	}
+	.major-item-img {
+
+		padding:17% 0;
+	}
+	.major-item-img img{
+		width:1rem;
+		height:1rem;
+
+	}
+	.major-item-text{
+		padding: 0.3rem 0.3rem;
+	}
+	.recruit-list {
+		padding: 0.3rem 0.3rem;
+	}
+	.recruit-item {
+		width:46%
+	}
 }
 
 @media (min-width:992px)and (max-width: 1199px){
@@ -36,7 +486,20 @@
 	}
 	.contain_big{
 	  	width:990px;
-	  }
+	 }
+	 .advantages{
+		padding: 0.5rem 0.8rem;
+	 }
+	.advantages-title p{
+	 	font-size:0.2rem
+	}
+	.website{
+		padding: 0.2rem 0.2rem;
+	}
+	.introduce-list{
+		padding: 0;
+	}
+	
 }
 
 @media (max-width: 991px) {
@@ -168,8 +631,8 @@
 		padding: 0;
 		height:auto
 	}
-	.advantages-title{
-		padding: 0.5rem 0;
+	.advantages-title: ;{
+		padding: 0.5rem 0 0 0;
 	}
 	.advantages-item-left{
 		float: none;
@@ -185,10 +648,10 @@
 		height:auto
 	}
 	.advantages-right-top{
-		height:auto
+		height:3rem
 	}
 	.advantages-right-bottom{
-		height:auto
+		height:3rem
 	}
 	.wxprocess{
 		padding: 0.2rem 0.2rem;
@@ -235,7 +698,7 @@
 	}
 	.major{
 		padding: 0.5rem 0;
-		height:14.2rem
+		height:18.6rem
 	}
 	.major-item{
 		float: none;
@@ -265,14 +728,14 @@
 @media (max-width: 480px) {
 	img { width: auto; max-width: 100%; }
 	.contain{
-	    width:100%;
+	    width:480px;
 	    padding: 0;
 	}
 	.banner{
-		height:5rem
+		height:14rem
 	}
 	.banner img{
-		height:5rem
+		height:14rem
 	}
 	.menu-item{
 		width:100%
@@ -294,17 +757,17 @@
 		padding: 0 0.4rem;
 	}
 	.product-item{
-		width:48%
+		width:100%
 	}
 	.process img{
 		width:100%
 	}
 	.footer{
-		height:2.5rem
+		height:3.5rem
 	}
 	.footer-content{
 		width:100%;
-		padding: 0.1rem;
+		padding: 0.6rem 0.1rem;
 	}
 	.footer-item{
 		height:100%
@@ -383,7 +846,7 @@
 		height:auto
 	}
 	.advantages-title{
-		padding: 0.5rem 0;
+		padding: 0.5rem 0 0 0;
 	}
 	.advantages-item-left{
 		float: none;
@@ -399,10 +862,21 @@
 		height:auto
 	}
 	.advantages-right-top{
-		height:auto
+		height:4rem
+	}
+	.advantages-right-img{
+		padding: 1.2rem 0;
+		width:30%
+	}
+	.advantages-right-img img{
+		width:1.5rem;
+		height:1.5rem
+	}
+	.advantages-right-content{
+		width:70%
 	}
 	.advantages-right-bottom{
-		height:auto
+		height:4rem
 	}
 	.wxprocess{
 		padding: 0.2rem 0.2rem;
@@ -449,7 +923,7 @@
 	}
 	.major{
 		padding: 0.5rem 0;
-		height:14.2rem
+		height:18.6rem
 	}
 	.major-item{
 		float: none;
@@ -458,7 +932,8 @@
 		height:auto
 	}
 	.major-item-img img{
-		width:1.5rem
+		width:1.5rem;
+		height:1.5rem
 	}
 	.recruit-list{
 		padding: 0.2rem 0.2rem;
@@ -470,6 +945,18 @@
 		margin: 0.5rem 0;
 		padding: 0;
 		float: none;
+	}
+	#computer{
+		display: none;
+	}
+	
+	#nav{
+		display: block;
+		float: right;
+	}
+	.strengths-item img{
+		width:1.5rem;
+		height:1.5rem
 	}
 }
 
