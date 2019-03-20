@@ -44,7 +44,7 @@
 		padding: 0;
 	}
 	.product-item{
-		margin: 0 1%;
+		
 		width:48%
 	}
 	.service{
@@ -210,7 +210,7 @@
   	padding: 0;
   }
   .product-item{
-  	margin: 0 1%;
+
   	width:48%
   }
   .service{
@@ -281,7 +281,7 @@
   	height:0.5rem;
   }
   .website-process-text{
-  	width:2rem;
+  	width:1rem;
 	margin: 0.3rem auto;
   }
   .app-process{
@@ -321,6 +321,10 @@
   }
 }
 @media(max-width: 992px){
+	.logo img{
+		width:0.5rem;
+		height:1rem;
+	}
 	.nav-main{
 		width:90%
 	}
@@ -438,7 +442,7 @@
 		height:0.5rem;
 	}
 	.website-process-text{
-		width:2rem;
+		width:1rem;
 		margin: 0.3rem auto;
 	}
 	.app-process{
@@ -525,17 +529,17 @@
 	
 }
 @media (max-width: 768px) {
-	img { width: auto; max-width: 100%; }
+	
 	.contain{
 	    width:100%;
 	    padding: 0;
 	}
 	.banner{
-		height:5rem
+		height:10.8rem
 	}
-	.banner img{
+	/* .banner img{
 		height:5rem
-	}
+	} */
 	.menu-item{
 		width:100%
 	}
@@ -556,7 +560,8 @@
 		padding: 0 0.4rem;
 	}
 	.product-item{
-		width:48%
+		width:48%;
+		
 	}
 	.process img{
 		width:100%
@@ -698,11 +703,11 @@
 		margin: 0.2rem;
 	}
 	.website-process{
-		height:14.2rem;
+		height:11.2rem;
 		padding:0.2rem 0.2rem;
 	}
 	.website-process-item{
-		height:4rem;
+		height:3rem;
 		width:43%
 	}
 	.introduce{
@@ -742,17 +747,36 @@
 	
 }
 @media (max-width: 480px) {
-	img { width: auto; max-width: 100%; }
+	
+	#phone{
+		display: block;
+	}
+	.navigation-phone{
+	
+		width:100%;
+		position: fixed;
+		top:1.4rem;
+		z-index:999
+		
+	}
+	.nav-main{
+		margin-top:3%;
+	}
+	.nav-item{
+		width:100%;
+		text-align: center;
+		height:25%
+	}
 	.contain{
 	    width:480px;
 	    padding: 0;
 	}
 	.banner{
-		height:14rem
+		height:13.8rem
 	}
-	.banner img{
+	/* .banner img{
 		height:14rem
-	}
+	} */
 	.menu-item{
 		width:100%
 	}
@@ -773,7 +797,8 @@
 		padding: 0 0.4rem;
 	}
 	.product-item{
-		width:100%
+		width:100%;
+		height:5.8rem
 	}
 	.process img{
 		width:100%

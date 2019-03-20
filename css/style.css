@@ -356,35 +356,7 @@ clear: both;
     padding-left: 15px;
     padding-right: 15px;
 }
-.orgin{
-    width:100%;
-    opacity: 0;
-    height: 0;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height .5s ease-out;
-}
-.after{
-    opacity: 1;
-    min-height: 2.5rem;
-    height: auto;
-    -webkit-animation: slide-down .5s ease-in;
-    transition: max-height .5s ease-in;
-    transform-origin: 50% 0;
-}
-.orgin1{
-    width:100%;
-    height: 0;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 1s ease-out;
-}
-.after1{
-    max-height: 1000px;
-    height: auto;
-    transition: max-height 2s ease-in;
-    transform-origin: 50% 0;
-}
+
 @-webkit-keyframes slide-down{
     0%{transform: scale(1,0);}
     25%{transform: scale(1,1.2);}
@@ -399,7 +371,7 @@ clear: both;
     transform-origin: 50% 0;
 }
 .orgin_phone{
-     width:100%;
+    width:100%;
     height: 0;
     max-height: 0px;
     overflow: hidden;
@@ -418,6 +390,7 @@ clear: both;
 	width:100%;
 	height:10.8rem;
 	position: relative;
+	overflow: hidden;
 }
 .banner-title{
 	font-size:0.75rem;
@@ -436,12 +409,31 @@ clear: both;
 #nav{
 	display: none;
 }
+#phone{
+  display: none;
+}
 .navigation{
 	width:100%;
 	height:1.4rem;
 	position: absolute;
 	top:0;
 	z-index:999
+}
+.orgin{
+    width:100%;
+    opacity: 0;
+    height: 0;
+	
+    transition: max-height .5s ease-out;
+}
+.after{
+    opacity: 1;
+    min-height: 2.5rem;
+    height: auto;
+    -webkit-animation: slide-down .5s ease-in;
+    transition: max-height .5s ease-in;
+    transform-origin: 50% 0;
+	background: rgb(0,0,0,0.6);
 }
 .nav-main{
 	margin: 0 auto;
@@ -452,7 +444,9 @@ clear: both;
 .logo{
 	float:left;
 	width:10%;
+	
 }
+
 .nav-item{
 	width:10%;
 	font-size:.2rem;
@@ -557,14 +551,20 @@ clear: both;
 } */
 .product-item{
 	width:32%;
-	height:5.4rem;
 	float: left;
-	margin: 0 0.6%;
+	margin: 0.6% 0.6%;
+	overflow: hidden;
 }
-.product-item img{
-	width:100%;
-	height:3.6rem;
+
+.product-item-mainimg{
 	
+	width:100%;
+	 margin:0 auto;
+}
+.product-item-mainimg img{
+	
+	width:100%;
+	height:100%
 }
 .product-item-content{
 	width:80%;
@@ -628,7 +628,7 @@ clear: both;
 
 .infomation{
 	width:100%;
-	padding: 0 1.5rem;
+	padding: 0 1rem;
 }
 .infomation-title{
 	width:100%;
@@ -649,11 +649,11 @@ clear: both;
 }
 .infomation-item-time{
 	border-right:1px solid #8f8f8f;
-	width:17%;
+	width:20%;
 	float: left;
 }
 .infomation-item-text{
-	width:83%;
+	width:80%;
 	float: left;
 }
 .infomation-item-text p{

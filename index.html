@@ -16,18 +16,21 @@
 		<script src="js/rem.js"></script>
 		<link rel="stylesheet" href="css/css/magic.css">
 		<link rel="stylesheet" href="css/animate/animate.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
 	<body style="background:#fff;">
 	<!--[if lte IE 8]>
 	<p class="browserupgrade">您的浏览器版本老的可笑, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
 	<![endif]-->
+	<div id="app">
 	<header>
-		<nav class="navigation">
+		<nav class="navigation" id="navigation">
 			<div class="nav-main">
 				<a class="logo">
+					
 					<image src="images/logo.png" alt="回到首页"/>
 				</a>
-				<a id="nav" >
+				<a id="nav" @click="toggleMenu">
 					<image src="images/nav.png"/>
 				</a>
 				<div id="computer">
@@ -77,8 +80,56 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</nav>
+		<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')" id="phone">
+			<div class="nav-item ">
+				<div class="nav-item-text ">
+					<a href="#" class="active">网站首页</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="smallProgram.html">小程序</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="website.html">网站开发</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="app.html">APP开发</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="case.html">精品案例</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="news.html">新闻中心</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="blog.html">技术博客</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="recruit.html">人才招聘</a>
+				</div>
+			</div>
+			<div class="nav-item">
+				<div class="nav-item-text">
+					<a href="about.html">关于我们</a>
+				</div>
+			</div>
+		</div>
 	</header>
 		
 	<div class="container">
@@ -185,7 +236,9 @@
 
 			<div class="product-list margin-50 clearfix">
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -197,7 +250,9 @@
 					</div>
 				</div>
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -209,7 +264,9 @@
 					</div>
 				</div>
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -221,7 +278,9 @@
 					</div>
 				</div>
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -233,7 +292,9 @@
 					</div>
 				</div>
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -245,7 +306,9 @@
 					</div>
 				</div>
 				<div class="product-item margin-30">
-					<image src="images/img3.png">
+					<div class="product-item-mainimg">
+						<image src="images/img3.png">
+					</div>
 					<div style="display: flex;width:100%">
 						<div class="product-item-content">
 							<p class="font18  margin-20 color-222">驾校</p>
@@ -528,6 +591,36 @@
 			</div>
 		</div>
 	</div>
+</div>
+	<script type="text/babel">
+		var app = new Vue({
+	    el: '#app',
+	    data: function() {
+	        return {
+	            is_toggle:false,
+	           
+	        }
+	    },
+		
+	    created () {
+	        const self = this;
+		
+	    },
+		
+	    methods:{
+			
+	
+			
+	        toggleMenu:function(e){
+	            const self = this;
+				console.log(444)
+	            self.is_toggle = !self.is_toggle;
+	        },
+			
+	  
+	    }
+	});
+	</script>
 		<script src="js/browser.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="js/base.js" type="application/javascript"></script>
@@ -538,8 +631,25 @@
 	</body>
 	
 	<script type="text/javascript">
-		
-		
+	
+        window.onscroll= function(){
+			var t = document.documentElement.scrollTop||document.body.scrollTop;
+			var navigation = document.getElementById('navigation');
+			if(t>=200){
+				$("#navigation").css('position','fixed');
+				$("#navigation").addClass('animated  jackInTheBox delay-0.5s');
+				navigation.addEventListener('animationend', function() {
+					$("#navigation").css('background','rgb(86, 153, 222,0.8)');
+				})
+				
+			}else{          //恢复正常
+				$("#navigation").css('position','absolute');
+				$("#navigation").css('background','none');
+				$("#navigation").css('opacity','1');
+				$("#navigation").removeClass('animated  jackInTheBox delay-0.5s');
+			}
+        }
+
 	
 	    function initMap(){
 	        createMap();
