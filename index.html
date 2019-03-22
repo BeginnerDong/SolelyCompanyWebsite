@@ -234,8 +234,27 @@
 				<p class="font18   color-333 margin-25">Peoduct，let customers rest assured</p>
 			</div>
 
-			<div class="product-list margin-50 clearfix">
-				<div class="product-item margin-30">
+			<div class="product-list margin-50 clearfix ">
+				<div class="product-item margin-30 draw clearfix">
+					<div class="product-item-mainimg ">
+						<image src="images/img3.png">
+						<div class="product-item-mainimg-mask">
+							<div class="mask-qrcode">
+								<image src="images/img4.png">
+							</div>
+						</div>
+					</div>
+					<div style="display: flex;width:100%">
+						<div class="product-item-content ">
+							<p class="font18  margin-20 color-222">驾校</p>
+							<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
+						</div>
+						<div class="product-item-img">
+							<image src="images/icon10.png">
+						</div>
+					</div>
+				</div>
+				<div class="product-item margin-30 clearfix" >
 					<div class="product-item-mainimg">
 						<image src="images/img3.png">
 					</div>
@@ -249,7 +268,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="product-item margin-30">
+				<div class="product-item margin-30 clearfix">
 					<div class="product-item-mainimg">
 						<image src="images/img3.png">
 					</div>
@@ -263,7 +282,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="product-item margin-30">
+				<div class="product-item margin-30 clearfix">
 					<div class="product-item-mainimg">
 						<image src="images/img3.png">
 					</div>
@@ -277,7 +296,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="product-item margin-30">
+				<div class="product-item margin-30 clearfix">
 					<div class="product-item-mainimg">
 						<image src="images/img3.png">
 					</div>
@@ -291,21 +310,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="product-item margin-30">
-					<div class="product-item-mainimg">
-						<image src="images/img3.png">
-					</div>
-					<div style="display: flex;width:100%">
-						<div class="product-item-content">
-							<p class="font18  margin-20 color-222">驾校</p>
-							<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-						</div>
-						<div class="product-item-img">
-							<image src="images/icon10.png">
-						</div>
-					</div>
-				</div>
-				<div class="product-item margin-30">
+				<div class="product-item margin-30 clearfix">
 					<div class="product-item-mainimg">
 						<image src="images/img3.png">
 					</div>
@@ -637,16 +642,16 @@
 			var navigation = document.getElementById('navigation');
 			if(t>=200){
 				$("#navigation").css('position','fixed');
-				$("#navigation").addClass('animated  jackInTheBox delay-0.5s');
+				$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
 				navigation.addEventListener('animationend', function() {
-					$("#navigation").css('background','rgb(86, 153, 222,0.8)');
+					$("#navigation").css('background','rgb(0, 0, 0,0.6)');
 				})
 				
 			}else{          //恢复正常
 				$("#navigation").css('position','absolute');
 				$("#navigation").css('background','none');
 				$("#navigation").css('opacity','1');
-				$("#navigation").removeClass('animated  jackInTheBox delay-0.5s');
+				$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
 			}
         }
 
