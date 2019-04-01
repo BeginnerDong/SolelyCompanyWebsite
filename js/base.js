@@ -1263,6 +1263,13 @@ window.base = {
 
 	}
 
+	throttle(method, context){
+	    clearTimeout(method.tId);
+	    method.tId = setTimeout(function(){
+	        method.call(context);
+	    }, 500);
+	}
+
 }
 
 // console.log(this);

@@ -28,11 +28,11 @@
 	<!--[if lte IE 8]>
 	<p class="browserupgrade">您的浏览器版本老的可笑, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
 	<![endif]-->
-		<header>
-			<include src="header.html"></include>
-		</header>
-		<div id="app">
 		
+		<div id="app">
+			<header>
+				<include src="header.html"></include>
+			</header>
 			
 			<div class="container">
 				<div class="banner clearfix">
@@ -47,8 +47,6 @@
 							<div  class="banner-small-title">更专注于行业特色 贴合用户使用习惯two</div>
 						</div>
 								
-							
-						
 						<div style="position: absolute;right:20px;top:50%;z-index:999" @click="changeBanner('+')">right</div>
 						<div style="position: absolute;left:20px;top:50%;z-index:999" @click="changeBanner('-')">left</div>
 					</div>
@@ -635,7 +633,6 @@
 				$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
 			}
         }
-
 
 	
 	    function initMap(){
