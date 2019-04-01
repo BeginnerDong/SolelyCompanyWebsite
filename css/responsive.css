@@ -1007,5 +1007,33 @@
 		width:1.5rem;
 		height:1.5rem
 	}
+
+	.service-list-item{
+		float: left;
+		width:50%;
+	}
+
+	.service-list-box-body-card-span{
+		width:25%;
+	}
+
+	.service-list-box-header-right {
+		padding-top: calc(0.8rem - 0.6rem);
+	}
+
+	.service-list-box-header-right-img {
+	    width: 0.6rem;
+	    height: 0.6rem;
+	}
+	.service-list-box-header-left {
+	    width: 75%;
+	    line-height: 1.0rem;
+	}
+
+	.service-list-box-header-right {
+	    width: 25%;
+	}
+
+
 }
 
