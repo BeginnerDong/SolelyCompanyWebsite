@@ -1,5 +1,5 @@
 window.base = {
-	g_restUrl: 'http://www.leeno-energy.cn/api/public/index.php/api/v1/',
+	g_restUrl: 'http://106.12.155.217/api/public/index.php/api/v1/',
 
 
 
