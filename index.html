@@ -19,6 +19,11 @@
 		<link rel="stylesheet" href="css/css/magic.css">
 		<link rel="stylesheet" href="css/animate/animate.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script src="js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 		
 	</head>
 
@@ -610,14 +615,11 @@
 		    }
 		});
 	</script>
-	<script src="js/browser.min.js"></script>
-	<script src="js/base.js" type="application/javascript"></script>
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript " src="js/bootstrap.js"></script>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
+	
 	<script type="text/javascript">
 	
         window.onscroll= function(){
+        	console.log(9999)
 			var t = document.documentElement.scrollTop||document.body.scrollTop;
 			var navigation = document.getElementById('navigation');
 			if(t>=200){

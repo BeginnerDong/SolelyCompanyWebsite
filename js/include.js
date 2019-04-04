@@ -30,15 +30,53 @@
             return objE.childNodes;
         },
         executeScript: function(content) {
-            var mac = /<script>([\s\S]*?)<\/script>/g;
+            var mac = /<script type="text\/javascript">([\s\S]*?)<\/script>/g;
             var r = "";
             while(r = mac.exec(content)) {
                 eval(r[1]);
             }
         },
+        loadScript: function(content){
+            var self = this;
+            var mac = /<script\s*?src="([\s\S]*?)"/ig;
+            var r = "";
+            var filePath = this.getFilePath();
+            var length = content.match(mac).length;
+            while(r = mac.exec(content)) {
+                length--;
+                var url = this.getRequestUrl(filePath,r[1]);
+                if(length>1){
+                    this.loadJs(url);
+                }else{
+                    var callback = function(){
+                        self.executeScript(content)
+                    };
+                    this.loadJs(url,callback);
+                };
+            };
+        },
+        loadJs:function(url,callback){
+            var script=document.createElement('script');
+            script.type="text/javascript";
+            if(typeof(callback)!="undefined"){
+                if(script.readyState){
+                    script.onreadystatechange=function(){
+                        if(script.readyState == "loaded" || script.readyState == "complete"){
+                            script.onreadystatechange=null;
+                            callback();
+                        }
+                    }
+                }else{
+                    script.onload=function(){
+                        callback();
+                    }
+                }
+            };
+            script.src=url;
+            document.body.appendChild(script);
+        },
         getHtml: function(content) {
-            var mac = /<script>([\s\S]*?)<\/script>/g;
-            content.replace(mac, "");
+            content = content.replace(/<script.*?>([\s\S]*?)<\/script>/ig, ''); 
             return content;
         },
         getPrevCount: function(src) {
@@ -74,14 +112,14 @@
                     parent.insertBefore(includeNodes[0], this);
                 }
                 //执行文本中的额javascript
-                $this.executeScript(content);
+                $this.loadScript(content);
+                //$this.executeScript(content);
                 parent.removeChild(this);
                 //替换元素 this.parentNode.replaceChild(includeNodes[1], this);
             })
         }
     }
     window.onload = function() {
-        console.log('niubi')
         new Include39485748323().replaceIncludeElements();
     }
 })(window, document)

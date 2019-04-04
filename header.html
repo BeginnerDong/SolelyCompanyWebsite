@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="css/css/magic.css">
 		<link rel="stylesheet" href="css/animate/animate.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 	</head>
 
 
@@ -134,36 +135,12 @@
 	</body>
 
 	<script src="js/browser.min.js"></script>
-	<script src="js/base.js" type="application/javascript"></script>
+	<script type="application/javascript" src="js/base.js" ></script>
 	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 	
-	
-	<script type="text/javascript">
-	
-        window.onscroll= function(){
-        	alert(521635)
-			var t = document.documentElement.scrollTop||document.body.scrollTop;
-			var navigation = document.getElementById('navigation');
-			if(t>=200){
-				$("#navigation").css('position','fixed');
-				$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
-				navigation.addEventListener('animationend', function() {
-					$("#navigation").css('background','rgb(0, 0, 0,0.6)');
-				})
-			}else{          //恢复正常
-				$("#navigation").css('position','absolute');
-				$("#navigation").css('background','none');
-				$("#navigation").css('opacity','1');
-				$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
-			}
-        }
-	   
-	</script>
-
-
 	<script type="text/javascript">
 		var header_app = new Vue({
-		    el: '#header_app',
+		    el: '#app',
 		    data(){
 		        return {
 		        	is_toggle:true
@@ -171,7 +148,7 @@
 		    },
 		    created () {
 		        const self = this;
-		        console.log('created');
+		        console.log('created-10000001');
 		        window.addEventListener('scroll',(e)=>{
 		        	console.log('addEventListener',e)
 		        });
@@ -202,7 +179,29 @@
 
 		    }
 		});
+	
+        window.onscroll= function(){
+        	console.log('onscroll=001')
+			var t = document.documentElement.scrollTop||document.body.scrollTop;
+			var navigation = document.getElementById('navigation');
+			if(t>=200){
+				$("#navigation").css('position','fixed');
+				$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
+				navigation.addEventListener('animationend', function() {
+					$("#navigation").css('background','rgb(0, 0, 0,0.6)');
+				})
+			}else{          //恢复正常
+				$("#navigation").css('position','absolute');
+				$("#navigation").css('background','none');
+				$("#navigation").css('opacity','1');
+				$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
+			}
+        }
+	   
 	</script>
+
+
+
 	
 
 </html>

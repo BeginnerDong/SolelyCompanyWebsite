@@ -1257,6 +1257,7 @@ window.base = {
 		}else{
 			var format = format + ':' + getDate(timestamp).getMinutes();
 		} */
+		
 		console.log(date)
 		console.log((date.getMonth() + 1))
 		return format;
