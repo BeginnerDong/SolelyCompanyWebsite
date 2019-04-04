@@ -14,70 +14,37 @@
 		<link href="css/wxParse.css" rel="stylesheet" />
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<script src="js/rem.js"></script>
+		<script src="js/include.js"></script>
+		<link rel="stylesheet" href="css/css/magic.css">
+		<link rel="stylesheet" href="css/animate/animate.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script src="js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript " src="js/bootstrap.js"></script>
 	</head>
 	<body style="background:#fff;">
+		<div id="app">
 		<header>
-			<nav class="navigation">
-				<div class="nav-main">
-					<a class="logo">
-						<image src="images/logo.png" alt="回到首页"/>
-					</a>
-					<a id="nav" >
-						<image src="images/nav.png"/>
-					</a>
-					<div id="computer">
-						<div class="nav-item ">
-							<div class="nav-item-text ">
-								<a href="index.html">网站首页</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="smallProgram.html">小程序</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="website.html">网站开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="app.html">APP开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="#"  class="active">精品案例</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="news.html">新闻中心</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="blog.html">技术博客</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="recruit.html">人才招聘</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="about.html">关于我们</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
+			<include src="header.html"></include>
 		</header>
 		<div class="container">
-			<div class="banner">
-				<image src="images/3-banner.png" />
+			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+				<image :src="item.url" />
+				<div  class="banner-item">
+					<div  class="animated bounceInLeft">
+						<div  class="banner-title" >{{item.title}}</div>
+						<div  class="banner-small-title">{{item.small_title}}</div>
+					</div>
+					
+							
+					<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+						<image src="images/icon-right.png" />
+					</div>
+					<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+						<image src="images/icon-left.png" />
+					</div>
+				</div>
 			</div>
 			
 	
@@ -105,79 +72,28 @@
 					
 					</div>
 				</div>
-				<div class="product-list margin-50 clearfix">
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
+				<div class="product-list margin-50 clearfix ">
+					<div class="product-item margin-30" v-for="item in mainData" style="position: relative;">
+						<div class="product-item-mainimg ">
+							<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
+							<div class="product-item-mainimg-mask">
+								<div class="mask-qrcode">
+									<image src="images/img4.png">
+								</div>
+							</div>
+						</div>
+						<div >
+							<div class="product-item-content ">
+								<p class="font18  margin-20 color-222">{{item.title}}</p>
 								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
 							</div>
 							<div class="product-item-img">
 								<image src="images/icon10.png">
 							</div>
 						</div>
+				
 					</div>
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-					</div>
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-					</div>
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-					</div>
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-					</div>
-					<div class="product-item margin-30">
-						<image src="images/img3.png">
-						<div style="display: flex;width:100%">
-							<div class="product-item-content">
-								<p class="font18  margin-20 color-222">驾校</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-					</div>
+				
 				</div>
 			</div>
 			
@@ -223,45 +139,96 @@
 				<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
 			</div>
 		</div>
-		<div class="footer clearfix">
-			<div class="footer-content clearfix">
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item" style="border:none">
-					<p class="font16">官方微信</p>
-					<div class="footer-item-img">
-						<image src="images/img10.png">
-					</div>
-				</div>
-			</div>
+
+		<include src="footer.html"></include>
+
 		</div>
 	</body>
+	
+	<script type="text/javascript">
+		var app = new Vue({
+		    el: '#app',
+		    data(){
+		        return {
+		        	banner_index:0,
+		        	is_toggle:true,
+					mainData: [],
+					labelData: [],
+					newsData:[],
+					paginate: { 
+					    count: 0, 
+					    currentPage: 1, 
+					    pagesize:6, 
+					    is_page: true, 
+					},
+					searchItem:{ thirdapp_id: 22},
+					banner_info:[
+						{url:'images/banner.png',title:'更专注于行业特色 贴合用户使用习惯',small_title:'更专注于行业特色 贴合用户使用习惯'},
+						{url:'images/2-banner.png',title:'',small_title:''}
+					]
+		        }
+		    },
+		    created () {
+		        const self = this;
+				self.init()
+		    },
+			
+		    methods: {
+		        init: function (e) {
+		            const self = this;
+					console.log(666);
+					console.log(self.banner_info);
+					self.getMainData();
+		        },
+		        
+				getMainData: function(id){
+				    var self = this;
+				    var postData = {};
+				    postData.paginate = window.base.cloneForm(self.paginate);
+				    postData.searchItem = window.base.cloneForm(self.searchItem);
+					postData.getBefore ={
+					 	caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      parentid:['in',[146]]
+					    },
+					    middleKey:'menu_id',
+					    key:'id',
+					    condition:'in',
+						},
+					};
+				    var callback = (res) => {
+				        console.log('getMainData', res);
+				        self.mainData = res.info.data;
+				       
+				    };
+				    window.base.articleList(postData, callback);
+				},
+	
+	
+		    	changeBanner: function(type) {
+		        	const self = this;
+	
+		        	if(type=='+'){
+		        		console.log(8852)
+		        		self.banner_index += 1;
+		        	}else if((type=='-')){
+		        		self.banner_index -= 1;
+		        	};
+		        	
+		        	if(self.banner_index<self.banner_info.length){
+		        		self.banner_index = 1
+		        	};
+		        	if(self.banner_index>=self.banner_info.length){
+		        		self.banner_index = 0
+		        	};
+		        	console.log(self.banner_index);
+		        	
+		    	}
+		    }
+		});
+	</script>
+	
 	
 	<script type="text/javascript">
 	

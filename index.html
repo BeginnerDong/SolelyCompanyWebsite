@@ -39,21 +39,24 @@
 				<include src="header.html"></include>
 			</header>
 			
+			
+			
 			<div class="container">
-				<div class="banner clearfix">
-					<image src="images/banner.png" />
+				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+					<image :src="item.url" />
 					<div  class="banner-item">
-						<div v-show="banner_index==0" class="animated bounceInLeft">
-							<div  class="banner-title" >更专注于行业特色 贴合用户使用习惯</div>
-							<div  class="banner-small-title">更专注于行业特色 贴合用户使用习惯</div>
+						<div  class="animated bounceInLeft">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-						<div v-show="banner_index==1" class="animated fadeIn">
-							<div  class="banner-title">微信公众平台开发two{{banner_index}}</div>
-							<div  class="banner-small-title">更专注于行业特色 贴合用户使用习惯two</div>
-						</div>
+						
 								
-						<div style="position: absolute;right:20px;top:50%;z-index:999" @click="changeBanner('+')">right</div>
-						<div style="position: absolute;left:20px;top:50%;z-index:999" @click="changeBanner('-')">left</div>
+						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+							<image src="images/icon-right.png" />
+						</div>
+						<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+							<image src="images/icon-left.png" />
+						</div>
 					</div>
 				</div>	
 				<div class="menu clearfix">
@@ -153,9 +156,9 @@
 					</div>
 
 					<div class="product-list margin-50 clearfix ">
-						<div class="product-item margin-30  " style="position: relative;">
+						<div class="product-item margin-30" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
-								<image src="images/img3.png">
+								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 								<div class="product-item-mainimg-mask">
 									<div class="mask-qrcode">
 										<image src="images/img4.png">
@@ -164,7 +167,7 @@
 							</div>
 							<div >
 								<div class="product-item-content ">
-									<p class="font18  margin-20 color-222">驾校</p>
+									<p class="font18  margin-20 color-222">{{item.title}}</p>
 									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
 								</div>
 								<div class="product-item-img">
@@ -173,83 +176,7 @@
 							</div>
 
 						</div>
-						
-						<div class="product-item margin-30 clearfix" style="position: relative;">
-							<div class="product-item-mainimg ">
-								<image src="images/img3.png">
-								<div class="product-item-mainimg-mask">
-									<div class="mask-qrcode">
-										<image src="images/img4.png">
-									</div>
-								</div>
-							</div>
-							<div >
-								<div class="product-item-content">
-									<p class="font18  margin-20 color-222">驾校</p>
-									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-								</div>
-								<div class="product-item-img">
-									<image src="images/icon10.png">
-								</div>
-							</div>
-						</div>
-						
-						<div class="product-item margin-30 clearfix">
-							<div class="product-item-mainimg">
-								<image src="images/img3.png">
-							</div>
-							<div style="display: flex;width:100%">
-								<div class="product-item-content">
-									<p class="font18  margin-20 color-222">驾校</p>
-									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-								</div>
-								<div class="product-item-img">
-									<image src="images/icon10.png">
-								</div>
-							</div>
-						</div>
-						<div class="product-item margin-30 clearfix">
-							<div class="product-item-mainimg">
-								<image src="images/img3.png">
-							</div>
-							<div style="display: flex;width:100%">
-								<div class="product-item-content">
-									<p class="font18  margin-20 color-222">驾校</p>
-									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-								</div>
-								<div class="product-item-img">
-									<image src="images/icon10.png">
-								</div>
-							</div>
-						</div>
-						<div class="product-item margin-30 clearfix">
-							<div class="product-item-mainimg">
-								<image src="images/img3.png">
-							</div>
-							<div style="display: flex;width:100%">
-								<div class="product-item-content">
-									<p class="font18  margin-20 color-222">驾校</p>
-									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-								</div>
-								<div class="product-item-img">
-									<image src="images/icon10.png">
-								</div>
-							</div>
-						</div>
-						<div class="product-item margin-30 clearfix">
-							<div class="product-item-mainimg">
-								<image src="images/img3.png">
-							</div>
-							<div style="display: flex;width:100%">
-								<div class="product-item-content">
-									<p class="font18  margin-20 color-222">驾校</p>
-									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-								</div>
-								<div class="product-item-img">
-									<image src="images/icon10.png">
-								</div>
-							</div>
-						</div>
+					
 					</div>
 				</div>
 				
@@ -417,64 +344,14 @@
 					</div>
 				
 					<div class="infomation-list margin-50 clearfix">
-						<div class="infomation-item margin-50 clearfix">
+						<div class="infomation-item margin-50 clearfix"  v-for="item in newsData">
 							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
+								<p class="font50   color-4f4e4e">{{item.day}}</p>
+								<p class="font12   color-898989 ">{{item.date}}</p>
 							</div>
 							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50 clearfix">
-							<div class="infomation-item-time ">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50 clearfix">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50 clearfix">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50 clearfix">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50 clearfix">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+								<p class="font16   color-696969 avoidOverflow">{{item.title}}</p>
+								<p class="font12   color-898989  avoidOverflow">{{item.description}}</p>
 							</div>
 						</div>
 					</div>
@@ -561,13 +438,18 @@
 		        	is_toggle:true,
 					mainData: [],
 					labelData: [],
+					newsData:[],
 					paginate: { 
 					    count: 0, 
 					    currentPage: 1, 
 					    pagesize:6, 
 					    is_page: true, 
 					},
-					searchItem:{ thirdapp_id: 21},
+					searchItem:{ thirdapp_id: 22},
+					banner_info:[
+						{url:'images/banner.png',title:'更专注于行业特色 贴合用户使用习惯',small_title:'更专注于行业特色 贴合用户使用习惯'},
+						{url:'images/2-banner.png',title:'',small_title:''}
+					]
 		        }
 		    },
 		    created () {
@@ -579,7 +461,9 @@
 		        init: function (e) {
 		            const self = this;
 					console.log(666);
-					self.getMainData()
+					console.log(self.banner_info);
+					self.getMainData();
+					self.getNewsData()
 		        },
 		        
 				getMainData: function(id){
@@ -587,11 +471,49 @@
 				    var postData = {};
 				    postData.paginate = window.base.cloneForm(self.paginate);
 				    postData.searchItem = window.base.cloneForm(self.searchItem);
-				  
+					postData.getBefore ={
+					 	caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      parentid:['in',[146]]
+					    },
+					    middleKey:'menu_id',
+					    key:'id',
+					    condition:'in',
+						},
+					};
 				    var callback = (res) => {
 				        console.log('getMainData', res);
 				        self.mainData = res.info.data;
 				       
+				    };
+				    window.base.articleList(postData, callback);
+				},
+				
+				getNewsData: function(id){
+				    var self = this;
+				    var postData = {};
+				    postData.paginate = window.base.cloneForm(self.paginate);
+				    postData.searchItem = window.base.cloneForm(self.searchItem);
+					postData.getBefore ={
+					 	caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      title:['=',['官网新闻中心']]
+					    },
+					    middleKey:'menu_id',
+					    key:'id',
+					    condition:'in',
+						},
+					};
+				    var callback = (res) => {
+				        
+				        self.newsData = res.info.data;
+						for (var i = 0; i < self.newsData.length; i++) {
+							self.newsData[i].date=self.newsData[i].create_time.substring(0,7);
+							self.newsData[i].day=self.newsData[i].create_time.substring(8,10);
+						}
+						console.log(self.newsData)
 				    };
 				    window.base.articleList(postData, callback);
 				},
@@ -602,14 +524,14 @@
 		        	if(type=='+'){
 		        		console.log(8852)
 		        		self.banner_index += 1;
-		        	}else{
+		        	}else if((type=='-')){
 		        		self.banner_index -= 1;
 		        	};
 		        	
-		        	if(self.banner_index<0){
+		        	if(self.banner_index<self.banner_info.length){
 		        		self.banner_index = 1
 		        	};
-		        	if(self.banner_index>1){
+		        	if(self.banner_index>=self.banner_info.length){
 		        		self.banner_index = 0
 		        	};
 		        	console.log(self.banner_index);

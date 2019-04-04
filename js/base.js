@@ -1262,7 +1262,7 @@ window.base = {
 		console.log((date.getMonth() + 1))
 		return format;
 
-	}
+	},
 
 	throttle(method, context){
 	    clearTimeout(method.tId);

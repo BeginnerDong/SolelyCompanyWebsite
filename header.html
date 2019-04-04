@@ -18,11 +18,14 @@
 		<link rel="stylesheet" href="css/css/magic.css">
 		<link rel="stylesheet" href="css/animate/animate.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script type="application/javascript" src="js/base.js" ></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
 	</head>
 
 
-	<body style="background:#fff;">
+
 
 		<div id="header_app">
 			<nav class="navigation" id="navigation">
@@ -132,11 +135,9 @@
 		</div>
 		
 
-	</body>
 
-	<script src="js/browser.min.js"></script>
-	<script type="application/javascript" src="js/base.js" ></script>
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+	
 	
 	<script type="text/javascript">
 		var header_app = new Vue({
@@ -157,7 +158,9 @@
 		    methods: {
 		        init: function (e) {
 		            const self = this;
-					console.log(666)
+					console.log(666);
+					var currentPath = window.base.GetUrlRelativePath();
+					console.log('currentPath',currentPath)
 		        },
 		        
 		    	changeHeaderStyle: function(scrollTop){
@@ -199,9 +202,5 @@
         }
 	   
 	</script>
-
-
-
-	
 
 </html>

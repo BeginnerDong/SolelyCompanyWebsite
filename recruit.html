@@ -23,72 +23,31 @@
 		<script src="js/base.js" type="application/javascript"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/rem.js"></script>
+		<script src="js/include.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
-			<nav class="navigation">
-				<div class="nav-main">
-					<a class="logo">
-						<image src="images/logo.png" alt="回到首页"/>
-					</a>
-					<a id="nav" >
-						<image src="images/nav.png"/>
-					</a>
-					<div id="computer">
-						<div class="nav-item ">
-							<div class="nav-item-text ">
-								<a href="index.html">网站首页</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="smallProgram.html">小程序</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="website.html">网站开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="app.html">APP开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="case.html">精品案例</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="news.html">新闻中心</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="blog.html">技术博客</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="#"  class="active">人才招聘</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="about.html">关于我们</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
+			<include src="header.html"></include>
 		</header>
 		<div class="container">
-			<div class="banner">
-				<image src="images/banner.png" />
+			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+				<image :src="item.url" />
+				<div  class="banner-item">
+					<div  class="animated bounceInLeft">
+						<div  class="banner-title" >{{item.title}}</div>
+						<div  class="banner-small-title">{{item.small_title}}</div>
+					</div>
+					
+							
+					<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+						<image src="images/icon-right.png" />
+					</div>
+					<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+						<image src="images/icon-left.png" />
+					</div>
+				</div>
 			</div>
 			
 			
@@ -174,44 +133,9 @@
 				<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
 			</div>
 		</div>
-		<div class="footer clearfix">
-			<div class="footer-content clearfix">
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item">
-					<p class="font16">服务领域</p>
-					<p class="font14 margin-16">官网建设</p>
-					<p class="font14 margin-12">网上商城</p>
-					<p class="font14 margin-12">互动营销</p>
-					<p class="font14 margin-12">品牌型网站</p>
-				</div>
-				<div class="footer-item" style="border:none">
-					<p class="font16">官方微信</p>
-					<div class="footer-item-img">
-						<image src="images/img10.png">
-					</div>
-				</div>
-			</div>
-		</div>
+
+		<include src="footer.html"></include>
+
 	</body>
 	
 	<script type="text/javascript">
