@@ -1269,7 +1269,18 @@ window.base = {
 	    method.tId = setTimeout(function(){
 	        method.call(context);
 	    }, 500);
-	}
+	},
+
+	debounce(method,delay,context){
+		console.log('debounce',method)
+		if(!context[method.tId]){
+			context[method.tId] = true;
+			context[method.tId] = setTimeout(function(){
+				method();
+				context[method.tId] = false;
+			},delay);
+		};
+	}　 
 
 }
 

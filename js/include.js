@@ -30,6 +30,7 @@
             return objE.childNodes;
         },
         executeScript: function(content) {
+            console.log('executeScript')
             var mac = /<script type="text\/javascript">([\s\S]*?)<\/script>/g;
             var r = "";
             while(r = mac.exec(content)) {
@@ -41,19 +42,26 @@
             var mac = /<script\s*?src="([\s\S]*?)"/ig;
             var r = "";
             var filePath = this.getFilePath();
-            var length = content.match(mac).length;
-            while(r = mac.exec(content)) {
-                length--;
-                var url = this.getRequestUrl(filePath,r[1]);
-                if(length>1){
-                    this.loadJs(url);
-                }else{
-                    var callback = function(){
-                        self.executeScript(content)
+
+
+            if(content.match(mac)){
+                var length = content.match(mac).length;
+                while(r = mac.exec(content)) {
+                    length--;
+                    var url = this.getRequestUrl(filePath,r[1]);
+                    if(length>1){
+                        this.loadJs(url);
+                    }else{
+                        var callback = function(){
+                            self.executeScript(content)
+                        };
+                        this.loadJs(url,callback);
                     };
-                    this.loadJs(url,callback);
                 };
-            };
+            }else{
+                self.executeScript(content)
+            }
+            
         },
         loadJs:function(url,callback){
             var script=document.createElement('script');
@@ -99,11 +107,15 @@
             var $this = this;
             var filePath = $this.getFilePath();
             var includeTals = document.getElementsByTagName("include");
+            console.log('includeTals',includeTals)
             this.forEach(includeTals, function() {
+
                 //拿到路径
                 var src = this.getAttribute("src");
+                
                 //拿到文件内容
                 var content = $this.getFileContent($this.getRequestUrl(filePath, src));
+                
                 //将文本转换成节点
                 var parent = this.parentNode;
                 var includeNodes = $this.parseNode($this.getHtml(content));

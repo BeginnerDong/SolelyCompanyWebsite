@@ -1,91 +1,14 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-	<head>
-		
-		<title>纯粹科技</title>
-		<!-- custom-theme -->
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>纯粹科技-首页</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="css/basic.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
-		<link href="css/wxParse.css" rel="stylesheet" />
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<script src="js/rem.js"></script>
-		<link rel="stylesheet" href="css/css/magic.css">
-		<link rel="stylesheet" href="css/animate/animate.min.css">
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="js/browser.min.js"></script>
-		<script type="application/javascript" src="js/base.js" ></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
-	</head>
-
-
-
-
-		<div id="header_app">
-			<nav class="navigation" id="navigation">
-				<div class="nav-main">
-					<a class="logo">	
-						<image src="images/logo.png" alt="回到首页"/>
-					</a>
-					<a id="nav" >
-						<image src="images/nav.png"/>
-					</a>
-					<div id="computer">
-						<div class="nav-item ">
-							<div class="nav-item-text ">
-								<a href="#" class="active">网站首页</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="smallProgram.html">小程序</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="website.html">网站开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="app.html">APP开发</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="case.html">精品案例</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="news.html">新闻中心</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="blog.html">技术博客</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="recruit.html">人才招聘</a>
-							</div>
-						</div>
-						<div class="nav-item">
-							<div class="nav-item-text">
-								<a href="about.html">关于我们</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-			<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')" id="phone">
+<div id="header_app">
+	<nav class="navigation" id="navigation">
+		<div class="nav-main">
+			<a class="logo">	
+				<image src="images/logo.png" alt="回到首页"/>
+			</a>
+			<a id="nav" >
+				<image src="images/nav.png"/>
+			</a>
+			<div id="computer">
 				<div class="nav-item ">
 					<div class="nav-item-text ">
 						<a href="#" class="active">网站首页</a>
@@ -133,74 +56,94 @@
 				</div>
 			</div>
 		</div>
-		
+	</nav>
+	<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')" id="phone">
+		<div class="nav-item ">
+			<div class="nav-item-text ">
+				<a href="#" class="active">网站首页</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="smallProgram.html">小程序</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="website.html">网站开发</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="app.html">APP开发</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="case.html">精品案例</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="news.html">新闻中心</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="blog.html">技术博客</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="recruit.html">人才招聘</a>
+			</div>
+		</div>
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="about.html">关于我们</a>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var header_app = new Vue({
+	    el: '#app',
+	    data(){
+	        return {
+	        	is_toggle:true
+	        }
+	    },
+	    created () {
+	        const self = this;
+	        window.addEventListener('scroll',(e)=>{
+	        	window.base.debounce(self.changeHeaderStyle,500,self)
+	        });
+	    },
+	    methods: {
+	        
+	    	changeHeaderStyle: function(){
+	    		const self = this;
+	    		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+	    		var navigation = document.getElementById('navigation');
+				if(scrollTop>=200){
+					$("#navigation").css('position','fixed');
+					$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
+					navigation.addEventListener('animationend', function() {
+						$("#navigation").css('background','rgb(0, 0, 0,0.6)');
+					})
+				}else{          //恢复正常
+					$("#navigation").css('position','absolute');
+					$("#navigation").css('background','none');
+					$("#navigation").css('opacity','1');
+					$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
+				}
+	    	}
+
+	    }
+	});   
+</script>
 
 
 
 	
-	
-	<script type="text/javascript">
-		var header_app = new Vue({
-		    el: '#app',
-		    data(){
-		        return {
-		        	is_toggle:true
-		        }
-		    },
-		    created () {
-		        const self = this;
-		        console.log('created-10000001');
-		        window.addEventListener('scroll',(e)=>{
-		        	console.log('addEventListener',e)
-		        });
-				self.init()
-		    },
-		    methods: {
-		        init: function (e) {
-		            const self = this;
-					console.log(666);
-					var currentPath = window.base.GetUrlRelativePath();
-					console.log('currentPath',currentPath)
-		        },
-		        
-		    	changeHeaderStyle: function(scrollTop){
-		    		const self = this;
-		    		var navigation = document.getElementById('navigation');
-					if(scrollTop>=200){
-						$("#navigation").css('position','fixed');
-						$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
-						navigation.addEventListener('animationend', function() {
-							$("#navigation").css('background','rgb(0, 0, 0,0.6)');
-						})
-					}else{          //恢复正常
-						$("#navigation").css('position','absolute');
-						$("#navigation").css('background','none');
-						$("#navigation").css('opacity','1');
-						$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
-					}
-		    	}
 
-		    }
-		});
-	
-        window.onscroll= function(){
-        	console.log('onscroll=001')
-			var t = document.documentElement.scrollTop||document.body.scrollTop;
-			var navigation = document.getElementById('navigation');
-			if(t>=200){
-				$("#navigation").css('position','fixed');
-				$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
-				navigation.addEventListener('animationend', function() {
-					$("#navigation").css('background','rgb(0, 0, 0,0.6)');
-				})
-			}else{          //恢复正常
-				$("#navigation").css('position','absolute');
-				$("#navigation").css('background','none');
-				$("#navigation").css('opacity','1');
-				$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
-			}
-        }
-	   
-	</script>
-
-</html>
