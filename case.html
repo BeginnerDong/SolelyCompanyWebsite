@@ -28,338 +28,444 @@
 			<include src="header.html"></include>
 		</header>
 		<div id="app">
-		
-		<div class="container">
-			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
-				<image :src="item.url" />
-				<div  class="banner-item">
-					<div  class="animated bounceInLeft">
-						<div  class="banner-title" >{{item.title}}</div>
-						<div  class="banner-small-title">{{item.small_title}}</div>
-					</div>
-					
-							
-					<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
-						<image src="images/icon-right.png" />
-					</div>
-					<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
-						<image src="images/icon-left.png" />
-					</div>
-				</div>
-			</div>
-			
-	
-			
-			<div class="product clearfix">
-				<div class="product-title">
-					<p class="font40   color-333">案例展示</p>
-					<p class="font18   color-333 margin-10">The case shows</p>
-				</div>
-				<div class="change">
-					<div class="change-items">
-						<p class="font24 color-333">产品：</p>
-						<p class="font24 color-5c5c5c" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</p>
-						
-					</div>
-					<div class="change-items margin-75">
-						<p class="font24 color-333">行业：</p>
-						<p class="font24 color-5c5c5c"  v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</p>
-					
-					</div>
-				</div>
-				<div class="product-list margin-50 clearfix ">
-					<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
-						<div class="product-item-mainimg ">
-							<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
-							<div class="product-item-mainimg-mask">
-								<div class="mask-qrcode">
-									<image :src="item.bannerImg&&item.bannerImg[2]?item.bannerImg[2].url:''">
-								</div>
-							</div>
-						</div>
-						<div >
-							<div class="product-item-content ">
-								<p class="font18  margin-20 color-222">{{item.title}}</p>
-								<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
-							</div>
-							<div class="product-item-img">
-								<image src="images/icon10.png">
-							</div>
-						</div>
-				
-					</div>
-				
-				</div>
-			</div>
-			 <div class="fenye">
-			    <span>
-			        共:{{allPages}}页
-			    </span>
-			    <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
-			    <span v-for="item in pageArray">
-			        <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
-			        <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
-			    </span>
-			    <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
-			    <span>
-			        跳转至：
-			        <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
-			    </span>
-			</div>
-			<div class="contact clearfix">
-				<div class="contact-item">
-					<div class="contact-item-left">
-						<div class="contact-item-left-title">
-							<p class="font16 color-333">Contact us</p>
-							<div class="contact-item-left-text">
-								<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
-								<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
-								<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
-								<div class="button clearfix">
-									<div class="button-item">
-										<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-										<p style="margin-left: 0.1rem;">合作咨询</p>
-									</div>
-									<div class="button-item">
-										<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-										<p style="margin-left: 0.1rem;">技术服务</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="contact-item">
-					<div class="contact-item-left">
-						<div class="contact-item-left-title">
-							<p class="font16 color-333">Wechat</p>
-							<div class="contact-item-right-text">
-								<div class="qrcode">
-									<image src ="images/qrcode.png">
-									<image src ="images/qrcode.png">
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="map">
-				<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
-			</div>
-		</div>
 
-		<include src="footer.html"></include>
+			<div class="container">
+				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+					<image :src="item.url" />
+					<div class="banner-item">
+						<div class="animated bounceInLeft">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
+						</div>
+
+
+						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+							<image src="images/icon-right.png" />
+						</div>
+						<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+							<image src="images/icon-left.png" />
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="product clearfix">
+					<div class="product-title">
+						<p class="font40   color-333">案例展示</p>
+						<p class="font18   color-333 margin-10">The case shows</p>
+					</div>
+					<div class="change">
+						<div class="change-items">
+							<p class="font24 color-333">产品：</p>
+							<p class="font24 color-5c5c5c" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</p>
+
+						</div>
+						<div class="change-items margin-75">
+							<p class="font24 color-333">行业：</p>
+							<p class="font24 color-5c5c5c" v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</p>
+
+						</div>
+					</div>
+					<div class="product-list margin-50 clearfix ">
+						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
+							<div class="product-item-mainimg ">
+								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
+									<div class="product-item-mainimg-mask">
+										<div class="mask-qrcode">
+											<image :src="item.bannerImg&&item.bannerImg[2]?item.bannerImg[2].url:''">
+										</div>
+									</div>
+							</div>
+							<div>
+								<div class="product-item-content ">
+									<p class="font18  margin-20 color-222">{{item.title}}</p>
+									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
+								</div>
+								<div class="product-item-img">
+									<image src="images/icon10.png">
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+				<div class="fenye">
+					<span>
+						共:{{allPages}}页
+					</span>
+					<a class="pages backPage" data-type="back" @click="changePage">上一页</a>
+					<span v-for="item in pageArray">
+						<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
+						<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
+					</span>
+					<a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
+					
+				</div>
+				<div class="contact clearfix">
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Contact us</p>
+								<div class="contact-item-left-text">
+									<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
+									<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
+									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
+									<div class="button clearfix">
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">合作咨询</p>
+										</a>
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">技术服务</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Wechat</p>
+								<div class="contact-item-right-text">
+									<div class="qrcode">
+										<image src="images/qrcode.png">
+											<image src="images/qrcode.png">
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="map">
+					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				</div>
+				<div class="consult">
+					<div class="consult_cont">
+						<div class="consult_top" @mouseover="enter(9)">
+							<img src="images/consult.png">
+							<a href="tel:18092651090"></a>
+						</div>
+						<div class="consult_bottom">
+							<div class="consult_method">
+								<div class="line_right" @mouseover="enter(9)"></div>
+
+								<ul>
+									<li>
+										<a @mouseover="enter(0)" @mouseout="leave(9)" @click="click_leave(0)">
+											<img src="images/qq_bg.png" class="consult_img">
+											<span data-id="0" class="hidden-sm">客服微信</span>
+											<div class="qq_icon" :class="wx_show == 0?'contact_show':'contact_hidden'">
+												<p class="qq_text">客服微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode1.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li data-id="1">
+										<a @mouseover="enter(1)" @mouseout="leave(9)" @click="click_leave(1)">
+											<img src="images/wx_con.png" class="consult_img">
+											<span data-id="1" class="hidden-sm">官方微信</span>
+											<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+												<p class="qq_text">官方微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="back_top" @mouseover="enter(2)" @mouseout="leave(9)" onclick="back_top()">
+											<img src="images/to_top.png" data-id="2" @mouseover="enter" @mouseout="leave">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				    <p class="qq_text">官方微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode.jpg"/>
+				    </div>
+					
+				</div>
+				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				    <p class="qq_text">客服微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode1.jpg"/>
+				    </div>
+				</div>
+				<div class="marketing">
+					<a class="marketing-item" href="tel:18092651090">
+						一键拨号
+					</a>
+					<div class="marketing-item" @click="phoneMarketing(0)">
+						客服微信
+					</div>
+					<div class="marketing-item" @click="phoneMarketing(1)">
+						官方微信
+					</div>
+				</div>
+			</div>
+
+			<include src="footer.html"></include>
 
 		</div>
 	</body>
-	
+
 	<script type="text/javascript">
 		var app = new Vue({
-		    el: '#app',
-		    data(){
-		        return {
-		        	banner_index:0,
-		        	is_toggle:true,
+			el: '#app',
+			data() {
+				return {
+					banner_index: 0,
+					is_toggle: true,
+					is_show:false,
+					wx_show:2,
 					mainData: [],
 					labelData: [],
-					labelDataTwo:[],
-					newsData:[], 
-					menu_array:[],
-					menu_arrayTwo:[],
+					labelDataTwo: [],
+					newsData: [],
+					menu_array: [],
+					menu_arrayTwo: [],
 					pageArray: [],
-					
+
 					allPages: 0,
 					linkPage: '',
-					paginate: { 
-					    count: 0, 
-					    currentPage: 1, 
-					    pagesize:9, 
-					    is_page: true, 
+					paginate: {
+						count: 0,
+						currentPage: 1,
+						pagesize: 9,
+						is_page: true,
 					},
-					searchItem:{ thirdapp_id: 22},
-					banner_info:[
-						{url:'images/banner.png',title:'更专注于行业特色 贴合用户使用习惯',small_title:'更专注于行业特色 贴合用户使用习惯'},
-						{url:'images/2-banner.png',title:'',small_title:''}
+					searchItem: {
+						thirdapp_id: 22
+					},
+					banner_info: [{
+							url: 'images/banner.png',
+							title: '更专注于行业特色 贴合用户使用习惯',
+							small_title: '更专注于行业特色 贴合用户使用习惯'
+						},
+						{
+							url: 'images/2-banner.png',
+							title: '',
+							small_title: ''
+						}
 					]
-		        }
-		    },
-		    created () {
-		        const self = this;
+				}
+			},
+			created() {
+				const self = this;
 				self.init()
-		    },
-			
-		    methods: {
-		        init: function (e) {
-		            const self = this;
+			},
+
+			methods: {
+				init: function(e) {
+					const self = this;
 					console.log(666);
 					console.log(self.banner_info);
 					self.getMainData();
 					self.getLabelData();
 					self.getLabelDataTwo()
-		        },
-				
-				  getLabelData() {
-				  var self = this;
-				  var postData = {};
-				  postData.searchItem = { 
-				      type: 1,
-				      thirdapp_id: 22,
-				  };
-					postData.getBefore ={
-					 caseData:{
-					    tableName:'Label',
-					    searchItem:{
-					      title:['=',['行业案例']],
-					    },
-					    middleKey:'parentid',
-					    key:'id',
-					    condition:'in',
-					  },
-					};
-				  var callback = function(res) {
-				    if(res.info.data.length>0){
-				      self.labelData.push.apply(self.labelData,res.info.data)
-				    }
+				},
 
-				  };
-				  window.base.labelGet(postData,callback);
-				},
-				
-				getLabelDataTwo() {
-				  var self = this;
-				
-				  var postData = {};
-				  postData.searchItem = { 
-				      type: 1,
-				      thirdapp_id: 22,
-				  };
-					postData.getBefore ={
-					 caseData:{
-					    tableName:'Label',
-					    searchItem:{
-					      title:['=',['案例类型']],
-					    },
-					    middleKey:'parentid',
-					    key:'id',
-					    condition:'in',
-					  },
+				getLabelData() {
+					var self = this;
+					var postData = {};
+					postData.searchItem = {
+						type: 1,
+						thirdapp_id: 22,
 					};
-				  var callback = function(res) {
-				    if(res.info.data.length>0){
-				      self.labelDataTwo.push.apply(self.labelDataTwo,res.info.data)
-				    }
-				  };
-				  window.base.labelGet(postData,callback);
+					postData.getBefore = {
+						caseData: {
+							tableName: 'Label',
+							searchItem: {
+								title: ['=', ['行业案例']],
+							},
+							middleKey: 'parentid',
+							key: 'id',
+							condition: 'in',
+						},
+					};
+					var callback = function(res) {
+						if (res.info.data.length > 0) {
+							self.labelData.push.apply(self.labelData, res.info.data)
+						}
+
+					};
+					window.base.labelGet(postData, callback);
 				},
-		        
-				getMainData: function(id){
-				    var self = this;
+
+				getLabelDataTwo() {
+					var self = this;
+
+					var postData = {};
+					postData.searchItem = {
+						type: 1,
+						thirdapp_id: 22,
+					};
+					postData.getBefore = {
+						caseData: {
+							tableName: 'Label',
+							searchItem: {
+								title: ['=', ['案例类型']],
+							},
+							middleKey: 'parentid',
+							key: 'id',
+							condition: 'in',
+						},
+					};
+					var callback = function(res) {
+						if (res.info.data.length > 0) {
+							self.labelDataTwo.push.apply(self.labelDataTwo, res.info.data)
+						}
+					};
+					window.base.labelGet(postData, callback);
+				},
+
+				getMainData: function(id) {
+					var self = this;
 					self.mainData = [];
-				    var postData = {};
-				    postData.paginate = window.base.cloneForm(self.paginate);
-				    postData.searchItem = window.base.cloneForm(self.searchItem);
-					if(!self.searchItem.menu_id){
-						postData.getBefore ={
-						 	caseData:{
-						    tableName:'Label',
-						    searchItem:{
-						      parentid:['in',[146]]
-						    },
-						    middleKey:'menu_id',
-						    key:'id',
-						    condition:'in',
+					var postData = {};
+					postData.paginate = window.base.cloneForm(self.paginate);
+					postData.searchItem = window.base.cloneForm(self.searchItem);
+					if (!self.searchItem.menu_id) {
+						postData.getBefore = {
+							caseData: {
+								tableName: 'Label',
+								searchItem: {
+									parentid: ['in', [146]]
+								},
+								middleKey: 'menu_id',
+								key: 'id',
+								condition: 'in',
 							},
 						};
 					}
-				    var callback = (res) => {
-				       console.log('getMainData', res);
-				       self.mainData.push.apply(self.mainData,res.info.data);
-					   self.paginate['count'] = res.info.total;
-					   window.base.computePageArr(self);
-				       
-				    };
-				    window.base.articleList(postData, callback);
+					var callback = (res) => {
+						console.log('getMainData', res);
+						self.mainData.push.apply(self.mainData, res.info.data);
+						self.paginate['count'] = res.info.total;
+						window.base.computePageArr(self);
+
+					};
+					window.base.articleList(postData, callback);
 				},
-				
-				 this_choose(id){ 
-				    const self = this;
-				 
-				    var position = self.menu_array.indexOf(id);
-				    if(position>=0){
-				      self.menu_array.splice(position, 1);
-				    }else{
-				      self.menu_array.push(id);
-				    };
-				    self.searchItem.menu_id = ['in',self.menu_array];
-				    if(self.menu_array==0){
-				      delete self.searchItem.menu_id
-				    };
+
+				this_choose(id) {
+					const self = this;
+
+					var position = self.menu_array.indexOf(id);
+					if (position >= 0) {
+						self.menu_array.splice(position, 1);
+					} else {
+						self.menu_array.push(id);
+					};
+					self.searchItem.menu_id = ['in', self.menu_array];
+					if (self.menu_array == 0) {
+						delete self.searchItem.menu_id
+					};
 					self.getMainData()
-				  },
-				
-				 this_chooseTwo(id){ 
-				    const self = this;
-				 
-				    var position = self.menu_arrayTwo.indexOf(id);
-				    if(position>=0){
-				      self.menu_arrayTwo.splice(position, 1);
-				    }else{
-				      self.menu_arrayTwo.push(id);
-				    };
-				    self.searchItem.passage1 = ['in',self.menu_arrayTwo];
-				    if(self.menu_arrayTwo==0){
-				      delete self.searchItem.menu_id
-				    };
-				    self.getMainData()
-				  },
-	
-			
-		    	changeBanner: function(type) {
-		    		const self = this;
-		    	
-		    		if(type=='+'){
-		    			console.log(8852)
-		    			self.banner_index += 1;
-		    		}else if((type=='-')){
-		    			self.banner_index -= 1;
-		    		};
-		    		console.log(self.banner_index);
-		    		if(self.banner_index<0){
-		    			self.banner_index = self.banner_info.length-1
-		    		};
-		    		if(self.banner_index==self.banner_info.length){
-		    			self.banner_index = 0
-		    		};
-		    		console.log(self.banner_index);
-		    		
-		    	},
-				
+				},
+
+				this_chooseTwo(id) {
+					const self = this;
+
+					var position = self.menu_arrayTwo.indexOf(id);
+					if (position >= 0) {
+						self.menu_arrayTwo.splice(position, 1);
+					} else {
+						self.menu_arrayTwo.push(id);
+					};
+					self.searchItem.passage1 = ['in', self.menu_arrayTwo];
+					if (self.menu_arrayTwo == 0) {
+						delete self.searchItem.menu_id
+					};
+					self.getMainData()
+				},
+
+
+				changeBanner: function(type) {
+					const self = this;
+
+					if (type == '+') {
+						console.log(8852)
+						self.banner_index += 1;
+					} else if ((type == '-')) {
+						self.banner_index -= 1;
+					};
+					console.log(self.banner_index);
+					if (self.banner_index < 0) {
+						self.banner_index = self.banner_info.length - 1
+					};
+					if (self.banner_index == self.banner_info.length) {
+						self.banner_index = 0
+					};
+					console.log(self.banner_index);
+
+				},
+
 				changePage(e) {
-				    var self = this;
-				    var dataSet = window.base.getDataSet(e);
-				    window.base.changePage(dataSet, self);
+					var self = this;
+					var dataSet = window.base.getDataSet(e);
+					window.base.changePage(dataSet, self);
 				},
-			
+
 				linkTo(e) {
-				    var self = this;
-				    console.log(e);
-				    self.linkPage = window.base.getDataSet(e).page;
-				    window.base.linkTo(self);
+					var self = this;
+					console.log(e);
+					self.linkPage = window.base.getDataSet(e).page;
+					window.base.linkTo(self);
 				},
-				
-				intoPath:function(url,id){
-				    const self = this;
-				    var toUrl = url;
-				    console.log(toUrl);
-				    window.location.href= toUrl+'?id='+id;
-				
+
+				intoPath: function(url, id) {
+					const self = this;
+					var toUrl = url;
+					console.log(toUrl);
+					window.location.href = toUrl + '?id=' + id;
+
 				},
-		    }
+				consult: function(e) {
+					var self = this;
+					self.is_show = !self.is_show;
+				},
+				mask: function(e) {
+					var self = this;
+					self.is_show = false;
+				},
+				enter(index) {
+					var self = this;
+					var cursorId = index;
+					self.wx_show = cursorId;
+
+				},
+				leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				},
+				click_leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				}
+			}
 		});
 	</script>
-	
-	
-	
+	<script>
+		function back_top() {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
+	</script>
+
+
+
 
 </html>

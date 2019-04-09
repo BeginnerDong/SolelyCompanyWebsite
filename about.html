@@ -28,299 +28,435 @@
 		<header>
 			<include src="header.html"></include>
 		</header>
-		
+
 		<div id="app">
-		<div class="container">
-			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
-				<image :src="item.url" />
-				<div  class="banner-item">
-					<div  class="animated bounceInLeft">
-						<div  class="banner-title" >{{item.title}}</div>
-						<div  class="banner-small-title">{{item.small_title}}</div>
-					</div>
-					
-							
-					<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
-						<image src="images/icon-right.png" />
-					</div>
-					<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
-						<image src="images/icon-left.png" />
-					</div>
-				</div>
-			</div>
-			<div class="introduce">
-				<div class="introduce-title">
-					<p class="font36 color-333">公司介绍</p>
-					<p class="font16 color-878787 margin-75">纯粹科技创始至今，以雄厚的技术团队和专业的设计团队</p>
-					<p class="font16 color-878787 margin-50">帮助中小企业快速搭建移动互联网平台，构建企业的自媒体营销运营平台体系</p>
-					<p class="font16 color-878787 margin-50">公司自立于还礼网的大环境下，致力于拓新型营销模式，用心打造值的信赖的多元化移动互联网机构</p>
-					<p class="font16 color-878787 margin-50">成为中小型企业在移动互联网领域最为信任的合作伙伴，可提供多个行业的解决方案，助力企业实现品牌树立，形象塑造，营销推广等</p>
-				</div>
-				<div class="introduce-list">
-					<div class="introduce-item" style="border-right:1px solid #bbbbbb">
-						<p class="font60 color-333">2016</p>
-						<p class="font20 color-959595">开始于</p>
-					</div>
-					<div class="introduce-item" style="border-right:1px solid #bbbbbb">
-						<p class="font60 color-333">860+</p>
-						<p class="font20 color-959595">服务客户</p>
-					</div>
-					<div class="introduce-item">
-						<p class="font60 color-333">230+</p>
-						<p class="font20 color-959595">线上项目</p>
-					</div>
-				</div>
-			</div>
-			<div class="major">
-				<div class="major-title">
-					<p class="font36 color-fff">我们的专业在哪里？</p>
-				</div>
-				<div class="major-list clearfix">
-					<div class="major-item clearfix">
-						<div class="major-item-text">
-							<p class="font24 color-333">平台部署全程指导</p>
-							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
+			<div class="container">
+				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+					<image :src="item.url" />
+					<div class="banner-item">
+						<div class="animated bounceInLeft">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
 						</div>
-						<div class="major-item-img">
-							<image src="images/8-icon.png">
+
+
+						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+							<image src="images/icon-right.png" />
 						</div>
-					</div>
-					<div class="major-item clearfix">
-						<div class="major-item-text">
-							<p class="font24 color-333">平台部署全程指导</p>
-							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
-						</div>
-						<div class="major-item-img">
-							<image src="images/8-icon2.png">
-						</div>
-					</div>
-					<div class="major-item clearfix">
-						<div class="major-item-text">
-							<p class="font24 color-333">平台部署全程指导</p>
-							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
-						</div>
-						<div class="major-item-img">
-							<image src="images/8-icon3.png">
-						</div>
-					</div>
-					<div class="major-item clearfix">
-						<div class="major-item-text">
-							<p class="font24 color-333">平台部署全程指导</p>
-							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
-						</div>
-						<div class="major-item-img">
-							<image src="images/8-icon4.png">
+						<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+							<image src="images/icon-left.png" />
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="contact clearfix">
-				<div class="contact-item">
-					<div class="contact-item-left">
-						<div class="contact-item-left-title">
-							<p class="font16 color-333">Contact us</p>
-							<div class="contact-item-left-text">
-								<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
-								<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
-								<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
-								<div class="button clearfix">
-									<div class="button-item">
-										<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-										<p style="margin-left: 0.1rem;">合作咨询</p>
-									</div>
-									<div class="button-item">
-										<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-										<p style="margin-left: 0.1rem;">技术服务</p>
-									</div>
-								</div>
+				<div class="introduce">
+					<div class="introduce-title">
+						<p class="font36 color-333">公司介绍</p>
+						<p class="font16 color-878787 margin-75">纯粹科技创始至今，以雄厚的技术团队和专业的设计团队</p>
+						<p class="font16 color-878787 margin-50">帮助中小企业快速搭建移动互联网平台，构建企业的自媒体营销运营平台体系</p>
+						<p class="font16 color-878787 margin-50">公司自立于还礼网的大环境下，致力于拓新型营销模式，用心打造值的信赖的多元化移动互联网机构</p>
+						<p class="font16 color-878787 margin-50">成为中小型企业在移动互联网领域最为信任的合作伙伴，可提供多个行业的解决方案，助力企业实现品牌树立，形象塑造，营销推广等</p>
+					</div>
+					<div class="introduce-list">
+						<div class="introduce-item" style="border-right:1px solid #bbbbbb">
+							<p class="font60 color-333">2016</p>
+							<p class="font20 color-959595">开始于</p>
+						</div>
+						<div class="introduce-item" style="border-right:1px solid #bbbbbb">
+							<p class="font60 color-333">860+</p>
+							<p class="font20 color-959595">服务客户</p>
+						</div>
+						<div class="introduce-item">
+							<p class="font60 color-333">230+</p>
+							<p class="font20 color-959595">线上项目</p>
+						</div>
+					</div>
+				</div>
+				<div class="major">
+					<div class="major-title">
+						<p class="font36 color-fff">我们的专业在哪里？</p>
+					</div>
+					<div class="major-list clearfix">
+						<div class="major-item clearfix">
+							<div class="major-item-text">
+								<p class="font24 color-333">平台部署全程指导</p>
+								<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
+							</div>
+							<div class="major-item-img">
+								<image src="images/8-icon.png">
 							</div>
 						</div>
-					</div>
-					
-				</div>
-				<div class="contact-item">
-					<div class="contact-item-left">
-						<div class="contact-item-left-title">
-							<p class="font16 color-333">Wechat</p>
-							<div class="contact-item-right-text">
-								<div class="qrcode">
-									<image src ="images/qrcode.png">
-									<image src ="images/qrcode.png">
-								</div>
-								
+						<div class="major-item clearfix">
+							<div class="major-item-text">
+								<p class="font24 color-333">平台部署全程指导</p>
+								<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
+							</div>
+							<div class="major-item-img">
+								<image src="images/8-icon2.png">
+							</div>
+						</div>
+						<div class="major-item clearfix">
+							<div class="major-item-text">
+								<p class="font24 color-333">平台部署全程指导</p>
+								<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
+							</div>
+							<div class="major-item-img">
+								<image src="images/8-icon3.png">
+							</div>
+						</div>
+						<div class="major-item clearfix">
+							<div class="major-item-text">
+								<p class="font24 color-333">平台部署全程指导</p>
+								<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
+							</div>
+							<div class="major-item-img">
+								<image src="images/8-icon4.png">
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="contact clearfix">
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Contact us</p>
+								<div class="contact-item-left-text">
+									<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
+									<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
+									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
+									<div class="button clearfix">
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">合作咨询</p>
+										</a>
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">技术服务</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Wechat</p>
+								<div class="contact-item-right-text">
+									<div class="qrcode">
+										<image src="images/qrcode.png">
+											<image src="images/qrcode.png">
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="map">
+					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				</div>
+				<div class="consult">
+					<div class="consult_cont">
+						<div class="consult_top" @mouseover="enter(9)">
+							<img src="images/consult.png">
+							<a href="tel:18092651090"></a>
+						</div>
+						<div class="consult_bottom">
+							<div class="consult_method">
+								<div class="line_right" @mouseover="enter(9)"></div>
+
+								<ul>
+									<li>
+										<a @mouseover="enter(0)" @mouseout="leave(9)" @click="click_leave(0)">
+											<img src="images/qq_bg.png" class="consult_img">
+											<span data-id="0" class="hidden-sm">客服微信</span>
+											<div class="qq_icon" :class="wx_show == 0?'contact_show':'contact_hidden'">
+												<p class="qq_text">客服微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode1.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li data-id="1">
+										<a @mouseover="enter(1)" @mouseout="leave(9)" @click="click_leave(1)">
+											<img src="images/wx_con.png" class="consult_img">
+											<span data-id="1" class="hidden-sm">官方微信</span>
+											<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+												<p class="qq_text">官方微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="back_top" @mouseover="enter(2)" @mouseout="leave(9)" onclick="back_top()">
+											<img src="images/to_top.png" data-id="2" @mouseover="enter" @mouseout="leave">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				    <p class="qq_text">官方微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode.jpg"/>
+				    </div>
+					
+				</div>
+				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				    <p class="qq_text">客服微信:18092651090</p>
+				    <div class="qrcode
+					11" style="margin-top: 0;">
+				        <img src="images/qrcode1.jpg"/>
+				    </div>
+				</div>
+				<div class="marketing">
+					<a class="marketing-item" href="tel:18092651090">
+						一键拨号
+					</a>
+					<div class="marketing-item" @click="phoneMarketing(0)">
+						客服微信
+					</div>
+					<div class="marketing-item" @click="phoneMarketing(1)">
+						官方微信
+					</div>
+				</div>
 			</div>
-			<div class="map">
-				<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
-			</div>
-		</div>
-		<include src="footer.html"></include>
+			<include src="footer.html"></include>
 		</div>
 	</body>
 	<script type="text/javascript">
 		var app = new Vue({
-		    el: '#app',
-		    data(){
-		        return {
-		        	banner_index:0,
-		        	is_toggle:true,
+			el: '#app',
+			data() {
+				return {
+					banner_index: 0,
+					is_toggle: true,
+					is_show:false,
+					wx_show:2,
 					mainData: [],
 					labelData: [],
-					newsData:[],
-					paginate: { 
-					    count: 0, 
-					    currentPage: 1, 
-					    pagesize:6, 
-					    is_page: true, 
+					newsData: [],
+					paginate: {
+						count: 0,
+						currentPage: 1,
+						pagesize: 6,
+						is_page: true,
 					},
-					searchItem:{ thirdapp_id: 22},
-					banner_info:[
-						
-						{url:'images/8-banner.jpg',title:'',small_title:''}
+					searchItem: {
+						thirdapp_id: 22
+					},
+					banner_info: [
+
+						{
+							url: 'images/8-banner.jpg',
+							title: '',
+							small_title: ''
+						}
 					]
-		        }
-		    },
-		    created () {
-		        const self = this;
+				}
+			},
+			created() {
+				const self = this;
 				self.init()
-		    },
-			
-		    methods: {
-		        init: function (e) {
-		            const self = this;
+			},
+
+			methods: {
+				init: function(e) {
+					const self = this;
 					console.log(666);
 					console.log(self.banner_info);
-				
-		        },
-		        
-				
-	
-		    	changeBanner: function(type) {
-		    		const self = this;
-		    	
-		    		if(type=='+'){
-		    			console.log(8852)
-		    			self.banner_index += 1;
-		    		}else if((type=='-')){
-		    			self.banner_index -= 1;
-		    		};
-		    		console.log(self.banner_index);
-		    		if(self.banner_index<0){
-		    			self.banner_index = self.banner_info.length-1
-		    		};
-		    		if(self.banner_index==self.banner_info.length){
-		    			self.banner_index = 0
-		    		};
-		    		console.log(self.banner_index);
-		    		
-		    	},
-		    }
+
+				},
+
+
+
+				changeBanner: function(type) {
+					const self = this;
+
+					if (type == '+') {
+						console.log(8852)
+						self.banner_index += 1;
+					} else if ((type == '-')) {
+						self.banner_index -= 1;
+					};
+					console.log(self.banner_index);
+					if (self.banner_index < 0) {
+						self.banner_index = self.banner_info.length - 1
+					};
+					if (self.banner_index == self.banner_info.length) {
+						self.banner_index = 0
+					};
+					console.log(self.banner_index);
+
+				},
+
+				consult: function(e) {
+					var self = this;
+					self.is_show = !self.is_show;
+				},
+				mask: function(e) {
+					var self = this;
+					self.is_show = false;
+				},
+				enter(index) {
+					var self = this;
+					var cursorId = index;
+					self.wx_show = cursorId;
+
+				},
+				leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				},
+				click_leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				}
+			}
 		});
 	</script>
+	<script>
+		function back_top() {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
+	</script>
 	<script type="text/javascript">
-	
-	    function initMap(){
-	        createMap();
-	        setMapEvent();
-	        addMapControl();
-	        addMarker();
-	    }
-	    
-	    function createMap(){
-	        var map = new BMap.Map("dituContent");
+		function initMap() {
+			createMap();
+			setMapEvent();
+			addMapControl();
+			addMarker();
+		}
 
-	        var point = new BMap.Point(108.900502,34.24334);
-	        map.centerAndZoom(point,17);
-	        window.map = map;
-			
-		
-	    }
-	    
-	    function setMapEvent(){
-	        map.enableDragging();
-	        map.enableScrollWheelZoom();
-	        map.enableDoubleClickZoom();
-	        map.enableKeyboard();
+		function createMap() {
+			var map = new BMap.Map("dituContent");
+
+			var point = new BMap.Point(108.900502, 34.24334);
+			map.centerAndZoom(point, 17);
+			window.map = map;
+
+
+		}
+
+		function setMapEvent() {
+			map.enableDragging();
+			map.enableScrollWheelZoom();
+			map.enableDoubleClickZoom();
+			map.enableKeyboard();
 			map.setMapStyle({
-				styleJson:[
-					{
-						"featureType": "all",
-						"elementType": "all",
-						"stylers": {
-							"lightness": 10,
-							"saturation": -100
-						}
+				styleJson: [{
+					"featureType": "all",
+					"elementType": "all",
+					"stylers": {
+						"lightness": 10,
+						"saturation": -100
 					}
-				]
+				}]
 			});
-	    }
-	    
-	    function addMapControl(){ 
-	    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-	    map.addControl(ctrl_nav);
-	    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-	    map.addControl(ctrl_ove);
-	    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-	    map.addControl(ctrl_sca);
-		
-	    }
-		var markerArr = [{title:"纯粹云信息科技有限公司",content:"电话:18092651090",point:"108.900502|34.24334",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-	     ];
-	    
-	    function addMarker(){
-	        for(var i=0;i<markerArr.length;i++){
-	            var json = markerArr[i];
-	            var p0 = json.point.split("|")[0];
-	            var p1 = json.point.split("|")[1];
-	            var point = new BMap.Point(p0,p1);
-	            var iconImg = createIcon(json.icon);
-	            var marker = new BMap.Marker(point,{icon:iconImg});
-	            var iw = createInfoWindow(i);
-	            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-	            marker.setLabel(label);
-	            map.addOverlay(marker);
-	            label.setStyle({
-	                        borderColor:"transparent",
-	                        color:"#000",
-	                        cursor:"pointer",
-	            });
-	            
-	            (function(){
-	                var index = i;
-	                var _iw = createInfoWindow(i);
-	                var _marker = marker;
-	                _marker.addEventListener("click",function(){
-	                    this.openInfoWindow(_iw);
-	                });
-	                _iw.addEventListener("open",function(){
-	                    _marker.getLabel().hide();
-	                })
-	                _iw.addEventListener("close",function(){
-	                    _marker.getLabel().show();
-	                })
-	                label.addEventListener("click",function(){
-	                    _marker.openInfoWindow(_iw);
-	                })
-	                if(!!json.isOpen){
-	                    label.hide();
-	                    _marker.openInfoWindow(_iw);
-	                }
-	            })()
-	        }
-	    }
-	    function createInfoWindow(i){
-	        var json = markerArr[i];
-	        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-	        return iw;
-	    }
-	    function createIcon(json){
-	        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-	        return icon;
-	    }
-	    
-	    initMap();
+		}
+
+		function addMapControl() {
+			var ctrl_nav = new BMap.NavigationControl({
+				anchor: BMAP_ANCHOR_TOP_LEFT,
+				type: BMAP_NAVIGATION_CONTROL_LARGE
+			});
+			map.addControl(ctrl_nav);
+			var ctrl_ove = new BMap.OverviewMapControl({
+				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+				isOpen: 1
+			});
+			map.addControl(ctrl_ove);
+			var ctrl_sca = new BMap.ScaleControl({
+				anchor: BMAP_ANCHOR_BOTTOM_LEFT
+			});
+			map.addControl(ctrl_sca);
+
+		}
+		var markerArr = [{
+			title: "纯粹云信息科技有限公司",
+			content: "电话:18092651090",
+			point: "108.900502|34.24334",
+			isOpen: 0,
+			icon: {
+				w: 23,
+				h: 25,
+				l: 46,
+				t: 21,
+				x: 9,
+				lb: 12
+			}
+		}];
+
+		function addMarker() {
+			for (var i = 0; i < markerArr.length; i++) {
+				var json = markerArr[i];
+				var p0 = json.point.split("|")[0];
+				var p1 = json.point.split("|")[1];
+				var point = new BMap.Point(p0, p1);
+				var iconImg = createIcon(json.icon);
+				var marker = new BMap.Marker(point, {
+					icon: iconImg
+				});
+				var iw = createInfoWindow(i);
+				var label = new BMap.Label(json.title, {
+					"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+				});
+				marker.setLabel(label);
+				map.addOverlay(marker);
+				label.setStyle({
+					borderColor: "transparent",
+					color: "#000",
+					cursor: "pointer",
+				});
+
+				(function() {
+					var index = i;
+					var _iw = createInfoWindow(i);
+					var _marker = marker;
+					_marker.addEventListener("click", function() {
+						this.openInfoWindow(_iw);
+					});
+					_iw.addEventListener("open", function() {
+						_marker.getLabel().hide();
+					})
+					_iw.addEventListener("close", function() {
+						_marker.getLabel().show();
+					})
+					label.addEventListener("click", function() {
+						_marker.openInfoWindow(_iw);
+					})
+					if (!!json.isOpen) {
+						label.hide();
+						_marker.openInfoWindow(_iw);
+					}
+				})()
+			}
+		}
+
+		function createInfoWindow(i) {
+			var json = markerArr[i];
+			var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
+				"</b><div class='iw_poi_content'>" + json.content + "</div>");
+			return iw;
+		}
+
+		function createIcon(json) {
+			var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+				imageOffset: new BMap.Size(-json.l, -json.t),
+				infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+				offset: new BMap.Size(json.x, json.h)
+			})
+			return icon;
+		}
+
+		initMap();
 	</script>
 </html>

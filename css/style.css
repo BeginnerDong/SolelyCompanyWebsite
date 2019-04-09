@@ -542,6 +542,14 @@ clear: both;
 	float: left;
 	margin: 0 3%;
 }
+.strengths-item img{
+	-moz-transition: all  1s; -webkit-transition:all  1s; transition:all  1s; -o-transition:all  1s;
+}
+.strengths-item img:hover{
+	-webkit-transform: rotate3d(0, 0, 1, 360deg);
+	transform: rotate3d(0, 0, 1, 360deg);
+}
+
 .product{
 	width:100%;
 	padding: 0 1rem;
@@ -555,6 +563,7 @@ clear: both;
 .product-list{
 	width:100%;
 	padding-bottom: 1.5rem;
+	overflow: hidden;
 }
 /* .product-list:after {
   content: "";
@@ -672,9 +681,10 @@ clear: both;
 	height:75%;
 	padding:10% 0;
 	text-align: center;
+	overflow: hidden;
 }
 .partner-item-img img{
-
+	
 }
 .partner-item-text{
 	height:25%;
@@ -791,11 +801,20 @@ clear: both;
 	margin-top: 0.2rem;
 	border-top:1px solid #8f8f8f
 }
-.qrcode{
+.contact-item-right-textCopy{
 	
+	margin-top: 0.2rem;
+	border-top:1px solid #8f8f8f
+}
+.qrcode{
+
 	margin-top: 0.3rem;
 	
 	
+}
+.qrcodeCopy{
+	width:30%;
+	margin-top: 0.3rem;		
 }
 .map{
 	width:100%;
@@ -849,16 +868,25 @@ clear: both;
 .advantages-title{
 	width:100%;
 	text-align: center;
+	
 }
+
 .advantages-item-left{
 	float: left;
 	width:32.5%;
 	height:5rem;
 	border-radius:2%;
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#17ACF0), to(#8ADBFF));
+	border:2px solid #fff;
 	margin-top: 0.8rem;
 	padding: 0.7rem 0.2rem;
     text-align: center;
+	
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
+}
+.advantages-item-left:hover{
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#17ACF0), to(#8ADBFF));
+	border:none
 }
 .advantages-item-right{
 	float: right;
@@ -868,7 +896,7 @@ clear: both;
 }
 .advantages-right-top{
 	height:2.3rem;
-	
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
 	border:2px solid #fff;
 	border-radius:0.1rem
 }
@@ -877,7 +905,17 @@ clear: both;
 	margin-top: 0.4rem;
 	border:2px solid #fff;
 	border-radius:0.1rem;
-
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
+}
+.advantages-right-top:hover{
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#17ACF0), to(#8ADBFF));
+	border:none
+}
+.advantages-right-bottom:hover{
+	-moz-transition: all  0.5s; -webkit-transition:all  0.5s; transition:all  0.5s; -o-transition:all  0.5s;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#17ACF0), to(#8ADBFF));
+	border:none
 }
 .advantages-right-img{
 	width:25%;
@@ -1001,6 +1039,9 @@ clear: both;
 	margin-top: 0.8rem;
 
 }
+.app-process-imgTwo{
+	display: none;
+}
 .app-process-img img{
 	width:100%
 
@@ -1053,9 +1094,13 @@ clear: both;
 	
 }
 .recruit-list{
-	padding: 1.1rem 1.5rem;
-;
+	padding: 1.1rem 1.5rem
 }
+.recruit-item-text{
+	color: #333333;
+}
+
+
 .recruit-item{
 	height:4.1rem;
 	width:30%;
@@ -1065,6 +1110,14 @@ clear: both;
 	padding: 1rem 0.2rem;
 	float: left;
 }
+.recruit-item:hover{
+	background: #f3f3f3;
+	-webkit-transition: all 0.5s;
+	transition:  all 0.5s;
+}
+.recruit-item:hover .recruit-item-text{
+	color: #089fe3;
+} 
 /* 关于我们 */
 .introduce{
 	height:8.4rem;
@@ -1433,7 +1486,7 @@ clear: both;
     top:70%;
     opacity:0;
 }
-.qrcode img{
+.qrcode11 img{
     width:1rem;
     height:1rem;
 }
@@ -1456,8 +1509,11 @@ clear: both;
     color:#f2f2f2;
     margin-right: 0.2rem;
 }
+.marketing{
+	display: none;
+}
 /*********************动画*************************/
-@keyframes fadeInUp {
+/* @keyframes fadeInUp {
     from {
         transform: translate3d(0,40px,0)
     }
@@ -1736,5 +1792,5 @@ clear: both;
     opacity: 1;
     transform:translate(0.4rem,0px);
   }
-}
+} */
 

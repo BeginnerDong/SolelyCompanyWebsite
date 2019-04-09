@@ -1038,7 +1038,81 @@
 	.service-list-box-header-right {
 	    width: 25%;
 	}
-
-
+	.partner-item-img img{
+		width:70%;
+		height:100%
+	}
+	.consult{
+		display: none;
+	}
+	.case-detail-introduce-item{
+		width:100%
+	}
+	.marketing{
+		display: block;
+		width:100%;
+		height:1rem;
+		position: fixed;
+		bottom:0;
+		line-height: 1rem;
+		background: rgba(0, 0, 0, 0.6);
+		z-index: 999;
+	}
+	.marketing-item{
+		width:33.3%;
+		border-right:1px solid #fff;
+		text-align: center;
+		float: left;
+		color: #fff;
+		cursor: pointer;
+	}
+	.marketing a:hover{
+		color:#fff
+	}
+	.qq_icon{
+	    width:60%;
+	    height:0rem;
+	    position: fixed;
+	    right:20%;
+	    top:30%;
+	    background:#fff;
+	    overflow: hidden;
+	    transition:all 1s;
+	    -webkit-transition:all 0.5s;
+	    z-index:999;
+	    box-shadow:0 0 10px #8dd5fc;
+	}
+	
+	.qq_text{
+	    margin-top:0.16rem;
+	    color:#666;
+		text-align: center;
+	}
+	.contact_show{
+	    height:40%;
+	    opacity: 1;
+	}
+	.qrcode11 img{
+	    width:80%;
+	    height:80%;
+		margin-top: 10%;
+		margin-left: 10%;
+	}
+	.aticle-detail-title{
+		height:1.5rem
+	}
+	.aticle-detail{
+		padding: 0.2rem 0.2rem;
+	}
+	.app-process-imgTwo{
+		display: block;
+	}
+	.app-process-imgTwo img{
+		width:100%;
+		height:100%
+	}
+	.app-process-img{
+		display: none;
+	}
 }
 

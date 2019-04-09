@@ -56,6 +56,9 @@
 					<div class="app-process-img">
 						<image src="images/4-img.png">
 					</div>
+					<div class="app-process-imgTwo">
+						<image src="images/4-imgTwo.png">
+					</div>
 				</div>
 
 				<div class="wecando">
@@ -140,19 +143,16 @@
 				</div>
 
 				<div class="fenye">
-				    <span>
-				        共:{{allPages}}页
-				    </span>
-				    <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
-				    <span v-for="item in pageArray">
-				        <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
-				        <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
-				    </span>
-				    <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
-				    <span>
-				        跳转至：
-				        <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
-				    </span>
+					<span>
+						共:{{allPages}}页
+					</span>
+					<a class="pages backPage" data-type="back" @click="changePage">上一页</a>
+					<span v-for="item in pageArray">
+						<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
+						<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
+					</span>
+					<a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
+					
 				</div>
 				<div class="infomation">
 					<div class="infomation-title">
@@ -160,64 +160,14 @@
 					</div>
 
 					<div class="infomation-list margin-50 clearfix">
-						<div class="infomation-item margin-50">
+						<div class="infomation-item margin-50 clearfix"  v-for="(item,index) in newsData" v-if="index<6"  @click="intoPath('articleDetail.html',item.id)">
 							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
+								<p class="font50   color-4f4e4e">{{item.day}}</p>
+								<p class="font12   color-898989 ">{{item.date}}</p>
 							</div>
 							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
-							</div>
-						</div>
-						<div class="infomation-item margin-50">
-							<div class="infomation-item-time">
-								<p class="font50   color-4f4e4e">17</p>
-								<p class="font12   color-898989 ">2019-05</p>
-							</div>
-							<div class="infomation-item-text">
-								<p class="font16   color-696969 avoidOverflow">六千字降头交互设计师需要懂得那些“用户流量”知识</p>
-								<p class="font12   color-898989  avoidOverflow">微软雅黑用户流量英文是这个词已经不新鲜你大声道撒</p>
+								<p class="font16   color-696969 avoidOverflow">{{item.title}}</p>
+								<p class="font12   color-898989  avoidOverflow">{{item.description}}</p>
 							</div>
 						</div>
 					</div>
@@ -232,14 +182,14 @@
 									<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
 									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
 									<div class="button clearfix">
-										<div class="button-item">
-											<image src="images/icon14.png" style="margin-right: 0.1rem;">
-												<p style="margin-left: 0.1rem;">合作咨询</p>
-										</div>
-										<div class="button-item">
-											<image src="images/icon14.png" style="margin-right: 0.1rem;">
-												<p style="margin-left: 0.1rem;">技术服务</p>
-										</div>
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">合作咨询</p>
+										</a>
+										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
+											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<p style="margin-left: 0.1rem;">技术服务</p>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -253,7 +203,7 @@
 								<div class="contact-item-right-text">
 									<div class="qrcode">
 										<image src="images/qrcode.png">
-											<image src="images/qrcode.png">
+										<image src="images/qrcode.png">
 									</div>
 
 								</div>
@@ -263,6 +213,75 @@
 				</div>
 				<div class="map">
 					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				</div>
+				<div class="consult">
+					<div class="consult_cont">
+						<div class="consult_top" @mouseover="enter(9)">
+							<img src="images/consult.png">
+							<a href="tel:18092651090"></a>
+						</div>
+						<div class="consult_bottom">
+							<div class="consult_method">
+								<div class="line_right" @mouseover="enter(9)"></div>
+
+								<ul>
+									<li>
+										<a @mouseover="enter(0)" @mouseout="leave(9)" @click="click_leave(0)">
+											<img src="images/qq_bg.png" class="consult_img">
+											<span data-id="0" class="hidden-sm">客服微信</span>
+											<div class="qq_icon" :class="wx_show == 0?'contact_show':'contact_hidden'">
+												<p class="qq_text">客服微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode1.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li data-id="1">
+										<a @mouseover="enter(1)" @mouseout="leave(9)" @click="click_leave(1)">
+											<img src="images/wx_con.png" class="consult_img">
+											<span data-id="1" class="hidden-sm">官方微信</span>
+											<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+												<p class="qq_text">官方微信:18092651090</p>
+												<div class="qrcode11" style="margin-top: 0;">
+													<img src="images/qrcode.jpg" />
+												</div>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a class="back_top" @mouseover="enter(2)" @mouseout="leave(9)" onclick="back_top()">
+											<img src="images/to_top.png" data-id="2" @mouseover="enter" @mouseout="leave">
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				    <p class="qq_text">官方微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode.jpg"/>
+				    </div>
+					
+				</div>
+				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				    <p class="qq_text">客服微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode1.jpg"/>
+				    </div>
+				</div>
+				<div class="marketing">
+					<a class="marketing-item" href="tel:18092651090">
+						一键拨号
+					</a>
+					<div class="marketing-item" @click="phoneMarketing(0)">
+						客服微信
+					</div>
+					<div class="marketing-item" @click="phoneMarketing(1)">
+						官方微信
+					</div>
 				</div>
 			</div>
 			<include src="footer.html"></include>
@@ -275,11 +294,13 @@
 				return {
 					banner_index: 0,
 					is_toggle: true,
+					is_show:false,
+					wx_show:2,
 					mainData: [],
 					labelData: [],
 					newsData: [],
 					pageArray: [],
-					
+
 					allPages: 0,
 					linkPage: '',
 					paginate: {
@@ -291,6 +312,10 @@
 					searchItem: {
 						thirdapp_id: 22,
 						passage1: 155
+					},
+					searchItemTwo: {
+						thirdapp_id: 22,
+					
 					},
 					banner_info: [
 
@@ -312,6 +337,7 @@
 					const self = this;
 					console.log(666);
 					self.getMainData();
+					self.getNewsData()
 				},
 
 				getMainData: function(id) {
@@ -328,7 +354,33 @@
 					window.base.articleList(postData, callback);
 				},
 
-
+				getNewsData: function(id){
+				    var self = this;
+				    var postData = {};
+				    postData.paginate = window.base.cloneForm(self.paginate);
+				    postData.searchItem = window.base.cloneForm(self.searchItemTwo);
+					postData.getBefore ={
+					 	caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      title:['=',['app新闻']]
+					    },
+					    middleKey:'menu_id',
+					    key:'id',
+					    condition:'in',
+						},
+					};
+				    var callback = (res) => {
+				        
+				        self.newsData.push.apply(self.newsData,res.info.data)
+						for (var i = 0; i < self.newsData.length; i++) {
+							self.newsData[i].date=self.newsData[i].create_time.substring(0,7);
+							self.newsData[i].day=self.newsData[i].create_time.substring(8,10);
+						}
+						console.log('self.newsData',self.newsData)
+				    };
+				    window.base.articleList(postData, callback);
+				},
 
 				changeBanner: function(type) {
 					const self = this;
@@ -349,29 +401,58 @@
 					console.log(self.banner_index);
 
 				},
-				
-				intoPath:function(url,id){
-				    const self = this;
-				    var toUrl = url;
-				    console.log(toUrl);
-				    window.location.href= toUrl+'?id='+id;
-				
+
+				intoPath: function(url, id) {
+					const self = this;
+					var toUrl = url;
+					console.log(toUrl);
+					window.location.href = toUrl + '?id=' + id;
+
 				},
-				
+
 				changePage(e) {
-				    var self = this;
-				    var dataSet = window.base.getDataSet(e);
-				    window.base.changePage(dataSet, self);
+					var self = this;
+					var dataSet = window.base.getDataSet(e);
+					window.base.changePage(dataSet, self);
 				},
-							
+
 				linkTo(e) {
-				    var self = this;
-				    console.log(e);
-				    self.linkPage = window.base.getDataSet(e).page;
-				    window.base.linkTo(self);
+					var self = this;
+					console.log(e);
+					self.linkPage = window.base.getDataSet(e).page;
+					window.base.linkTo(self);
 				},
+				consult: function(e) {
+					var self = this;
+					self.is_show = !self.is_show;
+				},
+				mask: function(e) {
+					var self = this;
+					self.is_show = false;
+				},
+				enter(index) {
+					var self = this;
+					var cursorId = index;
+					self.wx_show = cursorId;
+
+				},
+				leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				},
+				click_leave(index) {
+					var self = this;
+					var cursorId1 = index;
+					self.wx_show = cursorId1;
+				}
 			}
 		});
+	</script>
+	<script>
+		function back_top() {
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
+		}
 	</script>
 	<script type="text/javascript">
 		function initMap() {
