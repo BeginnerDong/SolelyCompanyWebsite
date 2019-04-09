@@ -31,6 +31,7 @@
 		<header>
 			<include src="header.html"></include>
 		</header>
+		<div id="app">
 		<div class="container">
 			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 				<image :src="item.url" />
@@ -135,9 +136,93 @@
 		</div>
 
 		<include src="footer.html"></include>
-
+		</div>
 	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+		    el: '#app',
+		    data(){
+		        return {
+		        	banner_index:0,
+		        	is_toggle:true,
+					mainData: [],
+					labelData: [],
+					newsData:[],
+					paginate: { 
+					    count: 0, 
+					    currentPage: 1, 
+					    pagesize:6, 
+					    is_page: true, 
+					},
+					searchItem:{ thirdapp_id: 22},
+					banner_info:[
+						{url:'images/banner.png',title:'更专注于行业特色 贴合用户使用习惯',small_title:'更专注于行业特色 贴合用户使用习惯'},
+						{url:'images/2-banner.png',title:'',small_title:''}
+					]
+		        }
+		    },
+		    created () {
+		        const self = this;
+				self.init()
+		    },
+			
+		    methods: {
+		        init: function (e) {
+		            const self = this;
+					console.log(666);
+					console.log(self.banner_info);
+					self.getMainData();
+
+		        },
+		        
+				getMainData: function(id){
+				    var self = this;
+				    var postData = {};
+				    postData.paginate = window.base.cloneForm(self.paginate);
+				    postData.searchItem = window.base.cloneForm(self.searchItem);
+					postData.getBefore ={
+					 	caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      parentid:['in',[146]]
+					    },
+					    middleKey:'menu_id',
+					    key:'id',
+					    condition:'in',
+						},
+					};
+				    var callback = (res) => {
+				        console.log('getMainData', res);
+				        self.mainData.push.apply(self.mainData,res.info.data)
+				       
+				    };
+					console.log('self.mainData',self.mainData)
+				    window.base.articleList(postData, callback);
+				},
+
 	
+		    	changeBanner: function(type) {
+		    		const self = this;
+		    	
+		    		if(type=='+'){
+		    			console.log(8852)
+		    			self.banner_index += 1;
+		    		}else if((type=='-')){
+		    			self.banner_index -= 1;
+		    		};
+		    		console.log(self.banner_index);
+		    		if(self.banner_index<0){
+		    			self.banner_index = self.banner_info.length-1
+		    		};
+		    		if(self.banner_index==self.banner_info.length){
+		    			self.banner_index = 0
+		    		};
+		    		console.log(self.banner_index);
+		    		
+		    	},
+		    }
+		});
+	</script>
 	<script type="text/javascript">
 	
 	    function initMap(){

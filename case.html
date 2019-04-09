@@ -24,10 +24,11 @@
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 	</head>
 	<body style="background:#fff;">
-		<div id="app">
 		<header>
 			<include src="header.html"></include>
 		</header>
+		<div id="app">
+		
 		<div class="container">
 			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 				<image :src="item.url" />
@@ -57,28 +58,22 @@
 				<div class="change">
 					<div class="change-items">
 						<p class="font24 color-333">产品：</p>
-						<p class="font24 color-5c5c5c">网站建设</p>
-						<p class="font24 color-5c5c5c">小程序</p>
-						<p class="font24 color-5c5c5c">公众号</p>
-						<p class="font24 color-5c5c5c">APP</p>
+						<p class="font24 color-5c5c5c" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</p>
+						
 					</div>
 					<div class="change-items margin-75">
 						<p class="font24 color-333">行业：</p>
-						<p class="font24 color-5c5c5c">商城</p>
-						<p class="font24 color-5c5c5c">餐饮</p>
-						<p class="font24 color-5c5c5c">健身</p>
-						<p class="font24 color-5c5c5c">旅游</p>
-						<p class="font24 color-5c5c5c">多商户</p>
+						<p class="font24 color-5c5c5c"  v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</p>
 					
 					</div>
 				</div>
 				<div class="product-list margin-50 clearfix ">
-					<div class="product-item margin-30" v-for="item in mainData" style="position: relative;">
+					<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 						<div class="product-item-mainimg ">
 							<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 							<div class="product-item-mainimg-mask">
 								<div class="mask-qrcode">
-									<image src="images/img4.png">
+									<image :src="item.bannerImg&&item.bannerImg[2]?item.bannerImg[2].url:''">
 								</div>
 							</div>
 						</div>
@@ -96,7 +91,21 @@
 				
 				</div>
 			</div>
-			
+			 <div class="fenye">
+			    <span>
+			        共:{{allPages}}页
+			    </span>
+			    <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
+			    <span v-for="item in pageArray">
+			        <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
+			        <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
+			    </span>
+			    <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
+			    <span>
+			        跳转至：
+			        <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+			    </span>
+			</div>
 			<div class="contact clearfix">
 				<div class="contact-item">
 					<div class="contact-item-left">
@@ -154,11 +163,18 @@
 		        	is_toggle:true,
 					mainData: [],
 					labelData: [],
-					newsData:[],
+					labelDataTwo:[],
+					newsData:[], 
+					menu_array:[],
+					menu_arrayTwo:[],
+					pageArray: [],
+					
+					allPages: 0,
+					linkPage: '',
 					paginate: { 
 					    count: 0, 
 					    currentPage: 1, 
-					    pagesize:6, 
+					    pagesize:9, 
 					    is_page: true, 
 					},
 					searchItem:{ thirdapp_id: 22},
@@ -179,158 +195,171 @@
 					console.log(666);
 					console.log(self.banner_info);
 					self.getMainData();
+					self.getLabelData();
+					self.getLabelDataTwo()
 		        },
+				
+				  getLabelData() {
+				  var self = this;
+				  var postData = {};
+				  postData.searchItem = { 
+				      type: 1,
+				      thirdapp_id: 22,
+				  };
+					postData.getBefore ={
+					 caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      title:['=',['行业案例']],
+					    },
+					    middleKey:'parentid',
+					    key:'id',
+					    condition:'in',
+					  },
+					};
+				  var callback = function(res) {
+				    if(res.info.data.length>0){
+				      self.labelData.push.apply(self.labelData,res.info.data)
+				    }
+
+				  };
+				  window.base.labelGet(postData,callback);
+				},
+				
+				getLabelDataTwo() {
+				  var self = this;
+				
+				  var postData = {};
+				  postData.searchItem = { 
+				      type: 1,
+				      thirdapp_id: 22,
+				  };
+					postData.getBefore ={
+					 caseData:{
+					    tableName:'Label',
+					    searchItem:{
+					      title:['=',['案例类型']],
+					    },
+					    middleKey:'parentid',
+					    key:'id',
+					    condition:'in',
+					  },
+					};
+				  var callback = function(res) {
+				    if(res.info.data.length>0){
+				      self.labelDataTwo.push.apply(self.labelDataTwo,res.info.data)
+				    }
+				  };
+				  window.base.labelGet(postData,callback);
+				},
 		        
 				getMainData: function(id){
 				    var self = this;
+					self.mainData = [];
 				    var postData = {};
 				    postData.paginate = window.base.cloneForm(self.paginate);
 				    postData.searchItem = window.base.cloneForm(self.searchItem);
-					postData.getBefore ={
-					 	caseData:{
-					    tableName:'Label',
-					    searchItem:{
-					      parentid:['in',[146]]
-					    },
-					    middleKey:'menu_id',
-					    key:'id',
-					    condition:'in',
-						},
-					};
+					if(!self.searchItem.menu_id){
+						postData.getBefore ={
+						 	caseData:{
+						    tableName:'Label',
+						    searchItem:{
+						      parentid:['in',[146]]
+						    },
+						    middleKey:'menu_id',
+						    key:'id',
+						    condition:'in',
+							},
+						};
+					}
 				    var callback = (res) => {
-				        console.log('getMainData', res);
-				        self.mainData = res.info.data;
+				       console.log('getMainData', res);
+				       self.mainData.push.apply(self.mainData,res.info.data);
+					   self.paginate['count'] = res.info.total;
+					   window.base.computePageArr(self);
 				       
 				    };
 				    window.base.articleList(postData, callback);
 				},
+				
+				 this_choose(id){ 
+				    const self = this;
+				 
+				    var position = self.menu_array.indexOf(id);
+				    if(position>=0){
+				      self.menu_array.splice(position, 1);
+				    }else{
+				      self.menu_array.push(id);
+				    };
+				    self.searchItem.menu_id = ['in',self.menu_array];
+				    if(self.menu_array==0){
+				      delete self.searchItem.menu_id
+				    };
+					self.getMainData()
+				  },
+				
+				 this_chooseTwo(id){ 
+				    const self = this;
+				 
+				    var position = self.menu_arrayTwo.indexOf(id);
+				    if(position>=0){
+				      self.menu_arrayTwo.splice(position, 1);
+				    }else{
+				      self.menu_arrayTwo.push(id);
+				    };
+				    self.searchItem.passage1 = ['in',self.menu_arrayTwo];
+				    if(self.menu_arrayTwo==0){
+				      delete self.searchItem.menu_id
+				    };
+				    self.getMainData()
+				  },
 	
-	
+			
 		    	changeBanner: function(type) {
-		        	const self = this;
-	
-		        	if(type=='+'){
-		        		console.log(8852)
-		        		self.banner_index += 1;
-		        	}else if((type=='-')){
-		        		self.banner_index -= 1;
-		        	};
-		        	
-		        	if(self.banner_index<self.banner_info.length){
-		        		self.banner_index = 1
-		        	};
-		        	if(self.banner_index>=self.banner_info.length){
-		        		self.banner_index = 0
-		        	};
-		        	console.log(self.banner_index);
-		        	
-		    	}
+		    		const self = this;
+		    	
+		    		if(type=='+'){
+		    			console.log(8852)
+		    			self.banner_index += 1;
+		    		}else if((type=='-')){
+		    			self.banner_index -= 1;
+		    		};
+		    		console.log(self.banner_index);
+		    		if(self.banner_index<0){
+		    			self.banner_index = self.banner_info.length-1
+		    		};
+		    		if(self.banner_index==self.banner_info.length){
+		    			self.banner_index = 0
+		    		};
+		    		console.log(self.banner_index);
+		    		
+		    	},
+				
+				changePage(e) {
+				    var self = this;
+				    var dataSet = window.base.getDataSet(e);
+				    window.base.changePage(dataSet, self);
+				},
+			
+				linkTo(e) {
+				    var self = this;
+				    console.log(e);
+				    self.linkPage = window.base.getDataSet(e).page;
+				    window.base.linkTo(self);
+				},
+				
+				intoPath:function(url,id){
+				    const self = this;
+				    var toUrl = url;
+				    console.log(toUrl);
+				    window.location.href= toUrl+'?id='+id;
+				
+				},
 		    }
 		});
 	</script>
 	
 	
-	<script type="text/javascript">
 	
-	    function initMap(){
-	        createMap();
-	        setMapEvent();
-	        addMapControl();
-	        addMarker();
-	    }
-	    
-	    function createMap(){
-	        var map = new BMap.Map("dituContent");
 
-	        var point = new BMap.Point(108.900502,34.24334);
-	        map.centerAndZoom(point,17);
-	        window.map = map;
-			
-		
-	    }
-	    
-	    function setMapEvent(){
-	        map.enableDragging();
-	        map.enableScrollWheelZoom();
-	        map.enableDoubleClickZoom();
-	        map.enableKeyboard();
-			map.setMapStyle({
-				styleJson:[
-					{
-						"featureType": "all",
-						"elementType": "all",
-						"stylers": {
-							"lightness": 10,
-							"saturation": -100
-						}
-					}
-				]
-			});
-	    }
-	    
-	    function addMapControl(){ 
-	    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-	    map.addControl(ctrl_nav);
-	    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-	    map.addControl(ctrl_ove);
-	    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-	    map.addControl(ctrl_sca);
-		
-	    }
-		var markerArr = [{title:"纯粹云信息科技有限公司",content:"电话:18092651090",point:"108.900502|34.24334",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-	     ];
-	    
-	    function addMarker(){
-	        for(var i=0;i<markerArr.length;i++){
-	            var json = markerArr[i];
-	            var p0 = json.point.split("|")[0];
-	            var p1 = json.point.split("|")[1];
-	            var point = new BMap.Point(p0,p1);
-	            var iconImg = createIcon(json.icon);
-	            var marker = new BMap.Marker(point,{icon:iconImg});
-	            var iw = createInfoWindow(i);
-	            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-	            marker.setLabel(label);
-	            map.addOverlay(marker);
-	            label.setStyle({
-	                        borderColor:"transparent",
-	                        color:"#000",
-	                        cursor:"pointer",
-	            });
-	            
-	            (function(){
-	                var index = i;
-	                var _iw = createInfoWindow(i);
-	                var _marker = marker;
-	                _marker.addEventListener("click",function(){
-	                    this.openInfoWindow(_iw);
-	                });
-	                _iw.addEventListener("open",function(){
-	                    _marker.getLabel().hide();
-	                })
-	                _iw.addEventListener("close",function(){
-	                    _marker.getLabel().show();
-	                })
-	                label.addEventListener("click",function(){
-	                    _marker.openInfoWindow(_iw);
-	                })
-	                if(!!json.isOpen){
-	                    label.hide();
-	                    _marker.openInfoWindow(_iw);
-	                }
-	            })()
-	        }
-	    }
-	    function createInfoWindow(i){
-	        var json = markerArr[i];
-	        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-	        return iw;
-	    }
-	    function createIcon(json){
-	        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-	        return icon;
-	    }
-	    
-	    initMap();
-	</script>
 </html>

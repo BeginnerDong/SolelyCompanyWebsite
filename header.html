@@ -5,121 +5,125 @@
 			<a class="logo">	
 				<image src="images/logo.png" alt="回到首页"/>
 			</a>
-			<a id="nav" >
+			<a id="nav"  @click="toggleMenu">
 				<image src="images/nav.png"/>
 			</a>
 			<div id="computer">
 				<div class="nav-item ">
 					<div class="nav-item-text ">
-						<a href="#" class="active">网站首页</a>
+						<a href="index.html" :class="currentUrl=='/SolelyCompanyWebsite/index.html'?'active':''">网站首页</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="smallProgram.html">小程序</a>
+						<a href="smallProgram.html" :class="currentUrl=='/SolelyCompanyWebsite/smallProgram.html'?'active':''">小程序</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="website.html">网站开发</a>
+						<a href="website.html" :class="currentUrl=='/SolelyCompanyWebsite/website.html'?'active':''">网站开发</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="app.html">APP开发</a>
+						<a href="app.html" :class="currentUrl=='/SolelyCompanyWebsite/app.html'?'active':''">APP开发</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="case.html">精品案例</a>
+						<a href="case.html" :class="currentUrl=='/SolelyCompanyWebsite/case.html'?'active':''">精品案例</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="news.html">新闻中心</a>
+						<a href="news.html" :class="currentUrl=='/SolelyCompanyWebsite/news.html'?'active':''">新闻中心</a>
+					</div>
+				</div>
+				
+				<div class="nav-item">
+					<div class="nav-item-text">
+						<a href="recruit.html" :class="currentUrl=='/SolelyCompanyWebsite/recruit.html'?'active':''">人才招聘</a>
 					</div>
 				</div>
 				<div class="nav-item">
 					<div class="nav-item-text">
-						<a href="blog.html">技术博客</a>
-					</div>
-				</div>
-				<div class="nav-item">
-					<div class="nav-item-text">
-						<a href="recruit.html">人才招聘</a>
-					</div>
-				</div>
-				<div class="nav-item">
-					<div class="nav-item-text">
-						<a href="about.html">关于我们</a>
+						<a href="about.html" :class="currentUrl=='/SolelyCompanyWebsite/about.html'?'active':''">关于我们</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
 	<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')" id="phone">
-		<div class="nav-item ">
+			<div class="nav-item ">
 			<div class="nav-item-text ">
-				<a href="#" class="active">网站首页</a>
+				<a href="index.html" :class="currentUrl=='/SolelyCompanyWebsite/index.html'?'active':''">网站首页</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="smallProgram.html">小程序</a>
+				<a href="smallProgram.html" :class="currentUrl=='/SolelyCompanyWebsite/smallProgram.html'?'active':''">小程序</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="website.html">网站开发</a>
+				<a href="website.html" :class="currentUrl=='/SolelyCompanyWebsite/website.html'?'active':''">网站开发</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="app.html">APP开发</a>
+				<a href="app.html" :class="currentUrl=='/SolelyCompanyWebsite/app.html'?'active':''">APP开发</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="case.html">精品案例</a>
+				<a href="case.html" :class="currentUrl=='/SolelyCompanyWebsite/case.html'?'active':''">精品案例</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="news.html">新闻中心</a>
+				<a href="news.html" :class="currentUrl=='/SolelyCompanyWebsite/news.html'?'active':''">新闻中心</a>
+			</div>
+		</div>
+		
+		<div class="nav-item">
+			<div class="nav-item-text">
+				<a href="recruit.html" :class="currentUrl=='/SolelyCompanyWebsite/recruit.html'?'active':''">人才招聘</a>
 			</div>
 		</div>
 		<div class="nav-item">
 			<div class="nav-item-text">
-				<a href="blog.html">技术博客</a>
-			</div>
-		</div>
-		<div class="nav-item">
-			<div class="nav-item-text">
-				<a href="recruit.html">人才招聘</a>
-			</div>
-		</div>
-		<div class="nav-item">
-			<div class="nav-item-text">
-				<a href="about.html">关于我们</a>
+				<a href="about.html" :class="currentUrl=='/SolelyCompanyWebsite/about.html'?'active':''">关于我们</a>
 			</div>
 		</div>
 	</div>
 </div>
+<script src="js/base.js" type="application/javascript"></script>
 <script type="text/javascript">
 	var header_app = new Vue({
-	    el: '#app',
+	    el: '#header_app',
 	    data(){
 	        return {
-	        	is_toggle:true
+	        	is_toggle:false,
+				currentUrl:''
 	        }
 	    },
 	    created () {
 	        const self = this;
+			var currentUrl = window.base.GetUrlRelativePath();
+			console.log('currentUrl',currentUrl);
+			self.currentUrl = currentUrl;
 	        window.addEventListener('scroll',(e)=>{
 	        	window.base.debounce(self.changeHeaderStyle,500,self)
+			
 	        });
+			
 	    },
 	    methods: {
+			
+			toggleMenu:function(e){
+			    var self = this;
+			    self.is_toggle = !self.is_toggle;
+			},
 	        
 	    	changeHeaderStyle: function(){
 	    		const self = this;

@@ -747,6 +747,9 @@
 	
 }
 @media (max-width: 480px) {
+	.navigation{
+		height:1.4rem
+	}
 	
 	#phone{
 		display: block;
@@ -761,6 +764,7 @@
 	}
 	.nav-main{
 		margin-top:3%;
+		height:1.4rem
 	}
 	.nav-item{
 		width:100%;
@@ -1002,6 +1006,7 @@
 	#nav{
 		display: block;
 		float: right;
+		margin-top: 0.1rem;
 	}
 	.strengths-item img{
 		width:1.5rem;

@@ -24,378 +24,458 @@
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 	</head>
 	<body style="background:#fff;">
-	<div id="app">
-	<header>
-		<include src="header.html"></include>
-	</header>
-	<div class="container">
-		<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
-			<image :src="item.url" />
-			<div  class="banner-item">
-				<div  class="animated bounceInLeft">
-					<div  class="banner-title" >{{item.title}}</div>
-					<div  class="banner-small-title">{{item.small_title}}</div>
-				</div>
-				
-						
-				<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
-					<image src="images/icon-right.png" />
-				</div>
-				<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
-					<image src="images/icon-left.png" />
-				</div>
-			</div>
-		</div>
-		
-		<div class="website">
-			<div class="website-title">
-				<p class="font20   color-b9b9b9">WEBSITE ADVANTAGE</p>
-				<p class="font22  margin-15 color-292929">网站优势</p>
-				<p class="font14  margin-75 color-b9b9b9">专业提供以互联网为基础的信息化系统软件解决方案</p>
-			</div>
-			<div class="website-list">
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">01</p>
-				</div>
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">02</p>
-				</div>
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">03</p>
-				</div>
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">04</p>
-				</div>
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">05</p>
-				</div>
-				<div class="website-item">
-					<p class="font14  color-5c5c5c">视觉设计</p>
-					<p class="font10  color-a8a8a8">The visual design</p>
-					<div class="website-item-left"></div>
-					<p class="font10  color-a8a8a8 margin-10">06</p>
-				</div>
-			</div>
-		</div>
-		
-		<div class="website-process">
-			<div class="website-process-title">
-				<p class="font26   color-fff">建站流程</p>
-				<p class="font18   color-fff margin-10">更多选择，为您提供更优质的资源</p>
-			</div>
-			
-			<div class="website-process-list">
-				<div class="website-process-item">
-					<div class="website-process-img">
-						<image src="images/3-icon4.png">
-					</div>
-					<div class="website-process-text">
-						<p class="font18   color-fff ">需求沟通</p>
-						<p class="font16   color-fff margin-25">倾听客户需求，链接用户使用环境和操作流程</p>
-					</div>
-				</div>
-				<div class="website-process-item">
-					<div class="website-process-img">
-						<image src="images/3-icon5.png">
-					</div>
-					<div class="website-process-text">
-						<p class="font18   color-fff ">视觉设计</p>
-						<p class="font16   color-fff margin-25">色彩及平面元素设计，结构和布局规范确认</p>
-					</div>
-				</div>
-				<div class="website-process-item">
-					<div class="website-process-img">
-						<image src="images/3-icon6.png">
-					</div>
-					<div class="website-process-text">
-						<p class="font18   color-fff ">前端制作</p>
-						<p class="font16   color-fff margin-25">CSS.JS.HTML5实现页面的动态展示</p>
-					</div>
-				</div>
-				<div class="website-process-item">
-					<div class="website-process-img">
-						<image src="images/3-icon7.png">
-					</div>
-					<div class="website-process-text">
-						<p class="font18   color-fff ">程序开发</p>
-						<p class="font16   color-fff margin-25">移动应用数据对接与开发</p>
-					</div>
-				</div>
-				<div class="website-process-item">
-					<div class="website-process-img">
-						<image src="images/3-icon8.png">
-					</div>
-					<div class="website-process-text">
-						<p class="font18   color-fff ">测试反馈</p>
-						<p class="font16   color-fff margin-25">修改调整，规范完善</p>
-					</div>
-				</div>
-			
-			</div>
-		</div>
-		
-		<div class="product clearfix">
-			<div class="product-title">
-				<p class="font40   color-333">产品，让客户充分放心</p>
-				<p class="font18   color-333 margin-25">Peoduct，let customers rest assured</p>
-			</div>
+		<header>
+			<include src="header.html"></include>
+		</header>
+		<div id="app">
 
-			<div class="product-list margin-50 clearfix ">
-				<div class="product-item margin-30" v-for="item in mainData" style="position: relative;">
-					<div class="product-item-mainimg ">
-						<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
-						<div class="product-item-mainimg-mask">
-							<div class="mask-qrcode">
-								<image src="images/img4.png">
+			<div class="container">
+				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
+					<image :src="item.url" />
+					<div class="banner-item">
+						<div class="animated bounceInLeft">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
+						</div>
+
+
+						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
+							<image src="images/icon-right.png" />
+						</div>
+						<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
+							<image src="images/icon-left.png" />
+						</div>
+					</div>
+				</div>
+
+				<div class="website">
+					<div class="website-title">
+						<p class="font20   color-b9b9b9">WEBSITE ADVANTAGE</p>
+						<p class="font22  margin-15 color-292929">网站优势</p>
+						<p class="font14  margin-75 color-b9b9b9">专业提供以互联网为基础的信息化系统软件解决方案</p>
+					</div>
+					<div class="website-list">
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">01</p>
+						</div>
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">02</p>
+						</div>
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">03</p>
+						</div>
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">04</p>
+						</div>
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">05</p>
+						</div>
+						<div class="website-item">
+							<p class="font14  color-5c5c5c">视觉设计</p>
+							<p class="font10  color-a8a8a8">The visual design</p>
+							<div class="website-item-left"></div>
+							<p class="font10  color-a8a8a8 margin-10">06</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="website-process">
+					<div class="website-process-title">
+						<p class="font26   color-fff">建站流程</p>
+						<p class="font18   color-fff margin-10">更多选择，为您提供更优质的资源</p>
+					</div>
+
+					<div class="website-process-list">
+						<div class="website-process-item">
+							<div class="website-process-img">
+								<image src="images/3-icon4.png">
+							</div>
+							<div class="website-process-text">
+								<p class="font18   color-fff ">需求沟通</p>
+								<p class="font16   color-fff margin-25">倾听客户需求，链接用户使用环境和操作流程</p>
 							</div>
 						</div>
-					</div>
-					<div >
-						<div class="product-item-content ">
-							<p class="font18  margin-20 color-222">{{item.title}}</p>
-							<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
+						<div class="website-process-item">
+							<div class="website-process-img">
+								<image src="images/3-icon5.png">
+							</div>
+							<div class="website-process-text">
+								<p class="font18   color-fff ">视觉设计</p>
+								<p class="font16   color-fff margin-25">色彩及平面元素设计，结构和布局规范确认</p>
+							</div>
 						</div>
-						<div class="product-item-img">
-							<image src="images/icon10.png">
+						<div class="website-process-item">
+							<div class="website-process-img">
+								<image src="images/3-icon6.png">
+							</div>
+							<div class="website-process-text">
+								<p class="font18   color-fff ">前端制作</p>
+								<p class="font16   color-fff margin-25">CSS.JS.HTML5实现页面的动态展示</p>
+							</div>
 						</div>
+						<div class="website-process-item">
+							<div class="website-process-img">
+								<image src="images/3-icon7.png">
+							</div>
+							<div class="website-process-text">
+								<p class="font18   color-fff ">程序开发</p>
+								<p class="font16   color-fff margin-25">移动应用数据对接与开发</p>
+							</div>
+						</div>
+						<div class="website-process-item">
+							<div class="website-process-img">
+								<image src="images/3-icon8.png">
+							</div>
+							<div class="website-process-text">
+								<p class="font18   color-fff ">测试反馈</p>
+								<p class="font16   color-fff margin-25">修改调整，规范完善</p>
+							</div>
+						</div>
+
 					</div>
-			
 				</div>
-			
-			</div>
-		</div>
-		
-		<div class="contact clearfix">
-			<div class="contact-item">
-				<div class="contact-item-left">
-					<div class="contact-item-left-title">
-						<p class="font16 color-333">Contact us</p>
-						<div class="contact-item-left-text">
-							<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
-							<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
-							<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
-							<div class="button clearfix">
-								<div class="button-item">
-									<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-									<p style="margin-left: 0.1rem;">合作咨询</p>
+
+				<div class="product clearfix">
+					<div class="product-title">
+						<p class="font40   color-333">产品，让客户充分放心</p>
+						<p class="font18   color-333 margin-25">Peoduct，let customers rest assured</p>
+					</div>
+
+					<div class="product-list margin-50 clearfix ">
+						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
+							<div class="product-item-mainimg ">
+								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
+									<div class="product-item-mainimg-mask">
+										<div class="mask-qrcode">
+											<image src="images/img4.png">
+										</div>
+									</div>
+							</div>
+							<div>
+								<div class="product-item-content ">
+									<p class="font18  margin-20 color-222">{{item.title}}</p>
+									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
 								</div>
-								<div class="button-item">
-									<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-									<p style="margin-left: 0.1rem;">技术服务</p>
+								<div class="product-item-img">
+									<image src="images/icon10.png">
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<div class="contact-item">
-				<div class="contact-item-left">
-					<div class="contact-item-left-title">
-						<p class="font16 color-333">Wechat</p>
-						<div class="contact-item-right-text">
-							<div class="qrcode">
-								<image src ="images/qrcode.png">
-								<image src ="images/qrcode.png">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="map">
-		    <div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
-		</div>
-	</div>
 
-	<include src="footer.html"></include>
-	</div>
-</body>
+						</div>
+
+					</div>
+				</div>
+				<div class="fenye">
+				    <span>
+				        共:{{allPages}}页
+				    </span>
+				    <a class="pages backPage" data-type="back" @click="changePage">上一页</a>
+				    <span v-for="item in pageArray">
+				        <a v-if="item == paginate.currentPage" class="currentpages active" >{{item}}</a>
+				        <a v-if="item != paginate.currentPage" class="currentpages" :data-page="item"  @click="linkTo">{{item}}</a>
+				    </span>
+				    <a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
+				    <span>
+				        跳转至：
+				        <input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+				    </span>
+				</div>
+				<div class="contact clearfix">
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Contact us</p>
+								<div class="contact-item-left-text">
+									<p class="font14 color-333 margin-30">ADD：<span class="font14 color-8f8f8f">陕西省西安市雁塔区高新大都荟A做座2007号</span></p>
+									<p class="font14 color-333 margin-30">TEL：<span class="font14 color-8f8f8f">18092651090</span></p>
+									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
+									<div class="button clearfix">
+										<div class="button-item">
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">合作咨询</p>
+										</div>
+										<div class="button-item">
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">技术服务</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="contact-item">
+						<div class="contact-item-left">
+							<div class="contact-item-left-title">
+								<p class="font16 color-333">Wechat</p>
+								<div class="contact-item-right-text">
+									<div class="qrcode">
+										<image src="images/qrcode.png">
+											<image src="images/qrcode.png">
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="map">
+					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				</div>
+			</div>
+
+			<include src="footer.html"></include>
+		</div>
+	</body>
 	<script type="text/javascript">
 		var app = new Vue({
-		    el: '#app',
-		    data(){
-		        return {
-		        	banner_index:0,
-		        	is_toggle:true,
+			el: '#app',
+			data() {
+				return {
+					banner_index: 0,
+					is_toggle: true,
 					mainData: [],
 					labelData: [],
-					newsData:[],
-					paginate: { 
-					    count: 0, 
-					    currentPage: 1, 
-					    pagesize:6, 
-					    is_page: true, 
+					newsData: [],
+					pageArray: [],
+					
+					allPages: 0,
+					linkPage: '',
+					paginate: {
+						count: 0,
+						currentPage: 1,
+						pagesize: 9,
+						is_page: true,
 					},
-					searchItem:{ thirdapp_id: 22,passage1:153},
-		        }
-		    },
-		    created () {
-		        const self = this;
+					searchItem: {
+						thirdapp_id: 22,
+						passage1: 153
+					},
+					banner_info: [
+
+						{
+							url: 'images/3-banner.png',
+							title: '',
+							small_title: ''
+						}
+					]
+				}
+			},
+			created() {
+				const self = this;
 				self.init()
-		    },
-			
-		    methods: {
-		        init: function (e) {
-		            const self = this;
+			},
+
+			methods: {
+				init: function(e) {
+					const self = this;
 					console.log(666);
 					self.getMainData();
-		        },
-		        
-				getMainData: function(id){
-				    var self = this;
-				    var postData = {};
-				    postData.paginate = window.base.cloneForm(self.paginate);
-				    postData.searchItem = window.base.cloneForm(self.searchItem);
-				    var callback = (res) => {
-				        console.log('getMainData', res);
-				        self.mainData = res.info.data;
-				       
-				    };
-				    window.base.articleList(postData, callback);
+				},
+
+				getMainData: function(id) {
+					var self = this;
+					var postData = {};
+					postData.paginate = window.base.cloneForm(self.paginate);
+					postData.searchItem = window.base.cloneForm(self.searchItem);
+					var callback = (res) => {
+						console.log('getMainData', res);
+						self.mainData.push.apply(self.mainData, res.info.data);
+						self.paginate['count'] = res.info.total;
+						window.base.computePageArr(self);
+
+					};
+					window.base.articleList(postData, callback);
+				},
+
+
+				changeBanner: function(type) {
+					const self = this;
+
+					if (type == '+') {
+						console.log(8852)
+						self.banner_index += 1;
+					} else if ((type == '-')) {
+						self.banner_index -= 1;
+					};
+					console.log(self.banner_index);
+					if (self.banner_index < 0) {
+						self.banner_index = self.banner_info.length - 1
+					};
+					if (self.banner_index == self.banner_info.length) {
+						self.banner_index = 0
+					};
+					console.log(self.banner_index);
+
 				},
 				
+				intoPath:function(url,id){
+				    const self = this;
+				    var toUrl = url;
+				    console.log(toUrl);
+				    window.location.href= toUrl+'?id='+id;
 				
-	
-		    	changeBanner: function(type) {
-		        	const self = this;
-	
-		        	if(type=='+'){
-		        		console.log(8852)
-		        		self.banner_index += 1;
-		        	}else{
-		        		self.banner_index -= 1;
-		        	};
-		        	
-		        	if(self.banner_index<0){
-		        		self.banner_index = 1
-		        	};
-		        	if(self.banner_index>1){
-		        		self.banner_index = 0
-		        	};
-		        	console.log(self.banner_index);
-		        	
-		    	}
-		    }
+				},
+				
+				changePage(e) {
+				    var self = this;
+				    var dataSet = window.base.getDataSet(e);
+				    window.base.changePage(dataSet, self);
+				},
+							
+				linkTo(e) {
+				    var self = this;
+				    console.log(e);
+				    self.linkPage = window.base.getDataSet(e).page;
+				    window.base.linkTo(self);
+				},
+			}
 		});
 	</script>
 	<script type="text/javascript">
-	
-	    function initMap(){
-	        createMap();
-	        setMapEvent();
-	        addMapControl();
-	        addMarker();
-	    }
-	    
-	    function createMap(){
-	        var map = new BMap.Map("dituContent");
+		function initMap() {
+			createMap();
+			setMapEvent();
+			addMapControl();
+			addMarker();
+		}
 
-	        var point = new BMap.Point(108.900502,34.24334);
-	        map.centerAndZoom(point,17);
-	        window.map = map;
-			
-		
-	    }
-	    
-	    function setMapEvent(){
-	        map.enableDragging();
-	        map.enableScrollWheelZoom();
-	        map.enableDoubleClickZoom();
-	        map.enableKeyboard();
+		function createMap() {
+			var map = new BMap.Map("dituContent");
+
+			var point = new BMap.Point(108.900502, 34.24334);
+			map.centerAndZoom(point, 17);
+			window.map = map;
+
+
+		}
+
+		function setMapEvent() {
+			map.enableDragging();
+			map.enableScrollWheelZoom();
+			map.enableDoubleClickZoom();
+			map.enableKeyboard();
 			map.setMapStyle({
-				styleJson:[
-					{
-						"featureType": "all",
-						"elementType": "all",
-						"stylers": {
-							"lightness": 10,
-							"saturation": -100
-						}
+				styleJson: [{
+					"featureType": "all",
+					"elementType": "all",
+					"stylers": {
+						"lightness": 10,
+						"saturation": -100
 					}
-				]
+				}]
 			});
-	    }
-	    
-	    function addMapControl(){ 
-	    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-	    map.addControl(ctrl_nav);
-	    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-	    map.addControl(ctrl_ove);
-	    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-	    map.addControl(ctrl_sca);
-		
-	    }
-		var markerArr = [{title:"纯粹云信息科技有限公司",content:"电话:18092651090",point:"108.900502|34.24334",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-	     ];
-	    
-	    function addMarker(){
-	        for(var i=0;i<markerArr.length;i++){
-	            var json = markerArr[i];
-	            var p0 = json.point.split("|")[0];
-	            var p1 = json.point.split("|")[1];
-	            var point = new BMap.Point(p0,p1);
-	            var iconImg = createIcon(json.icon);
-	            var marker = new BMap.Marker(point,{icon:iconImg});
-	            var iw = createInfoWindow(i);
-	            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-	            marker.setLabel(label);
-	            map.addOverlay(marker);
-	            label.setStyle({
-	                        borderColor:"transparent",
-	                        color:"#000",
-	                        cursor:"pointer",
-	            });
-	            
-	            (function(){
-	                var index = i;
-	                var _iw = createInfoWindow(i);
-	                var _marker = marker;
-	                _marker.addEventListener("click",function(){
-	                    this.openInfoWindow(_iw);
-	                });
-	                _iw.addEventListener("open",function(){
-	                    _marker.getLabel().hide();
-	                })
-	                _iw.addEventListener("close",function(){
-	                    _marker.getLabel().show();
-	                })
-	                label.addEventListener("click",function(){
-	                    _marker.openInfoWindow(_iw);
-	                })
-	                if(!!json.isOpen){
-	                    label.hide();
-	                    _marker.openInfoWindow(_iw);
-	                }
-	            })()
-	        }
-	    }
-	    function createInfoWindow(i){
-	        var json = markerArr[i];
-	        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-	        return iw;
-	    }
-	    function createIcon(json){
-	        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-	        return icon;
-	    }
-	    
-	    initMap();
+		}
+
+		function addMapControl() {
+			var ctrl_nav = new BMap.NavigationControl({
+				anchor: BMAP_ANCHOR_TOP_LEFT,
+				type: BMAP_NAVIGATION_CONTROL_LARGE
+			});
+			map.addControl(ctrl_nav);
+			var ctrl_ove = new BMap.OverviewMapControl({
+				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+				isOpen: 1
+			});
+			map.addControl(ctrl_ove);
+			var ctrl_sca = new BMap.ScaleControl({
+				anchor: BMAP_ANCHOR_BOTTOM_LEFT
+			});
+			map.addControl(ctrl_sca);
+
+		}
+		var markerArr = [{
+			title: "纯粹云信息科技有限公司",
+			content: "电话:18092651090",
+			point: "108.900502|34.24334",
+			isOpen: 0,
+			icon: {
+				w: 23,
+				h: 25,
+				l: 46,
+				t: 21,
+				x: 9,
+				lb: 12
+			}
+		}];
+
+		function addMarker() {
+			for (var i = 0; i < markerArr.length; i++) {
+				var json = markerArr[i];
+				var p0 = json.point.split("|")[0];
+				var p1 = json.point.split("|")[1];
+				var point = new BMap.Point(p0, p1);
+				var iconImg = createIcon(json.icon);
+				var marker = new BMap.Marker(point, {
+					icon: iconImg
+				});
+				var iw = createInfoWindow(i);
+				var label = new BMap.Label(json.title, {
+					"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+				});
+				marker.setLabel(label);
+				map.addOverlay(marker);
+				label.setStyle({
+					borderColor: "transparent",
+					color: "#000",
+					cursor: "pointer",
+				});
+
+				(function() {
+					var index = i;
+					var _iw = createInfoWindow(i);
+					var _marker = marker;
+					_marker.addEventListener("click", function() {
+						this.openInfoWindow(_iw);
+					});
+					_iw.addEventListener("open", function() {
+						_marker.getLabel().hide();
+					})
+					_iw.addEventListener("close", function() {
+						_marker.getLabel().show();
+					})
+					label.addEventListener("click", function() {
+						_marker.openInfoWindow(_iw);
+					})
+					if (!!json.isOpen) {
+						label.hide();
+						_marker.openInfoWindow(_iw);
+					}
+				})()
+			}
+		}
+
+		function createInfoWindow(i) {
+			var json = markerArr[i];
+			var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
+				"</b><div class='iw_poi_content'>" + json.content + "</div>");
+			return iw;
+		}
+
+		function createIcon(json) {
+			var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+				imageOffset: new BMap.Size(-json.l, -json.t),
+				infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+				offset: new BMap.Size(json.x, json.h)
+			})
+			return icon;
+		}
+
+		initMap();
 	</script>
 </html>

@@ -15,13 +15,21 @@
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<script src="js/rem.js"></script>
 		<script src="js/include.js"></script>
+		<link rel="stylesheet" href="css/css/magic.css">
+		<link rel="stylesheet" href="css/animate/animate.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="js/browser.min.js"></script>
+		<script src="js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
 			<include src="header.html"></include>
 		</header>
 		
-		
+		<div id="app">
 		<div class="container">
 			<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 				<image :src="item.url" />
@@ -83,7 +91,7 @@
 							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
 						</div>
 						<div class="major-item-img">
-							<image src="images/8-icon.png">
+							<image src="images/8-icon2.png">
 						</div>
 					</div>
 					<div class="major-item clearfix">
@@ -92,7 +100,7 @@
 							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
 						</div>
 						<div class="major-item-img">
-							<image src="images/8-icon.png">
+							<image src="images/8-icon3.png">
 						</div>
 					</div>
 					<div class="major-item clearfix">
@@ -101,7 +109,7 @@
 							<p class="font16 color-959595 margin-30">为各平台的搭建部署提供全程指导，零基础也能助您实现平台快速上线和运营</p>
 						</div>
 						<div class="major-item-img">
-							<image src="images/8-icon.png">
+							<image src="images/8-icon4.png">
 						</div>
 					</div>
 				</div>
@@ -150,9 +158,68 @@
 			</div>
 		</div>
 		<include src="footer.html"></include>
-
+		</div>
 	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+		    el: '#app',
+		    data(){
+		        return {
+		        	banner_index:0,
+		        	is_toggle:true,
+					mainData: [],
+					labelData: [],
+					newsData:[],
+					paginate: { 
+					    count: 0, 
+					    currentPage: 1, 
+					    pagesize:6, 
+					    is_page: true, 
+					},
+					searchItem:{ thirdapp_id: 22},
+					banner_info:[
+						
+						{url:'images/8-banner.jpg',title:'',small_title:''}
+					]
+		        }
+		    },
+		    created () {
+		        const self = this;
+				self.init()
+		    },
+			
+		    methods: {
+		        init: function (e) {
+		            const self = this;
+					console.log(666);
+					console.log(self.banner_info);
+				
+		        },
+		        
+				
 	
+		    	changeBanner: function(type) {
+		    		const self = this;
+		    	
+		    		if(type=='+'){
+		    			console.log(8852)
+		    			self.banner_index += 1;
+		    		}else if((type=='-')){
+		    			self.banner_index -= 1;
+		    		};
+		    		console.log(self.banner_index);
+		    		if(self.banner_index<0){
+		    			self.banner_index = self.banner_info.length-1
+		    		};
+		    		if(self.banner_index==self.banner_info.length){
+		    			self.banner_index = 0
+		    		};
+		    		console.log(self.banner_index);
+		    		
+		    	},
+		    }
+		});
+	</script>
 	<script type="text/javascript">
 	
 	    function initMap(){
