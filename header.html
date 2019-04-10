@@ -53,8 +53,8 @@
 			</div>
 		</div>
 	</nav>
-	<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')" id="phone">
-			<div class="nav-item ">
+	<div   class="navigation-phone orgin" :class="(is_toggle?'after':'')">
+		<div class="nav-item ">
 			<div class="nav-item-text ">
 				<a href="index.html" :class="currentUrl=='/SolelyCompanyWebsite/index.html'?'active':''">网站首页</a>
 			</div>
@@ -123,24 +123,41 @@
 			toggleMenu:function(e){
 			    var self = this;
 			    self.is_toggle = !self.is_toggle;
+				var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+				var navigation = document.getElementById('navigation');
+				if(scrollTop<100){
+					if(self.is_toggle){
+						$("#navigation").css('background','rgb(0, 0, 0,0.6)');
+					}else{
+						$("#navigation").css('background','none');
+					}
+				}	
 			},
 	        
 	    	changeHeaderStyle: function(){
 	    		const self = this;
 	    		var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
 	    		var navigation = document.getElementById('navigation');
-				if(scrollTop>=200){
-					$("#navigation").css('position','fixed');
-					$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
-					navigation.addEventListener('animationend', function() {
-						$("#navigation").css('background','rgb(0, 0, 0,0.6)');
-					})
-				}else{          //恢复正常
-					$("#navigation").css('position','absolute');
-					$("#navigation").css('background','none');
-					$("#navigation").css('opacity','1');
-					$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
-				}
+				
+					if(scrollTop>=100){
+						$("#navigation").css('position','fixed');
+						$("#navigation").addClass('animated.faster  slideInDown delay-0.1s');
+						if(!self.is_toggle){
+							navigation.addEventListener('animationend', function() {
+								$("#navigation").css('background','rgb(0, 0, 0,0.6)');
+							})
+						}
+						
+					}else{          //恢复正常
+						$("#navigation").css('position','absolute');
+						if(!self.is_toggle){
+							$("#navigation").css('background','none');
+							$("#navigation").css('opacity','1');
+						}
+						$("#navigation").removeClass('animated.faster  slideInDown delay-0.1s');
+					}
+				
+			
 	    	}
 
 	    }

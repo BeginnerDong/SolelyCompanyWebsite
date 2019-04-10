@@ -464,7 +464,7 @@
 		height:2rem
 	}
 	.wecando-item-img{
-		display: none;
+		
 	}
 	.wecando-item-img img{
 		width:0.5rem;
@@ -651,8 +651,8 @@
 		padding: 0;
 		height:auto
 	}
-	.advantages-title: ;{
-		padding: 0.5rem 0 0 0;
+	.advantages-title:{
+		padding: 0.5rem 0;
 	}
 	.advantages-item-left{
 		float: none;
@@ -759,7 +759,7 @@
 		width:100%;
 		position: fixed;
 		top:1.4rem;
-		z-index:999
+		z-index:9999
 		
 	}
 	.nav-main{
@@ -769,7 +769,7 @@
 	.nav-item{
 		width:100%;
 		text-align: center;
-		height:25%
+		height:0.6rem
 	}
 	.contain{
 	    width:480px;
@@ -802,7 +802,8 @@
 	}
 	.product-item{
 		width:100%;
-		height:5.8rem
+		height:5.8rem;
+		margin: 0.6% 0;
 	}
 	.process img{
 		width:100%
@@ -834,7 +835,7 @@
 		height:auto
 	}
 	.button{
-		margin: 0.2rem auto;
+		margin: 0.2rem 0;
 	}
 	.infomation{
 		padding: 0.5rem 0.2rem;
@@ -856,7 +857,7 @@
 		height:auto
 	}
 	.service{
-		padding: 0 0.2rem;
+		padding: 0.2rem 0.2rem;
 	}
 	.about-us-left{
 		float: none;
@@ -888,7 +889,7 @@
 		height:auto
 	}
 	.advantages-title{
-		padding: 0.5rem 0 0 0;
+		padding: 0.5rem 0;
 	}
 	.advantages-item-left{
 		float: none;
@@ -952,14 +953,14 @@
 	}
 	.website-process{
 		padding:0.2rem 0.2rem;
-		height:11.2rem
+		height:13.2rem
 	}
 	.website-process-item{
 		height:4rem;
 		width:43%
 	}
 	.wecando-item-img{
-		display: none;
+		
 	}
 	.wecando{
 		height:7.8rem
@@ -1003,6 +1004,12 @@
 		display: none;
 	}
 	
+	.contact-item-left-text{
+		margin-top: 0.2rem;
+		border-top: 1px solid #8f8f8f;
+		text-align: left;
+		padding: 0 0.5rem;
+	}
 	#nav{
 		display: block;
 		float: right;
@@ -1069,7 +1076,7 @@
 	.marketing a:hover{
 		color:#fff
 	}
-	.qq_icon{
+	.qq_icon1{
 	    width:60%;
 	    height:0rem;
 	    position: fixed;
@@ -1081,6 +1088,7 @@
 	    -webkit-transition:all 0.5s;
 	    z-index:999;
 	    box-shadow:0 0 10px #8dd5fc;
+		display: block;
 	}
 	
 	.qq_text{
@@ -1106,6 +1114,7 @@
 	}
 	.app-process-imgTwo{
 		display: block;
+		margin-top:0.8rem;
 	}
 	.app-process-imgTwo img{
 		width:100%;
@@ -1113,6 +1122,88 @@
 	}
 	.app-process-img{
 		display: none;
+	}
+	.qrcodeCopy{
+		text-align: center;
+		width:100%;
+		padding: 0 20%;
+	}
+	.banner-title{
+		margin-top: 40%;
+	}
+	.process{
+		display: none;
+		
+	}
+	.processTwo{
+		display: block;
+		background-image:url(../images/img5.png);
+		width:100%;
+		height:5.3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.processTwo img{
+		width:90%;
+		margin: 0 auto;
+	}
+	.banner-mainTitle{
+		width:100%;
+		top:0;
+		left:0
+	}
+	.banner-imgIcon{
+		width:100%;
+		text-align: center;
+		top:40%
+		
+	}
+	.banner-imgIcon img{
+		width:80%;
+		
+	}
+	.program-image{
+		display: none;
+	}
+	.program-imageTwo{
+		margin-top:0.5rem;
+		display: block;
+		padding:0 0.4rem
+	}
+	.program-imageTwo img{
+		width:100%
+	}
+	.program-small-title{
+		width:100%;
+		line-height: 0.5rem;
+		height:0.5rem
+	}
+	.program-small-title-img{
+		width:20%;
+		text-align: center;
+		float: left;
+		padding: 0.15rem 0;
+	}
+	.program-small-title-img img{
+		width:0.2rem;
+		height:0.2rem
+	}
+	.program-small-title-text{
+		width:80%;
+		float: left;
+		text-align: left;
+	}
+	.program-small-title-box{
+		height:3rem;
+		margin-top: 1rem;
+		display: block;
+	}
+	.change-items-main{
+		width:88%
+	}
+	.change-items-title{
+		width:12%
 	}
 }
 

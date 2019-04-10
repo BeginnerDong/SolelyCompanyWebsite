@@ -34,13 +34,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div class="banner-item">
-						<div class="animated bounceInLeft">
-							<div class="banner-title">{{item.title}}</div>
-							<div class="banner-small-title">{{item.small_title}}</div>
+					<div  class="banner-item">
+						<div  class="animated bounceInLeft banner-mainTitle">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-
-
+						
+						<div  class="animated bounceInRight banner-imgIcon">					
+							<image :src="item.iconUrl" />	
+						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -55,12 +57,6 @@
 					<div class="recruit-item">
 						<p class="font16 color-666">2019.02.23</p>
 						<div style="width:0.2rem;height:0.03rem;background: #8c8c8c;margin-top: 0.2rem;"></div>
-						<p class="font18  margin-20 recruit-item-text active">产品经理</p>
-						<p class="font16 color-8c8c8c margin-60">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
-					</div>
-					<div class="recruit-item">
-						<p class="font16 color-666">2019.02.23</p>
-						<div style="width:0.2rem;height:0.03rem;background: #8c8c8c;margin-top: 0.2rem;"></div>
 						<p class="font18  margin-20 recruit-item-text">产品经理</p>
 						<p class="font16 color-8c8c8c margin-60">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
 					</div>
@@ -79,7 +75,13 @@
 					<div class="recruit-item">
 						<p class="font16 color-666">2019.02.23</p>
 						<div style="width:0.2rem;height:0.03rem;background: #8c8c8c;margin-top: 0.2rem;"></div>
-						<p class="font18  margin-20 recruit-item-text active">产品经理</p>
+						<p class="font18  margin-20 recruit-item-text">产品经理</p>
+						<p class="font16 color-8c8c8c margin-60">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+					</div>
+					<div class="recruit-item">
+						<p class="font16 color-666">2019.02.23</p>
+						<div style="width:0.2rem;height:0.03rem;background: #8c8c8c;margin-top: 0.2rem;"></div>
+						<p class="font18  margin-20 recruit-item-text">产品经理</p>
 						<p class="font16 color-8c8c8c margin-60">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
 					</div>
 					<div class="recruit-item">
@@ -177,14 +179,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
 				    <p class="qq_text">官方微信:18092651090</p>
 				    <div class="qrcode" style="margin-top: 0;">
 				        <img src="images/qrcode.jpg"/>
 				    </div>
 					
 				</div>
-				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
 				    <p class="qq_text">客服微信:18092651090</p>
 				    <div class="qrcode" style="margin-top: 0;">
 				        <img src="images/qrcode1.jpg"/>
@@ -227,15 +229,17 @@
 					searchItem: {
 						thirdapp_id: 22
 					},
-					banner_info: [{
-							url: 'images/banner.png',
-							title: '更专注于行业特色 贴合用户使用习惯',
-							small_title: '更专注于行业特色 贴合用户使用习惯'
+					banner_info:[
+						{url:'images/new/img5.jpg',
+						title:'新闻中心',
+						small_title:'更专注于行业特色 贴合用户使用习惯',
+						iconUrl:'images/element/element-17.png'
 						},
-						{
-							url: 'images/2-banner.png',
-							title: '',
-							small_title: ''
+						
+						{url:'images/new/img5.jpg',
+						title:'新闻中心2 ',
+						small_title:'更专注于行业特色2 贴合用户使用习惯2',
+						iconUrl:'images/element/element-18.png'
 						}
 					]
 				}

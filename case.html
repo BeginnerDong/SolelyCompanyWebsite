@@ -32,13 +32,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div class="banner-item">
-						<div class="animated bounceInLeft">
-							<div class="banner-title">{{item.title}}</div>
-							<div class="banner-small-title">{{item.small_title}}</div>
+					<div  class="banner-item">
+						<div  class="animated bounceInLeft banner-mainTitle">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-
-
+						
+						<div  class="animated bounceInRight banner-imgIcon">					
+							<image :src="item.iconUrl" />	
+						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -57,14 +59,16 @@
 					</div>
 					<div class="change">
 						<div class="change-items">
-							<p class="font24 color-333">产品：</p>
-							<p class="font24 color-5c5c5c" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</p>
-
+							<div class="font26 color-333 change-items-title">产品：</div>
+							<div class="change-items-main">
+								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</div>
+							</div>
 						</div>
-						<div class="change-items margin-75">
-							<p class="font24 color-333">行业：</p>
-							<p class="font24 color-5c5c5c" v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</p>
-
+						<div class="change-items">
+							<div class="font26 color-333 change-items-title">行业：</div>
+							<div class="change-items-main">
+								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</div>
+							</div>
 						</div>
 					</div>
 					<div class="product-list margin-50 clearfix ">
@@ -189,14 +193,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
 				    <p class="qq_text">官方微信:18092651090</p>
 				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode.jpg"/>
 				    </div>
 					
 				</div>
-				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
 				    <p class="qq_text">客服微信:18092651090</p>
 				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode1.jpg"/>
@@ -248,15 +252,17 @@
 					searchItem: {
 						thirdapp_id: 22
 					},
-					banner_info: [{
-							url: 'images/banner.png',
-							title: '更专注于行业特色 贴合用户使用习惯',
-							small_title: '更专注于行业特色 贴合用户使用习惯'
+					banner_info:[
+						{url:'images/new/img3.jpg',
+						title:'精品案例',
+						small_title:'更专注于行业特色 贴合用户使用习惯',
+						iconUrl:'images/element/element-13.png'
 						},
-						{
-							url: 'images/2-banner.png',
-							title: '',
-							small_title: ''
+						
+						{url:'images/new/img3.jpg',
+						title:'精品案例2 ',
+						small_title:'更专注于行业特色2 贴合用户使用习惯2',
+						iconUrl:'images/element/element-14.png'
 						}
 					]
 				}

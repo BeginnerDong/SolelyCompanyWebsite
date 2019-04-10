@@ -33,13 +33,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div class="banner-item">
-						<div class="animated bounceInLeft">
-							<div class="banner-title">{{item.title}}</div>
-							<div class="banner-small-title">{{item.small_title}}</div>
+					<div  class="banner-item">
+						<div  class="animated bounceInLeft banner-mainTitle">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-
-
+						
+						<div  class="animated bounceInRight banner-imgIcon">					
+							<image :src="item.iconUrl" />	
+						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -201,14 +203,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
 				    <p class="qq_text">官方微信:18092651090</p>
 				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode.jpg"/>
 				    </div>
 					
 				</div>
-				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
 				    <p class="qq_text">客服微信:18092651090</p>
 				    <div class="qrcode
 					11" style="margin-top: 0;">
@@ -251,12 +253,17 @@
 					searchItem: {
 						thirdapp_id: 22
 					},
-					banner_info: [
-
-						{
-							url: 'images/8-banner.jpg',
-							title: '',
-							small_title: ''
+					banner_info:[
+						{url:'images/new/img6.jpg',
+						title:'关于我们',
+						small_title:'更专注于行业特色 贴合用户使用习惯',
+						iconUrl:'images/element/element-19.png'
+						},
+						
+						{url:'images/new/img6.jpg',
+						title:'关于我们2 ',
+						small_title:'更专注于行业特色2 贴合用户使用习惯2',
+						iconUrl:'images/element/element-21.png'
 						}
 					]
 				}

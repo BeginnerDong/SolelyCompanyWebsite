@@ -349,6 +349,9 @@ clear: both;
 .margin-75{
 	margin-top: 0.75rem;
 }
+.margin-100{
+	margin-top: 1rem;
+}
 .img-responsive{
     max-width: 100%;
     height: auto;
@@ -375,6 +378,7 @@ clear: both;
     transform-origin: 50% 0;
 }
 .orgin_phone{
+	display: none;
     width:100%;
     height: 0;
     max-height: 0px;
@@ -402,6 +406,12 @@ clear: both;
 	width: 100%;
 	height: 100%;
 }
+.banner-mainTitle{
+	position: absolute;
+	top:15%;
+	left:5%;
+	width: 50%;
+}
 .banner-title{
 	font-size:0.75rem;
 	color:#fff;
@@ -414,6 +424,12 @@ clear: both;
 	margin-top:5%;
 	margin-left:15%
 }
+.banner-imgIcon{
+	position: absolute;
+	top:20%;
+	right:0;
+	width: 50%;
+}
 #nav{
 	display: none;
 }
@@ -425,16 +441,17 @@ clear: both;
 	height:1rem;
 	position: absolute;
 	top:0;
-	z-index:999
+	z-index:9999
 }
 .orgin{
     width:100%;
     opacity: 0;
     height: 0;
-	
+	display: none;
     transition: max-height .5s ease-out;
 }
 .after{
+	display: block;
     opacity: 1;
     min-height: 2.5rem;
     height: auto;
@@ -558,11 +575,11 @@ clear: both;
 .product-title{
 	width:100%;
 	text-align: center;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
 }
 .product-list{
 	width:100%;
-	padding-bottom: 1.5rem;
+	padding-bottom: 1rem;
 	overflow: hidden;
 }
 /* .product-list:after {
@@ -654,6 +671,9 @@ clear: both;
 	align-items: center;
 	justify-content: center;
 }
+.processTwo{
+	display: none;
+}
 .partner{
 	background-image:url(../images/custom.jpg);
 	width:100%;
@@ -698,11 +718,11 @@ clear: both;
 .infomation-title{
 	width:100%;
 	text-align: center;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
 }
 .infomation-list{
 	width:100%;
-	padding-bottom: 1.5rem;
+	padding-bottom: 1rem;
 	position:relative;
 }
 
@@ -853,12 +873,17 @@ clear: both;
 .program{
 	height:8.3rem;
 	text-align: center;
-	padding: 1.5rem 0;
+	padding: 1rem 0;
 }
 .program-image{
 	margin-top: 0.5rem;
 }
-
+.program-imageTwo{
+	display: none;
+}
+.program-small-title-box{
+	display: none;
+}
 .advantages{
 	background-image:url(../images/2-img6.png) ;
 	width:100%;
@@ -1081,17 +1106,19 @@ clear: both;
 }
 /* 案例 */
 .change{
-	padding: 0.8rem 0 0 1.05rem;
-	height:2rem;
+	padding: 0.8rem 0 0 0rem;
+
 }
 .change-items{
-	
+	width:100%;
+	height:auto;
+
 }
-.change-items p{
-	margin-left: 0.3rem;
-	width:8%;
-	float: left;
-	
+.change-items-main{
+	width:95%;float: left;margin: 0.25rem 0;
+}
+.change-items-title{
+	width:5%;float: left;margin: 0.25rem 0;height:0.5rem;line-height: 0.5rem;
 }
 .recruit-list{
 	padding: 1.1rem 1.5rem
@@ -1422,6 +1449,9 @@ clear: both;
     height:0.4rem;
     line-height: 0.4rem;
 }*/
+.qq_icon1{
+	display: none;
+}
 .qq_icon{
     width:0;
     height:1.85rem;

@@ -32,13 +32,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div class="banner-item">
-						<div class="animated bounceInLeft">
-							<div class="banner-title">{{item.title}}</div>
-							<div class="banner-small-title">{{item.small_title}}</div>
+					<div  class="banner-item">
+						<div  class="animated bounceInLeft banner-mainTitle">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-
-
+						
+						<div  class="animated bounceInRight banner-imgIcon">					
+							<image :src="item.iconUrl" />	
+						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -106,14 +108,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="qq_icon" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
 				    <p class="qq_text">官方微信:18092651090</p>
 				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode.jpg"/>
 				    </div>
 					
 				</div>
-				<div class="qq_icon":class="wx_show == 0?'contact_show':'contact_hidden'">
+				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
 				    <p class="qq_text">客服微信:18092651090</p>
 				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode1.jpg"/>

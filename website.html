@@ -32,13 +32,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div class="banner-item">
-						<div class="animated bounceInLeft">
-							<div class="banner-title">{{item.title}}</div>
-							<div class="banner-small-title">{{item.small_title}}</div>
+					<div  class="banner-item">
+						<div  class="animated bounceInLeft banner-mainTitle">
+							<div  class="banner-title" >{{item.title}}</div>
+							<div  class="banner-small-title">{{item.small_title}}</div>
 						</div>
-
-
+						
+						<div  class="animated bounceInRight banner-imgIcon">					
+							<image :src="item.iconUrl" />	
+						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -180,18 +182,7 @@
 
 					</div>
 				</div>
-				<div class="fenye">
-					<span>
-						共:{{allPages}}页
-					</span>
-					<a class="pages backPage" data-type="back" @click="changePage">上一页</a>
-					<span v-for="item in pageArray">
-						<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
-						<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
-					</span>
-					<a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
-					
-				</div>
+				
 				<div class="contact clearfix">
 					<div class="contact-item">
 						<div class="contact-item-left">
@@ -278,6 +269,30 @@
 						</div>
 					</div>
 				</div>
+				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
+				    <p class="qq_text">官方微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode.jpg"/>
+				    </div>
+					
+				</div>
+				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
+				    <p class="qq_text">客服微信:18092651090</p>
+				    <div class="qrcode11" style="margin-top: 0;">
+				        <img src="images/qrcode1.jpg"/>
+				    </div>
+				</div>
+				<div class="marketing">
+					<a class="marketing-item" href="tel:18092651090">
+						一键拨号
+					</a>
+					<div class="marketing-item" @click="phoneMarketing(0)">
+						客服微信
+					</div>
+					<div class="marketing-item" @click="phoneMarketing(1)">
+						官方微信
+					</div>
+				</div>
 			</div>
 
 			<include src="footer.html"></include>
@@ -309,12 +324,17 @@
 						thirdapp_id: 22,
 						passage1: 153
 					},
-					banner_info: [
-
-						{
-							url: 'images/3-banner.png',
-							title: '',
-							small_title: ''
+					banner_info:[
+						{url:'images/new/img1.jpg',
+						title:'专业网站开发',
+						small_title:'更专注于行业特色 贴合用户使用习惯',
+						iconUrl:'images/element/element-9.png'
+						},
+						
+						{url:'images/new/img1.jpg',
+						title:'专业网站开发2 ',
+						small_title:'更专注于行业特色2 贴合用户使用习惯2',
+						iconUrl:'images/element/element-10.png'
 						}
 					]
 				}
