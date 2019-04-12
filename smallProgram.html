@@ -22,6 +22,8 @@
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
+		<script src="js/jquery.stellar.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -140,7 +142,7 @@
 						<p class="font18   color-333 margin-25">大势所趋，快点参与进来吧</p>
 					</div>
 
-					<div class="product-list margin-50 clearfix ">
+					<div class="product-list margin-50 clearfix " id="productList">
 						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
@@ -164,7 +166,7 @@
 
 					</div>
 				</div>
-				
+
 				<div class="wxprocess">
 					<div class="wxprocess-title">
 						<p class="font26   color-fff">微信开发流程</p>
@@ -372,6 +374,20 @@
 					console.log(666);
 					self.getMainData();
 				},
+				
+				
+							
+				phoneMarketing:function(index){
+					const self = this;
+					if(index==self.wx_show){
+						self.wx_show =2
+					}else{
+						self.wx_show =index
+					}
+					
+					console.log('self.wx_show',self.wx_show)
+				},
+				
 
 				getMainData: function(id) {
 					var self = this;
@@ -461,7 +477,14 @@
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
 	</script>
-
+	<script>
+			 
+		$('#productList').waypoint(function() {
+		  $("#productList").addClass('animated slideInLeft');
+		  $("#productList").css('opacity','1');
+		}, { offset: '75%' });
+			
+	 </script>
 	<script type="text/javascript">
 		function initMap() {
 			createMap();

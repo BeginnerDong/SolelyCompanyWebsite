@@ -22,6 +22,7 @@
 		<script src="js/base.js" type="application/javascript"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -32,15 +33,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div  class="banner-item">
-						<div  class="animated bounceInLeft banner-mainTitle">
-							<div  class="banner-title" >{{item.title}}</div>
-							<div  class="banner-small-title">{{item.small_title}}</div>
+					<div class="banner-item">
+						<div class="animated bounceInLeft banner-mainTitle">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
 						</div>
-						
-						<div  class="animated bounceInRight banner-imgIcon">					
-							<image :src="item.iconUrl" />	
-						</div>	
+
+						<div class="animated bounceInRight banner-imgIcon">
+							<image :src="item.iconUrl" />
+						</div>
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -104,8 +105,10 @@
 
 					<div class="website-process-list">
 						<div class="website-process-item">
-							<div class="website-process-img">
-								<image src="images/3-icon4.png">
+
+							<div class="website-process-img" >
+								
+								<image src="images/3-icon4.png" class="website-process-img-img">
 							</div>
 							<div class="website-process-text">
 								<p class="font18   color-fff ">需求沟通</p>
@@ -114,7 +117,7 @@
 						</div>
 						<div class="website-process-item">
 							<div class="website-process-img">
-								<image src="images/3-icon5.png">
+								<image src="images/3-icon5.png"  class="website-process-img-img">
 							</div>
 							<div class="website-process-text">
 								<p class="font18   color-fff ">视觉设计</p>
@@ -123,7 +126,7 @@
 						</div>
 						<div class="website-process-item">
 							<div class="website-process-img">
-								<image src="images/3-icon6.png">
+								<image src="images/3-icon6.png"  class="website-process-img-img">
 							</div>
 							<div class="website-process-text">
 								<p class="font18   color-fff ">前端制作</p>
@@ -132,7 +135,7 @@
 						</div>
 						<div class="website-process-item">
 							<div class="website-process-img">
-								<image src="images/3-icon7.png">
+								<image src="images/3-icon7.png"  class="website-process-img-img">
 							</div>
 							<div class="website-process-text">
 								<p class="font18   color-fff ">程序开发</p>
@@ -141,7 +144,7 @@
 						</div>
 						<div class="website-process-item">
 							<div class="website-process-img">
-								<image src="images/3-icon8.png">
+								<image src="images/3-icon8.png"  class="website-process-img-img">
 							</div>
 							<div class="website-process-text">
 								<p class="font18   color-fff ">测试反馈</p>
@@ -158,7 +161,7 @@
 						<p class="font18   color-333 margin-25">Peoduct，let customers rest assured</p>
 					</div>
 
-					<div class="product-list margin-50 clearfix ">
+					<div class="product-list margin-50 clearfix" id="productList">
 						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
@@ -182,7 +185,7 @@
 
 					</div>
 				</div>
-				
+
 				<div class="contact clearfix">
 					<div class="contact-item">
 						<div class="contact-item-left">
@@ -194,12 +197,12 @@
 									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
 									<div class="button clearfix">
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">合作咨询</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">合作咨询</p>
 										</a>
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">技术服务</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">技术服务</p>
 										</a>
 									</div>
 								</div>
@@ -214,7 +217,7 @@
 								<div class="contact-item-right-text">
 									<div class="qrcode">
 										<image src="images/qrcode.png">
-										<image src="images/qrcode.png">
+											<image src="images/qrcode.png">
 									</div>
 								</div>
 							</div>
@@ -270,17 +273,17 @@
 					</div>
 				</div>
 				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
-				    <p class="qq_text">官方微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode.jpg"/>
-				    </div>
-					
+					<p class="qq_text">官方微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode.jpg" />
+					</div>
+
 				</div>
-				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
-				    <p class="qq_text">客服微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode1.jpg"/>
-				    </div>
+				<div class="qq_icon1" :class="wx_show == 0?'contact_show':'contact_hidden'">
+					<p class="qq_text">客服微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode1.jpg" />
+					</div>
 				</div>
 				<div class="marketing">
 					<a class="marketing-item" href="tel:18092651090">
@@ -305,8 +308,8 @@
 				return {
 					banner_index: 0,
 					is_toggle: true,
-					is_show:false,
-					wx_show:2,
+					is_show: false,
+					wx_show: 2,
 					mainData: [],
 					labelData: [],
 					newsData: [],
@@ -324,17 +327,18 @@
 						thirdapp_id: 22,
 						passage1: 153
 					},
-					banner_info:[
-						{url:'images/new/img1.jpg',
-						title:'专业网站开发',
-						small_title:'更专注于行业特色 贴合用户使用习惯',
-						iconUrl:'images/element/element-9.png'
+					banner_info: [{
+							url: 'images/new/img1.jpg',
+							title: '专业网站开发',
+							small_title: '更专注于行业特色 贴合用户使用习惯',
+							iconUrl: 'images/element/element-9.png'
 						},
-						
-						{url:'images/new/img1.jpg',
-						title:'专业网站开发2 ',
-						small_title:'更专注于行业特色2 贴合用户使用习惯2',
-						iconUrl:'images/element/element-10.png'
+
+						{
+							url: 'images/new/img1.jpg',
+							title: '专业网站开发2 ',
+							small_title: '更专注于行业特色2 贴合用户使用习惯2',
+							iconUrl: 'images/element/element-10.png'
 						}
 					]
 				}
@@ -343,6 +347,19 @@
 				const self = this;
 				self.init()
 			},
+
+
+			phoneMarketing: function(index) {
+				const self = this;
+				if (index == self.wx_show) {
+					self.wx_show = 2
+				} else {
+					self.wx_show = index
+				}
+
+				console.log('self.wx_show', self.wx_show)
+			},
+
 
 			methods: {
 				init: function(e) {
@@ -434,140 +451,20 @@
 			}
 		});
 	</script>
+
+	<script>
+		$('#productList').waypoint(function() {
+			$("#productList").addClass('animated slideInLeft');
+			$("#productList").css('opacity', '1');
+		}, {
+			offset: '75%'
+		});
+	</script>
 	<script>
 		function back_top() {
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
 	</script>
-	<script type="text/javascript">
-		function initMap() {
-			createMap();
-			setMapEvent();
-			addMapControl();
-			addMarker();
-		}
-
-		function createMap() {
-			var map = new BMap.Map("dituContent");
-
-			var point = new BMap.Point(108.900502, 34.24334);
-			map.centerAndZoom(point, 17);
-			window.map = map;
-
-
-		}
-
-		function setMapEvent() {
-			map.enableDragging();
-			map.enableScrollWheelZoom();
-			map.enableDoubleClickZoom();
-			map.enableKeyboard();
-			map.setMapStyle({
-				styleJson: [{
-					"featureType": "all",
-					"elementType": "all",
-					"stylers": {
-						"lightness": 10,
-						"saturation": -100
-					}
-				}]
-			});
-		}
-
-		function addMapControl() {
-			var ctrl_nav = new BMap.NavigationControl({
-				anchor: BMAP_ANCHOR_TOP_LEFT,
-				type: BMAP_NAVIGATION_CONTROL_LARGE
-			});
-			map.addControl(ctrl_nav);
-			var ctrl_ove = new BMap.OverviewMapControl({
-				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
-				isOpen: 1
-			});
-			map.addControl(ctrl_ove);
-			var ctrl_sca = new BMap.ScaleControl({
-				anchor: BMAP_ANCHOR_BOTTOM_LEFT
-			});
-			map.addControl(ctrl_sca);
-
-		}
-		var markerArr = [{
-			title: "纯粹云信息科技有限公司",
-			content: "电话:18092651090",
-			point: "108.900502|34.24334",
-			isOpen: 0,
-			icon: {
-				w: 23,
-				h: 25,
-				l: 46,
-				t: 21,
-				x: 9,
-				lb: 12
-			}
-		}];
-
-		function addMarker() {
-			for (var i = 0; i < markerArr.length; i++) {
-				var json = markerArr[i];
-				var p0 = json.point.split("|")[0];
-				var p1 = json.point.split("|")[1];
-				var point = new BMap.Point(p0, p1);
-				var iconImg = createIcon(json.icon);
-				var marker = new BMap.Marker(point, {
-					icon: iconImg
-				});
-				var iw = createInfoWindow(i);
-				var label = new BMap.Label(json.title, {
-					"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
-				});
-				marker.setLabel(label);
-				map.addOverlay(marker);
-				label.setStyle({
-					borderColor: "transparent",
-					color: "#000",
-					cursor: "pointer",
-				});
-
-				(function() {
-					var index = i;
-					var _iw = createInfoWindow(i);
-					var _marker = marker;
-					_marker.addEventListener("click", function() {
-						this.openInfoWindow(_iw);
-					});
-					_iw.addEventListener("open", function() {
-						_marker.getLabel().hide();
-					})
-					_iw.addEventListener("close", function() {
-						_marker.getLabel().show();
-					})
-					label.addEventListener("click", function() {
-						_marker.openInfoWindow(_iw);
-					})
-					if (!!json.isOpen) {
-						label.hide();
-						_marker.openInfoWindow(_iw);
-					}
-				})()
-			}
-		}
-
-		function createInfoWindow(i) {
-			var json = markerArr[i];
-			var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
-				"</b><div class='iw_poi_content'>" + json.content + "</div>");
-			return iw;
-		}
-
-		function createIcon(json) {
-			var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
-				imageOffset: new BMap.Size(-json.l, -json.t),
-				infoWindowOffset: new BMap.Size(json.lb + 5, 1),
-				offset: new BMap.Size(json.x, json.h)
-			})
-			return icon;
-		}
-
-		initMap();
-	</script>
+	
+	
 </html>

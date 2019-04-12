@@ -18,10 +18,12 @@
 		<link rel="stylesheet" href="css/css/magic.css">
 		<link rel="stylesheet" href="css/animate/animate.min.css">
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
 		<script src="js/browser.min.js"></script>
 		<script src="js/base.js" type="application/javascript"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -33,15 +35,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div  class="banner-item">
-						<div  class="animated bounceInLeft banner-mainTitle">
-							<div  class="banner-title" >{{item.title}}</div>
-							<div  class="banner-small-title">{{item.small_title}}</div>
+					<div class="banner-item">
+						<div class="animated bounceInLeft banner-mainTitle">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
 						</div>
-						
-						<div  class="animated bounceInRight banner-imgIcon">					
-							<image :src="item.iconUrl" />	
-						</div>	
+
+						<div class="animated bounceInRight banner-imgIcon">
+							<image :src="item.iconUrl" />
+						</div>
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -119,7 +121,7 @@
 						<p class="font18   color-333 margin-25">大势所趋，快点参与进来吧</p>
 					</div>
 
-					<div class="product-list margin-50 clearfix ">
+					<div class="product-list margin-50 clearfix" id="productList">
 						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
@@ -149,7 +151,7 @@
 					</div>
 
 					<div class="infomation-list margin-50 clearfix">
-						<div class="infomation-item margin-50 clearfix"  v-for="(item,index) in newsData" v-if="index<6"  @click="intoPath('articleDetail.html',item.id)">
+						<div class="infomation-item margin-50 clearfix" v-for="(item,index) in newsData" v-if="index<6" @click="intoPath('articleDetail.html',item.id)">
 							<div class="infomation-item-time">
 								<p class="font50   color-4f4e4e">{{item.day}}</p>
 								<p class="font12   color-898989 ">{{item.date}}</p>
@@ -172,12 +174,12 @@
 									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
 									<div class="button clearfix">
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">合作咨询</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">合作咨询</p>
 										</a>
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">技术服务</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">技术服务</p>
 										</a>
 									</div>
 								</div>
@@ -192,7 +194,7 @@
 								<div class="contact-item-right-text">
 									<div class="qrcode">
 										<image src="images/qrcode.png">
-										<image src="images/qrcode.png">
+											<image src="images/qrcode.png">
 									</div>
 
 								</div>
@@ -249,17 +251,17 @@
 					</div>
 				</div>
 				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
-				    <p class="qq_text">官方微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode.jpg"/>
-				    </div>
-					
+					<p class="qq_text">官方微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode.jpg" />
+					</div>
+
 				</div>
-				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
-				    <p class="qq_text">客服微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode1.jpg"/>
-				    </div>
+				<div class="qq_icon1" :class="wx_show == 0?'contact_show':'contact_hidden'">
+					<p class="qq_text">客服微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode1.jpg" />
+					</div>
 				</div>
 				<div class="marketing">
 					<a class="marketing-item" href="tel:18092651090">
@@ -283,8 +285,8 @@
 				return {
 					banner_index: 0,
 					is_toggle: true,
-					is_show:false,
-					wx_show:2,
+					is_show: false,
+					wx_show: 2,
 					mainData: [],
 					labelData: [],
 					newsData: [],
@@ -304,19 +306,20 @@
 					},
 					searchItemTwo: {
 						thirdapp_id: 22,
-					
+
 					},
-					banner_info:[
-						{url:'images/new/img2.jpg',
-						title:'专业App开发',
-						small_title:'更专注于行业特色 贴合用户使用习惯',
-						iconUrl:'images/element/element-11.png'
+					banner_info: [{
+							url: 'images/new/img2.jpg',
+							title: '专业App开发',
+							small_title: '更专注于行业特色 贴合用户使用习惯',
+							iconUrl: 'images/element/element-11.png'
 						},
-						
-						{url:'images/new/img2.jpg',
-						title:'专业App开发2 ',
-						small_title:'更专注于行业特色2 贴合用户使用习惯2',
-						iconUrl:'images/element/element-12.png'
+
+						{
+							url: 'images/new/img2.jpg',
+							title: '专业App开发2 ',
+							small_title: '更专注于行业特色2 贴合用户使用习惯2',
+							iconUrl: 'images/element/element-12.png'
 						}
 					]
 				}
@@ -348,32 +351,45 @@
 					window.base.articleList(postData, callback);
 				},
 
-				getNewsData: function(id){
-				    var self = this;
-				    var postData = {};
-				    postData.paginate = window.base.cloneForm(self.paginate);
-				    postData.searchItem = window.base.cloneForm(self.searchItemTwo);
-					postData.getBefore ={
-					 	caseData:{
-					    tableName:'Label',
-					    searchItem:{
-					      title:['=',['app新闻']]
-					    },
-					    middleKey:'menu_id',
-					    key:'id',
-					    condition:'in',
+
+				phoneMarketing: function(index) {
+					const self = this;
+					if (index == self.wx_show) {
+						self.wx_show = 2
+					} else {
+						self.wx_show = index
+					}
+
+					console.log('self.wx_show', self.wx_show)
+				},
+
+
+				getNewsData: function(id) {
+					var self = this;
+					var postData = {};
+					postData.paginate = window.base.cloneForm(self.paginate);
+					postData.searchItem = window.base.cloneForm(self.searchItemTwo);
+					postData.getBefore = {
+						caseData: {
+							tableName: 'Label',
+							searchItem: {
+								title: ['=', ['app新闻']]
+							},
+							middleKey: 'menu_id',
+							key: 'id',
+							condition: 'in',
 						},
 					};
-				    var callback = (res) => {
-				        
-				        self.newsData.push.apply(self.newsData,res.info.data)
+					var callback = (res) => {
+
+						self.newsData.push.apply(self.newsData, res.info.data)
 						for (var i = 0; i < self.newsData.length; i++) {
-							self.newsData[i].date=self.newsData[i].create_time.substring(0,7);
-							self.newsData[i].day=self.newsData[i].create_time.substring(8,10);
+							self.newsData[i].date = self.newsData[i].create_time.substring(0, 7);
+							self.newsData[i].day = self.newsData[i].create_time.substring(8, 10);
 						}
-						console.log('self.newsData',self.newsData)
-				    };
-				    window.base.articleList(postData, callback);
+						console.log('self.newsData', self.newsData)
+					};
+					window.base.articleList(postData, callback);
 				},
 
 				changeBanner: function(type) {
@@ -447,6 +463,14 @@
 		function back_top() {
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
+	</script>
+	<script>
+		$('#productList').waypoint(function() {
+			$("#productList").addClass('animated slideInLeft');
+			$("#productList").css('opacity', '1');
+		}, {
+			offset: '75%'
+		});
 	</script>
 	<script type="text/javascript">
 		function initMap() {

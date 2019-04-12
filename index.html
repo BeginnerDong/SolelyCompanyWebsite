@@ -24,11 +24,13 @@
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
-		
+		<!-- <script src="js/jquery.stellar.js"></script> -->
+		<script src="js/jquery.waypoints.min.js"></script>
 	</head>
 
 
-	<body style="background:#fff;">
+
+	<body style="background:#fff; background-attachment:fixed;">
 
 	<!--[if lte IE 8]>
 	<p class="browserupgrade">您的浏览器版本老的可笑, 请到 <a href="http://browsehappy.com/">这里</a> 更新, 以获取最佳的体验</p>
@@ -36,9 +38,7 @@
 		<header>
 			<include src="header.html"></include>
 		</header>
-		<div id="app">
-			
-			
+		<div id="app">	
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
@@ -133,29 +133,33 @@
 						</div>
 					</div>
 				</div>
-				<div class="strengths clearfix">
-					<div class="strengths-item">
-						<image src="images/icon4.png" id="strengths-item-img">
-						<p class="font24  margin-50 color-fff">开发架构</p>
-						<p class="font16  margin-30 color-fff">基于目前流行的WEB2.0架构（php+mysql），拥有成熟、稳定的技术解决方案。</p>
-					</div>
-					<div class="strengths-item">
-						<image src="images/icon5.png">
-						<p class="font24  margin-50 color-fff">系统可控性</p>
-						<p class="font16  margin-30 color-fff">源码透明、开放，一切的数据及资源都架设在自己的服务器上，保证独立性、安全性及可控性。</p>
-					</div>
-					<div class="strengths-item">
-						<image src="images/icon6.png">
-						<p class="font24  margin-50 color-fff">开放的生态理念</p>
-						<p class="font16  margin-30 color-fff">活跃的开发者及设计团队、依托现有生态，轻松扩展。</p>
-					</div>
-					<div class="strengths-item">
-						<image src="images/icon7.png">
-						<p class="font24  margin-50 color-fff">完善的售后体系</p>
-						<p class="font16  margin-30 color-fff">优质的客服人员、技术工程师解决使用中的各种疑难问题。</p>
-					</div>
+				<div class="strengths clearfix" >
+				
+						<div class="strengths-item">
+							<image src="images/icon4.png" id="strengths-item-img">
+							<p class="font24  margin-50 color-fff">开发架构</p>
+							<p class="font16  margin-30 color-fff">基于目前流行的WEB2.0架构（php+mysql），拥有成熟、稳定的技术解决方案。</p>
+						</div>
+						<div class="strengths-item">
+							<image src="images/icon5.png">
+							<p class="font24  margin-50 color-fff">系统可控性</p>
+							<p class="font16  margin-30 color-fff">源码透明、开放，一切的数据及资源都架设在自己的服务器上，保证独立性、安全性及可控性。</p>
+						</div>
+						<div class="strengths-item">
+							<image src="images/icon6.png">
+							<p class="font24  margin-50 color-fff">开放的生态理念</p>
+							<p class="font16  margin-30 color-fff">活跃的开发者及设计团队、依托现有生态，轻松扩展。</p>
+						</div>
+						<div class="strengths-item">
+							<image src="images/icon7.png">
+							<p class="font24  margin-50 color-fff">完善的售后体系</p>
+							<p class="font16  margin-30 color-fff">优质的客服人员、技术工程师解决使用中的各种疑难问题。</p>
+						</div>
+					
 				</div>
 				
+				
+
 				
 				<div class="product">
 					<div class="product-title">
@@ -189,7 +193,10 @@
 				</div>
 				
 				<div class="process">
-					<image src="images/icon11.png">
+					<div class="process-main" >
+						<image src="images/icon11.png">
+					</div>
+					
 				</div>
 				<div class="processTwo">
 					<image src="images/new/phone-icon3.png">
@@ -481,6 +488,55 @@
 					</div>
 				</div>
 			</div>
+			<div class="layer_from" v-if="isShowBj">
+			
+				<span class="close" @click="closeBj">+</span>
+				<div class="header">
+			
+					<div class="inlien_block">
+						<h1>在线获取方案和报价，24小时倾情为您服务</h1>
+					</div>
+				</div>
+			
+				<div class="form_flex">
+					<div class="input_group">
+						<label for="city">所在城市<i>*</i></label>
+						<select class="prov" style="width: 50%;margin-right: 5px;" name="prov" id="prov"><option value="">请选择</option><option value="1">北京</option><option value="2">天津</option><option value="3">河北</option><option value="4">山西</option><option value="5">内蒙古</option><option value="6">辽宁</option><option value="7">吉林</option><option value="8">黑龙江</option><option value="9">上海</option><option value="10">江苏</option><option value="11">浙江</option><option value="12">安徽</option><option value="13">福建</option><option value="14">江西</option><option value="15">山东</option><option value="16">河南</option><option value="17">湖北</option><option value="18">湖南</option><option value="19">广东</option><option value="20">广西</option><option value="21">海南</option><option value="22">重庆</option><option value="23">四川</option><option value="24">贵州</option><option value="25">云南</option><option value="26">西藏</option><option value="27">陕西</option><option value="28">甘肃</option><option value="29">青海</option><option value="30">宁夏</option><option value="31">新疆</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">国外</option></select>
+						<select class="city" style="width: 46%;" name="city" id="city" disabled="disabled"></select>
+					</div>
+					<div class="input_group">
+						<label for="name">您的称呼<i>*</i></label>
+						<input type="text" id="username" name="username" autocomplete="off" placeholder="请输入您的姓名">
+					</div>
+					<div class="input_group">
+						<label for="phone">联系电话<i>*</i></label>
+						<input type="text" id="cellphone" name="cellphone" autocomplete="off" placeholder="请输入您的电话">
+					</div>
+					<div class="input_group">
+						<label for="siteType">网站类型<i>*</i></label>
+						<select name="wzlx" id="wzlx">
+							<option value="1">PC网站</option>
+							<option value="2">手机网站</option>
+							<option value="3">微信网站</option>
+							<option value="4">小程序</option>
+							<option value="5">其他</option>
+						</select>
+					</div>
+				</div>
+				
+				<input type="submit" class="submit_div" value="获取报价" @click="submit">
+				<p class="text_h1">全国销售热线：4000-998-667</p>
+			</div>
+			
+			
+			<div class="layerMsg" v-if="comBj">
+				<h2>提交成功</h2>
+				<div class="msg">
+					稍后我们工作人员会尽快给您致电，
+					请保存电话畅通！
+				</div>
+				<div class="confirm_div" @click="comfirm">确定</div>
+			</div>
 			<include src="footer.html"></include>
 
 		</div>
@@ -510,6 +566,9 @@
 		        	banner_index:0,
 		        	is_toggle:false,
 					is_show:false,
+					comBj:false,
+					isShowBj:true,
+					
 					wx_show:2,
 					mainData: [],
 					labelData: [],
@@ -642,6 +701,24 @@
 					console.log('self.wx_show',self.wx_show)
 				},
 				
+				submit(){
+					const self = this;
+					self.isShowBj = false;
+					self.comBj = true;
+				},
+				
+				comfirm(){
+					const self = this;
+					
+					self.comBj = false;
+				},
+				
+				closeBj(){
+					const self = this;
+					self.isShowBj = false;
+					
+				},
+				
 				consult:function(e){
 				    var self = this;
 				    self.is_show = !self.is_show;
@@ -675,26 +752,18 @@
 	     }
 	 </script>
 	 <script>
-	     
-			 window.addEventListener("scroll", function(event) {
-                var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-				var partnerList = document.getElementById('partnerList');
-                console.log(scrollTop);
-                if(scrollTop >4580){
-                    $("#partnerList").addClass('animated slideInUp');
-                    
-                }
-            });
+		 
+			$('#productList').waypoint(function() {
+			  $("#productList").addClass('animated slideInLeft');
+			  $("#productList").css('opacity','1');
+			}, { offset: '75%' });
+		
+			$('#partnerList').waypoint(function() {
+			  $("#partnerList").addClass('animated slideInUp');
+			  $("#partnerList").css('opacity','1');
+			}, { offset: '50%' });
 			
-			 window.addEventListener("scroll", function(event) {
-			    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-				var productList = document.getElementById('productList');
-			    console.log(scrollTop);
-			    if(scrollTop >1780){
-			        $("#productList").addClass('animated slideInLeft');
-			        
-			    }
-			});
+			
 				
 	
 	  </script>

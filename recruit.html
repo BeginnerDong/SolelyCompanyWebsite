@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script src="js/rem.js"></script>
 		<script src="js/include.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
@@ -282,6 +283,19 @@
 					console.log('self.mainData', self.mainData)
 					window.base.articleList(postData, callback);
 				},
+				
+							
+				phoneMarketing:function(index){
+					const self = this;
+					if(index==self.wx_show){
+						self.wx_show =2
+					}else{
+						self.wx_show =index
+					}
+					
+					console.log('self.wx_show',self.wx_show)
+				},
+				
 
 
 				changeBanner: function(type) {

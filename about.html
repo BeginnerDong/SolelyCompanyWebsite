@@ -21,6 +21,7 @@
 		<script src="js/browser.min.js"></script>
 		<script src="js/base.js" type="application/javascript"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
@@ -212,8 +213,7 @@
 				</div>
 				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
 				    <p class="qq_text">客服微信:18092651090</p>
-				    <div class="qrcode
-					11" style="margin-top: 0;">
+				    <div class="qrcode11" style="margin-top: 0;">
 				        <img src="images/qrcode1.jpg"/>
 				    </div>
 				</div>
@@ -302,6 +302,19 @@
 					console.log(self.banner_index);
 
 				},
+				
+							
+				phoneMarketing:function(index){
+					const self = this;
+					if(index==self.wx_show){
+						self.wx_show =2
+					}else{
+						self.wx_show =index
+					}
+					
+					console.log('self.wx_show',self.wx_show)
+				},
+				
 
 				consult: function(e) {
 					var self = this;

@@ -22,6 +22,7 @@
 		<script src="js/base.js" type="application/javascript"></script>
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script src="js/jquery.waypoints.min.js"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -32,15 +33,15 @@
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
 					<image :src="item.url" />
-					<div  class="banner-item">
-						<div  class="animated bounceInLeft banner-mainTitle">
-							<div  class="banner-title" >{{item.title}}</div>
-							<div  class="banner-small-title">{{item.small_title}}</div>
+					<div class="banner-item">
+						<div class="animated bounceInLeft banner-mainTitle">
+							<div class="banner-title">{{item.title}}</div>
+							<div class="banner-small-title">{{item.small_title}}</div>
 						</div>
-						
-						<div  class="animated bounceInRight banner-imgIcon">					
-							<image :src="item.iconUrl" />	
-						</div>	
+
+						<div class="animated bounceInRight banner-imgIcon">
+							<image :src="item.iconUrl" />
+						</div>
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
 							<image src="images/icon-right.png" />
 						</div>
@@ -61,17 +62,19 @@
 						<div class="change-items">
 							<div class="font26 color-333 change-items-title">产品：</div>
 							<div class="change-items-main">
-								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelDataTwo" @click="this_chooseTwo(item.id)">{{item.title}}</div>
+								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelDataTwo"
+								 @click="this_chooseTwo(item.id)">{{item.title}}</div>
 							</div>
 						</div>
 						<div class="change-items">
 							<div class="font26 color-333 change-items-title">行业：</div>
 							<div class="change-items-main">
-								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelData" @click="this_choose(item.id)">{{item.title}}</div>
+								<div class="font22 color-5c5c5c" style="float: left;margin-left:0.2rem;height:0.5rem;line-height: 0.5rem" v-for="item in labelData"
+								 @click="this_choose(item.id)">{{item.title}}</div>
 							</div>
 						</div>
 					</div>
-					<div class="product-list margin-50 clearfix ">
+					<div class="product-list margin-50 clearfix" id="productList">
 						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
@@ -105,7 +108,7 @@
 						<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
 					</span>
 					<a class="pages nextPage" data-type="next" @click="changePage">下一页</a>
-					
+
 				</div>
 				<div class="contact clearfix">
 					<div class="contact-item">
@@ -118,12 +121,12 @@
 									<p class="font14 color-333 margin-30">WEB：<span class="font14 color-8f8f8f">www.solelytech.com</span></p>
 									<div class="button clearfix">
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">合作咨询</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">合作咨询</p>
 										</a>
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
-											<p style="margin-left: 0.1rem;">技术服务</p>
+											<image src="images/icon14.png" style="margin-right: 0.1rem;">
+												<p style="margin-left: 0.1rem;">技术服务</p>
 										</a>
 									</div>
 								</div>
@@ -194,17 +197,17 @@
 					</div>
 				</div>
 				<div class="qq_icon1" :class="wx_show == 1?'contact_show':'contact_hidden'">
-				    <p class="qq_text">官方微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode.jpg"/>
-				    </div>
-					
+					<p class="qq_text">官方微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode.jpg" />
+					</div>
+
 				</div>
-				<div class="qq_icon1":class="wx_show == 0?'contact_show':'contact_hidden'">
-				    <p class="qq_text">客服微信:18092651090</p>
-				    <div class="qrcode11" style="margin-top: 0;">
-				        <img src="images/qrcode1.jpg"/>
-				    </div>
+				<div class="qq_icon1" :class="wx_show == 0?'contact_show':'contact_hidden'">
+					<p class="qq_text">客服微信:18092651090</p>
+					<div class="qrcode11" style="margin-top: 0;">
+						<img src="images/qrcode1.jpg" />
+					</div>
 				</div>
 				<div class="marketing">
 					<a class="marketing-item" href="tel:18092651090">
@@ -231,8 +234,8 @@
 				return {
 					banner_index: 0,
 					is_toggle: true,
-					is_show:false,
-					wx_show:2,
+					is_show: false,
+					wx_show: 2,
 					mainData: [],
 					labelData: [],
 					labelDataTwo: [],
@@ -252,17 +255,18 @@
 					searchItem: {
 						thirdapp_id: 22
 					},
-					banner_info:[
-						{url:'images/new/img3.jpg',
-						title:'精品案例',
-						small_title:'更专注于行业特色 贴合用户使用习惯',
-						iconUrl:'images/element/element-13.png'
+					banner_info: [{
+							url: 'images/new/img3.jpg',
+							title: '精品案例',
+							small_title: '更专注于行业特色 贴合用户使用习惯',
+							iconUrl: 'images/element/element-13.png'
 						},
-						
-						{url:'images/new/img3.jpg',
-						title:'精品案例2 ',
-						small_title:'更专注于行业特色2 贴合用户使用习惯2',
-						iconUrl:'images/element/element-14.png'
+
+						{
+							url: 'images/new/img3.jpg',
+							title: '精品案例2 ',
+							small_title: '更专注于行业特色2 贴合用户使用习惯2',
+							iconUrl: 'images/element/element-14.png'
 						}
 					]
 				}
@@ -271,6 +275,19 @@
 				const self = this;
 				self.init()
 			},
+
+
+			phoneMarketing: function(index) {
+				const self = this;
+				if (index == self.wx_show) {
+					self.wx_show = 2
+				} else {
+					self.wx_show = index
+				}
+
+				console.log('self.wx_show', self.wx_show)
+			},
+
 
 			methods: {
 				init: function(e) {
@@ -470,7 +487,14 @@
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
 	</script>
-
+	<script>
+		$('#productList').waypoint(function() {
+			$("#productList").addClass('animated slideInLeft');
+			$("#productList").css('opacity', '1');
+		}, {
+			offset: '75%'
+		});
+	</script>
 
 
 

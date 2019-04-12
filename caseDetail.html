@@ -217,6 +217,20 @@
 					console.log(self.banner_index);
 
 				},
+				
+							
+				phoneMarketing:function(index){
+					const self = this;
+					if(index==self.wx_show){
+						self.wx_show =2
+					}else{
+						self.wx_show =index
+					}
+					
+					console.log('self.wx_show',self.wx_show)
+				},
+				
+				
 				consult: function(e) {
 					var self = this;
 					self.is_show = !self.is_show;
