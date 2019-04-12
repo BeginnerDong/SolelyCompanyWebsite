@@ -26,6 +26,7 @@
 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 		<!-- <script src="js/jquery.stellar.js"></script> -->
 		<script src="js/jquery.waypoints.min.js"></script>
+		
 	</head>
 
 
@@ -60,8 +61,8 @@
 					</div>
 					
 				</div>	
-				<div class="menu clearfix">
-					<div class="menu-item clearfix animated  jackInTheBox delay-1s" style="background-color:#F4AA50">
+				<div class="menu clearfix" id="menuList">
+					<div class="menu-item clearfix" style="background-color:#F4AA50">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">高端网站建设</p>
 							<p class="font16 color-fff margin-40">品牌网站建设</p>
@@ -74,7 +75,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix animated  jackInTheBox delay-1s" style="background-color:#5699DE">
+					<div class="menu-item clearfix" style="background-color:#5699DE">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">小程序定制开发</p>
 							<p class="font16 color-fff margin-40">软件平台开发</p>
@@ -87,7 +88,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix animated  jackInTheBox delay-1s" style="background-color:#F577B2">
+					<div class="menu-item clearfix" style="background-color:#F577B2">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">APP开发</p>
 							<p class="font16 color-fff margin-40">软件平台开发</p>
@@ -100,7 +101,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix animated  jackInTheBox delay-1s" style="background-color:#A08AFF">
+					<div class="menu-item clearfix" style="background-color:#A08AFF">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">系统定制</p>
 							<p class="font16 color-fff margin-40">移动APP开发</p>
@@ -117,9 +118,9 @@
 				<div class="about-us clearfix">
 					<div class="about-us-left">
 						<p class="font24 color-999">About us</p>
-						<p class="font26  margin-50 color-333">标题标题标题标题标题标题标题</p>
+						<p class="font26  margin-50 color-333">10年开发经验|9道测试严把质量|8种角色打造服务闭环。</p>
 						
-						<p class="font18  margin-30 color-7a">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
+						<p class="font18  margin-30 color-7a">西安纯粹云信息科技有限公司是一家专致于服务中高端定制软件项目的互联网公司，创始人团队全部源于技术条线，以完善的团队，先进的技术，助力企业实现互联网转型。</p>
 						<div class="contact-item-right-textCopy">
 							<div class="qrcodeCopy flexRowBetween">
 								<image src="images/qrcode.png">
@@ -135,22 +136,22 @@
 				</div>
 				<div class="strengths clearfix" >
 				
-						<div class="strengths-item">
-							<image src="images/icon4.png" id="strengths-item-img">
+						<div class="strengths-item" id="strengthsList1">
+							<image src="images/icon4.png" >
 							<p class="font24  margin-50 color-fff">开发架构</p>
 							<p class="font16  margin-30 color-fff">基于目前流行的WEB2.0架构（php+mysql），拥有成熟、稳定的技术解决方案。</p>
 						</div>
-						<div class="strengths-item">
+						<div class="strengths-item" id="strengthsList2">
 							<image src="images/icon5.png">
 							<p class="font24  margin-50 color-fff">系统可控性</p>
 							<p class="font16  margin-30 color-fff">源码透明、开放，一切的数据及资源都架设在自己的服务器上，保证独立性、安全性及可控性。</p>
 						</div>
-						<div class="strengths-item">
+						<div class="strengths-item" id="strengthsList3">
 							<image src="images/icon6.png">
 							<p class="font24  margin-50 color-fff">开放的生态理念</p>
 							<p class="font16  margin-30 color-fff">活跃的开发者及设计团队、依托现有生态，轻松扩展。</p>
 						</div>
-						<div class="strengths-item">
+						<div class="strengths-item" id="strengthsList4">
 							<image src="images/icon7.png">
 							<p class="font24  margin-50 color-fff">完善的售后体系</p>
 							<p class="font16  margin-30 color-fff">优质的客服人员、技术工程师解决使用中的各种疑难问题。</p>
@@ -168,7 +169,7 @@
 					</div>
 
 					<div class="product-list margin-50 clearfix " id="productList">
-						<div class="product-item margin-30" v-for="item in mainData" style="position: relative;" @click="intoPath('caseDetail.html',item.id)">
+						<div class="product-item margin-30"  v-for="(item,index) in mainData"  style="position: relative;" @click="intoPath('caseDetail.html',item.id)">
 							<div class="product-item-mainimg">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 								<div class="product-item-mainimg-mask">
@@ -193,9 +194,9 @@
 				</div>
 				
 				<div class="process">
-					<div class="process-main" >
-						<image src="images/icon11.png">
-					</div>
+					
+						<image src="images/icon11.png" class="process-img" id="processImg">
+					
 					
 				</div>
 				<div class="processTwo">
@@ -215,8 +216,11 @@
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 								<div class="service-list-box-body">
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>测试文章</div>
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>测试文章2</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>需求整理</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>定位分析</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >03</span>可行性分析</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >04</span>功能策划</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >05</span>合同签订</div>
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 							</div>
@@ -225,13 +229,17 @@
 						<div class="service-list-item">
 							<div class="service-list-box">
 								<div class="service-list-box-header">
-									<div class="service-list-box-header-left avoidOverflow font15"><strong>售前产品经理</strong></div>
+									<div class="service-list-box-header-left avoidOverflow font15"><strong>售后客服</strong></div>
 									<div class="service-list-box-header-right"><div class="service-list-box-header-right-img"><img style="width:100%;height: 100%;" src="images/index-1-2.png"></div></div>
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 								<div class="service-list-box-body">
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>测试文章</div>
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>测试文章2</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>细致需求分析</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>风格设计</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >03</span>内容规划</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >04</span>原型对接</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >05</span>项目管理</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >06</span>后台管理培训</div>
 								</div>
 							</div>
 						</div>
@@ -239,13 +247,14 @@
 						<div class="service-list-item">
 							<div class="service-list-box">
 								<div class="service-list-box-header">
-									<div class="service-list-box-header-left avoidOverflow font15"><strong>售前产品经理</strong></div>
+									<div class="service-list-box-header-left avoidOverflow font15"><strong>项目经理</strong></div>
 									<div class="service-list-box-header-right"><div class="service-list-box-header-right-img"><img style="width:100%;height: 100%;" src="images/index-1-3.png"></div></div>
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 								<div class="service-list-box-body">
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>测试文章</div>
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>测试文章2</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>项目启动</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>成立专项小组流程分析</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >03</span>项目管理</div>
 								</div>
 							</div>
 						</div>
@@ -253,13 +262,16 @@
 						<div class="service-list-item">
 							<div class="service-list-box">
 								<div class="service-list-box-header">
-									<div class="service-list-box-header-left avoidOverflow font15"><strong>售前产品经理</strong></div>
+									<div class="service-list-box-header-left avoidOverflow font15"><strong>开发团队</strong></div>
 									<div class="service-list-box-header-right"><div class="service-list-box-header-right-img"><img style="width:100%;height: 100%;" src="images/index-1-4.png"></div></div>
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 								<div class="service-list-box-body">
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>测试文章</div>
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>测试文章2</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>创意设计</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>页面设计</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >03</span>用户体验感探索</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >04</span>系统设计</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >05</span>程序开发</div>
 								</div>
 							</div>
 						</div>
@@ -267,13 +279,14 @@
 						<div class="service-list-item">
 							<div class="service-list-box">
 								<div class="service-list-box-header">
-									<div class="service-list-box-header-left avoidOverflow font15"><strong>售前产品经理</strong></div>
+									<div class="service-list-box-header-left avoidOverflow font15"><strong>测试团队</strong></div>
 									<div class="service-list-box-header-right"><div class="service-list-box-header-right-img"><img style="width:100%;height: 100%;" src="images/index-1-5.png"></div></div>
 								</div>
 								<div style="width: 100%;height: 0.2rem;"></div>
 								<div class="service-list-box-body">
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>测试文章</div>
-									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>测试文章2</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >01</span>项目测试</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >02</span>验收测试</div>
+									<div class="service-list-box-body-card avoidOverflow font10"><span class="service-list-box-body-card-span font10" >03</span>运营上线</div>
 								</div>
 							</div>
 						</div>
@@ -361,7 +374,7 @@
 						<p class="font18   color-333 margin-25">Infomation，let customers know more</p>
 					</div>
 				
-					<div class="infomation-list margin-50 clearfix">
+					<div class="infomation-list margin-50 clearfix" id="infomationList">
 						<div class="infomation-item margin-50 clearfix"  v-for="(item,index) in newsData" v-if="index<6"  @click="intoPath('articleDetail.html',item.id)">
 							<div class="infomation-item-time">
 								<p class="font50   color-4f4e4e">{{item.day}}</p>
@@ -499,11 +512,13 @@
 				</div>
 			
 				<div class="form_flex">
-					<div class="input_group">
+					<div class="input_group" id="city">
 						<label for="city">所在城市<i>*</i></label>
-						<select class="prov" style="width: 50%;margin-right: 5px;" name="prov" id="prov"><option value="">请选择</option><option value="1">北京</option><option value="2">天津</option><option value="3">河北</option><option value="4">山西</option><option value="5">内蒙古</option><option value="6">辽宁</option><option value="7">吉林</option><option value="8">黑龙江</option><option value="9">上海</option><option value="10">江苏</option><option value="11">浙江</option><option value="12">安徽</option><option value="13">福建</option><option value="14">江西</option><option value="15">山东</option><option value="16">河南</option><option value="17">湖北</option><option value="18">湖南</option><option value="19">广东</option><option value="20">广西</option><option value="21">海南</option><option value="22">重庆</option><option value="23">四川</option><option value="24">贵州</option><option value="25">云南</option><option value="26">西藏</option><option value="27">陕西</option><option value="28">甘肃</option><option value="29">青海</option><option value="30">宁夏</option><option value="31">新疆</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">国外</option></select>
-						<select class="city" style="width: 46%;" name="city" id="city" disabled="disabled"></select>
+						
+						<select class="prov" style="width: 50%;margin-right: 5px;" >
+						<select class="city" style="width: 46%;" disabled="disabled"></select>
 					</div>
+					
 					<div class="input_group">
 						<label for="name">您的称呼<i>*</i></label>
 						<input type="text" id="username" name="username" autocomplete="off" placeholder="请输入您的姓名">
@@ -556,8 +571,17 @@
 		}
 	</style>
 
-
-
+	
+	<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+	<script type="text/javascript">
+		console.log('$("#city").citySelect',$("#city").citySelect)
+		$(function(){
+			$("#city").citySelect({
+				nodata:"none",
+				required:false
+			}); 
+		});
+	</script>
 	<script type="text/javascript">
 		var app = new Vue({
 		    el: '#app',
@@ -567,7 +591,7 @@
 		        	is_toggle:false,
 					is_show:false,
 					comBj:false,
-					isShowBj:true,
+					isShowBj:false,
 					
 					wx_show:2,
 					mainData: [],
@@ -582,14 +606,14 @@
 					searchItem:{ thirdapp_id: 22},
 					banner_info:[
 						{url:'images/new/img.jpg',
-						title:'更专注于行业特色 ',
-						small_title:'更专注于行业特色 贴合用户使用习惯',
+						title:'高品质技术保障 ',
+						small_title:'注重极致的用户体验',
 						iconUrl:'images/element/element-1.png'
 						},
 						
 						{url:'images/new/img.jpg',
-						title:'更专注于行业特色2 ',
-						small_title:'更专注于行业特色2 贴合用户使用习惯2',
+						title:'全方位技术支持 ',
+						small_title:'售后无忧',
 						iconUrl:'images/element/element-6.png'
 						}
 					]
@@ -603,6 +627,12 @@
 		    methods: {
 		        init: function (e) {
 		            const self = this;
+					setTimeout(function()
+					{
+						self.showBj();
+					},10000);
+					
+				
 					console.log(666);
 					console.log(self.banner_info);
 					self.getMainData();
@@ -616,13 +646,13 @@
 				    postData.searchItem = window.base.cloneForm(self.searchItem);
 					postData.getBefore ={
 					 	caseData:{
-					    tableName:'Label',
-					    searchItem:{
-					      parentid:['in',[146]]
-					    },
-					    middleKey:'menu_id',
-					    key:'id',
-					    condition:'in',
+							tableName:'Label',
+							searchItem:{
+							  parentid:['in',[146]]
+							},
+							middleKey:'menu_id',
+							key:'id',
+							condition:'in',
 						},
 					};
 				    var callback = (res) => {
@@ -718,7 +748,11 @@
 					self.isShowBj = false;
 					
 				},
-				
+				showBj(){
+					const self = this;
+					self.isShowBj = true;
+					
+				},
 				consult:function(e){
 				    var self = this;
 				    self.is_show = !self.is_show;
@@ -742,7 +776,11 @@
 				    var self = this;
 				    var cursorId1 = index;
 				        self.wx_show =cursorId1;
-				}
+				},
+				
+				
+				
+				
 		    }
 		});
 	</script>
@@ -753,18 +791,51 @@
 	 </script>
 	 <script>
 		 
+			
 			$('#productList').waypoint(function() {
-			  $("#productList").addClass('animated slideInLeft');
-			  $("#productList").css('opacity','1');
+				
+					$("#productList").addClass('animated slideInLeft');
+					$("#productList").css('opacity','1');
+				
+			  
 			}, { offset: '75%' });
 		
 			$('#partnerList').waypoint(function() {
 			  $("#partnerList").addClass('animated slideInUp');
 			  $("#partnerList").css('opacity','1');
-			}, { offset: '50%' });
+			}, { offset: '75%' });
+			
+			$('#infomationList').waypoint(function() {
+			  $("#infomationList").addClass('animated slideInUp');
+			  $("#infomationList").css('opacity','1');
+			}, { offset: '75%' });
 			
 			
-				
+			$('#processImg').waypoint(function() {
+			  $("#processImg").addClass('animated slideInUp');
+			  $("#processImg").css('opacity','1');
+			}, { offset: '75%' });
+			
+			$('#strengthsList1').waypoint(function() {
+			  $("#strengthsList1").addClass('animated slideInUp');
+			  $("#strengthsList1").css('opacity','1');
+			}, { offset: '75%' });
+			$('#strengthsList2').waypoint(function() {
+			  $("#strengthsList2").addClass('animated slideInUp');
+			  $("#strengthsList2").css('opacity','1');
+			}, { offset: '75%' });
+			$('#strengthsList3').waypoint(function() {
+			  $("#strengthsList3").addClass('animated slideInUp');
+			  $("#strengthsList3").css('opacity','1');
+			}, { offset: '75%' });
+			$('#strengthsList4').waypoint(function() {
+			  $("#strengthsList4").addClass('animated slideInUp');
+			  $("#strengthsList4").css('opacity','1');
+			}, { offset: '75%' });
+			$('#menuList').waypoint(function() {
+			  $("#menuList").addClass('animated slideInUp');
+			  $("#menuList").css('opacity','1');
+			}, { offset: '75%' });	
 	
 	  </script>
 	

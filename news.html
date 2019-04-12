@@ -55,7 +55,7 @@
 				<div class="infomation clearfix">
 
 
-					<div class="infomation-list margin-50 clearfix">
+					<div class="infomation-list margin-50 clearfix" id="infomationList">
 						<div class="infomation-item margin-50 clearfix" v-for="item in newsData">
 							<div class="infomation-item-time">
 								<p class="font50   color-4f4e4e">{{item.day}}</p>
@@ -377,6 +377,16 @@
 		function back_top() {
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
+		
+		
+	</script>
+	<script>
+		$('#infomationList').waypoint(function() {
+			$("#infomationList").addClass('animated slideInUp');
+			$("#infomationList").css('opacity', '1');
+		}, {
+			offset: '75%'
+		});
 	</script>
 	<script type="text/javascript">
 		function initMap() {
@@ -401,16 +411,7 @@
 			map.enableScrollWheelZoom();
 			map.enableDoubleClickZoom();
 			map.enableKeyboard();
-			map.setMapStyle({
-				styleJson: [{
-					"featureType": "all",
-					"elementType": "all",
-					"stylers": {
-						"lightness": 10,
-						"saturation": -100
-					}
-				}]
-			});
+
 		}
 
 		function addMapControl() {

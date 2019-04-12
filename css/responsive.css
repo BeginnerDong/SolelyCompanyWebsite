@@ -1205,5 +1205,8 @@
 	.change-items-title{
 		width:12%
 	}
+	.layer_from{
+		display: none;
+	}
 }
 

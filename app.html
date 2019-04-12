@@ -75,8 +75,8 @@
 								<image src="images/4-icon.png">
 							</div>
 							<div class="wecando-item-content">
-								<p class="font20   color-fff">专业的技术</p>
-								<p class="font16   color-fff margin-30">内容内容内容内容内容内容内容内容内容内容内容</p>
+								<p class="font20   color-fff">专业的设计</p>
+								<p class="font16   color-fff margin-30">尖端思路，可视化思考，视觉设计规范，国际化设计体系</p>
 							</div>
 						</div>
 						<div class="wecando-item">
@@ -86,8 +86,8 @@
 								</div>
 							</div>
 							<div class="wecando-item-content">
-								<p class="font20   color-fff">完善的服务</p>
-								<p class="font16   color-fff margin-30">内容内容内容内容内容内容内容内容内容内容内容</p>
+								<p class="font20   color-fff">高端的开发</p>
+								<p class="font16   color-fff margin-30">基于LAMP开发框架，高效开发，便于迭代</p>
 							</div>
 						</div>
 						<div class="wecando-item">
@@ -97,8 +97,8 @@
 								</div>
 							</div>
 							<div class="wecando-item-content">
-								<p class="font20   color-fff">高端的开发</p>
-								<p class="font16   color-fff margin-30">内容内容内容内容内容内容内容内容内容内容内容</p>
+								<p class="font20   color-fff">完善的服务</p>
+								<p class="font16   color-fff margin-30">安全维护，漏洞修复，后台管理培训，技术支持</p>
 							</div>
 						</div>
 						<div class="wecando-item">
@@ -108,8 +108,8 @@
 								</div>
 							</div>
 							<div class="wecando-item-content">
-								<p class="font20   color-fff">安全的善后</p>
-								<p class="font16   color-fff margin-30">内容内容内容内容内容内容内容内容内容内容内容</p>
+								<p class="font20   color-fff">安全的售后</p>
+								<p class="font16   color-fff margin-30">源码交付，知识产权归客户所有，提供一年免费售后</p>
 							</div>
 						</div>
 					</div>
@@ -150,7 +150,7 @@
 						<p class="font40   color-333">当每个价值共享，时刻记录企业发展步伐</p>
 					</div>
 
-					<div class="infomation-list margin-50 clearfix">
+					<div class="infomation-list margin-50 clearfix" id="infomationList">
 						<div class="infomation-item margin-50 clearfix" v-for="(item,index) in newsData" v-if="index<6" @click="intoPath('articleDetail.html',item.id)">
 							<div class="infomation-item-time">
 								<p class="font50   color-4f4e4e">{{item.day}}</p>
@@ -471,6 +471,11 @@
 		}, {
 			offset: '75%'
 		});
+		
+		$('#infomationList').waypoint(function() {
+		  $("#infomationList").addClass('animated slideInUp');
+		  $("#infomationList").css('opacity','1');
+		}, { offset: '75%' });
 	</script>
 	<script type="text/javascript">
 		function initMap() {
