@@ -59,7 +59,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 .clearfix:after {
     content: " ";
     display: table;
-clear: both;
+	clear: both;
 }
 
 
@@ -503,7 +503,6 @@ clear: both;
 	width:25%;
 	height:100%;
 	float: left;
-	
 }
 .menu-item-left{
 	width:50%;
@@ -526,7 +525,6 @@ clear: both;
 }
 
 .about-us{
-	
 	width:100%;
 }
 .about-us-left{
@@ -594,7 +592,7 @@ clear: both;
 	width:100%;
 	padding-bottom: 1rem;
 	overflow: hidden;
-	opacity: 0;
+	
 }
 /* .product-list:after {
   content: "";
@@ -610,6 +608,7 @@ clear: both;
 	border: 0;
 	height:4.6rem;
 	cursor: pointer;
+	opacity: 0;
 	
 }
 

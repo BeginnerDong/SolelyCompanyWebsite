@@ -143,7 +143,7 @@
 					</div>
 
 					<div class="product-list margin-50 clearfix " id="productList">
-						<div class="product-item margin-30" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
+						<div class="product-item margin-30 to_animate_one" @click="intoPath('caseDetail.html',item.id)" v-for="item in mainData" style="position: relative;">
 							<div class="product-item-mainimg ">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 									<div class="product-item-mainimg-mask">
@@ -480,10 +480,45 @@
 	<script>
 			 
 		$('#productList').waypoint(function() {
-		  $("#productList").addClass('animated slideInLeft');
-		  $("#productList").css('opacity','1');
+			$('#productList').css('opacity','1');
+			$("#productList .to_animate_one").each(function(k) {
+                var el = $(this);
+				console.log('test');
+                setTimeout(function() {
+                    el.addClass('fadeInUp animated');
+                    el.css('opacity','1');
+                }, k * 300, 'easeInOutExpo');
+
+            });
 		}, { offset: '75%' });
 			
+		$('.wxprocess-list').waypoint(function() {
+		  $(".wxprocess-list").addClass('animated slideInLeft');
+		  $(".wxprocess-list").css('opacity','1');
+		}, { offset: '75%' });
+		
+		$(".advantages-item-left").css('opacity','0');
+		$(".advantages-item-right").css('opacity','0');
+		$('.advantages-item-left').waypoint(function() {
+		  $(".advantages-item-left").addClass('animated bounceInLeft');
+		  $(".advantages-item-left").css('opacity','1');
+		}, { offset: '75%' });
+		
+		$('.advantages-item-right').waypoint(function() {
+		  $(".advantages-item-right").addClass('animated bounceInRight');
+		  $(".advantages-item-right").css('opacity','1');
+		}, { offset: '75%' });
+		
+		$('.wxprocess-item').css('opacity','0');
+		$('.wxprocess-item').waypoint(function(){
+				$(".wxprocess-item").each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('rotateInUpLeft animated');
+                    el.css('opacity','1');
+                }, k * 300, 'easeInOutExpo');
+            });
+			},{offset:'75%'});
 	 </script>
 	<script type="text/javascript">
 		function initMap() {

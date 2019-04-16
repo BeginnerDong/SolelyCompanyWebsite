@@ -479,4 +479,13 @@
 
 		initMap();
 	</script>
+	<script type="text/javascript">
+		$('.major-item').css('opacity','0');
+		$('.major-item').waypoint(function(){
+				$('.major-item').addClass('animated lightSpeedIn');
+				$('.major-item').css('opacity','1');
+			},{offset:'75%'});
+			
+		
+	</script>
 </html>

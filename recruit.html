@@ -480,4 +480,16 @@
 
 		initMap();
 	</script>
+	<script type="text/javascript">
+		$('.recruit-item').css('opacity','0');
+		$('.recruit-item').waypoint(function() {
+			$(".recruit-item").each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('fadeInUp animated');
+                    el.css('opacity','1');
+                }, k * 300, 'easeInOutExpo');
+            });
+		}, { offset: '75%' });
+	</script>
 </html>

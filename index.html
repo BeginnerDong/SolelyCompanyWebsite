@@ -27,6 +27,39 @@
 		<!-- <script src="js/jquery.stellar.js"></script> -->
 		<script src="js/jquery.waypoints.min.js"></script>
 		
+		<link rel="stylesheet" media="screen and (max-width:500px)" href="style.css">  
+		<style type="text/css">
+			@media screen and (max-width: 500px) {  
+	            .mystyle1 {  
+	                margin-bottom: 25px; 
+	            } 
+	            .menu{
+        			width:100%;
+        			height: 600px !important;
+					height:3rem;
+        		} 
+        		.menu-item{
+        			width:100%;
+					height: 25%;
+					position: absolute;
+					z-index: 1;
+        		}
+				.menu-item2{
+					top: 150px;
+				}
+				.menu-item3{
+					top: 300px;
+				}
+				.menu-item4{
+					top: 450px;
+				}
+				
+	        } 
+        	.partner-list{
+        		margin-bottom: 10px;
+        	}
+        		
+		</style>
 	</head>
 
 
@@ -62,7 +95,7 @@
 					
 				</div>	
 				<div class="menu clearfix" id="menuList">
-					<div class="menu-item clearfix" style="background-color:#F4AA50">
+					<div class="menu-item menu-item1 clearfix" style="background-color:#F4AA50">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">高端网站建设</p>
 							<p class="font16 color-fff margin-40">品牌网站建设</p>
@@ -75,7 +108,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix" style="background-color:#5699DE">
+					<div class="menu-item menu-item2 clearfix" style="background-color:#5699DE">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">小程序定制开发</p>
 							<p class="font16 color-fff margin-40">软件平台开发</p>
@@ -88,7 +121,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix" style="background-color:#F577B2">
+					<div class="menu-item menu-item3 clearfix" style="background-color:#F577B2">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">APP开发</p>
 							<p class="font16 color-fff margin-40">软件平台开发</p>
@@ -101,7 +134,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="menu-item clearfix" style="background-color:#A08AFF">
+					<div class="menu-item menu-item4 clearfix" style="background-color:#A08AFF">
 						<div class="menu-item-left">
 							<p class="font24 color-fff margin-40">系统定制</p>
 							<p class="font16 color-fff margin-40">移动APP开发</p>
@@ -116,7 +149,7 @@
 					</div>
 				</div>
 				<div class="about-us clearfix">
-					<div class="about-us-left">
+					<div class="about-us-left ">
 						<p class="font24 color-999">About us</p>
 						<p class="font26  margin-50 color-333">10年开发经验|9道测试严把质量|8种角色打造服务闭环。</p>
 						
@@ -169,7 +202,7 @@
 					</div>
 
 					<div class="product-list margin-50 clearfix " id="productList">
-						<div class="product-item margin-30"  v-for="(item,index) in mainData"  style="position: relative;" @click="intoPath('caseDetail.html',item.id)">
+						<div class="product-item margin-30 to_animate_one"  v-for="(item,index) in mainData"  style="position: relative;" @click="intoPath('caseDetail.html',item.id)">
 							<div class="product-item-mainimg">
 								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 								<div class="product-item-mainimg-mask">
@@ -276,7 +309,7 @@
 							</div>
 						</div>
 
-						<div class="service-list-item">
+						<div class="service-list-item mystyle1">
 							<div class="service-list-box">
 								<div class="service-list-box-header">
 									<div class="service-list-box-header-left avoidOverflow font15"><strong>测试团队</strong></div>
@@ -301,7 +334,7 @@
 					</div>
 
 					<div class="partner-list margin-40 clearfix " id="partnerList">
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
 								<image src="images/index-logo1.png">
 							</div>
@@ -309,7 +342,7 @@
 								<p class="font18   color-666">金鳙鱼头</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
 								<image src="images/index-logo2.png">
 							</div>
@@ -317,7 +350,7 @@
 								<p class="font18   color-666">红芋头</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
 								<image src="images/index-logo3.png">
 							</div>
@@ -325,7 +358,7 @@
 								<p class="font18   color-666">维尼熊儿童摄影</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
 								<image src="images/index-logo4.png">
 							</div>
@@ -333,7 +366,7 @@
 								<p class="font18   color-666">英泰思</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
 								<image src="images/index-logo5.png">
 							</div>
@@ -341,7 +374,7 @@
 								<p class="font18   color-666">交大人居学院</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
 								<image src="images/index-logo6.png">
 							</div>
@@ -349,7 +382,7 @@
 								<p class="font18   color-666">天度云</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
 								<image src="images/index-logo7.png">
 							</div>
@@ -357,7 +390,7 @@
 								<p class="font18   color-666">支条条</p>
 							</div>
 						</div>
-						<div class="partner-item margin-50">
+						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
 								<image src="images/index-logo8.png">
 							</div>
@@ -790,53 +823,98 @@
 	     }
 	 </script>
 	 <script>
-		 
-			
-			$('#productList').waypoint(function() {
-				
-					$("#productList").addClass('animated slideInLeft');
-					$("#productList").css('opacity','1');
-				
-			  
-			}, { offset: '75%' });
+	 		$('.menu-item').css('opacity','0');
+	 		$('.menu-item').waypoint(function() {
+				$(".menu-item").each(function(k) {
+		            var el = $(this);
+					console.log('test');
+		            setTimeout(function() {
+		                el.addClass('fadeInRight animated');
+		                el.css('opacity','1');
+		            }, k * 400, 'easeInOutExpo');
 		
+		        });
+			}, { offset: '70%' });
+	 	
+		 	$('#productList').waypoint(function() {
+				$('#productList').css('opacity','1');
+				$("#productList .to_animate_one").each(function(k) {
+		            var el = $(this);
+					console.log('test');
+		            setTimeout(function() {
+		                el.addClass('fadeInUp animated');
+		                el.css('opacity','1');
+		            }, k * 300, 'easeInOutExpo');
+		
+		        });
+			}, { offset: '70%' });
+				
+			$('.service-list-item').css('opacity','0');
+	 		$('.service-list-item').waypoint(function() {
+				$(".service-list-item").each(function(k) {
+		            var el = $(this);
+					console.log('test');
+		            setTimeout(function() {
+		                el.addClass('flipInX animated');
+		                el.css('opacity','1');
+		            }, k * 300, 'easeInOutExpo');
+		        });
+			}, { offset: '75%' });
+			
+			$('.partner-item').css('opacity','0');
+	 		$('.partner-item').waypoint(function() {
+				$(".partner-item").each(function(k) {
+		            var el = $(this);
+					console.log('test');
+		            setTimeout(function() {
+		                el.addClass('flipInY animated');
+		                el.css('opacity','1');
+		            }, k * 300, 'easeInOutExpo');
+		        });
+			}, { offset: '70%' });
+			
 			$('#partnerList').waypoint(function() {
 			  $("#partnerList").addClass('animated slideInUp');
 			  $("#partnerList").css('opacity','1');
-			}, { offset: '75%' });
+			}, { offset: '70%' });
 			
 			$('#infomationList').waypoint(function() {
 			  $("#infomationList").addClass('animated slideInUp');
 			  $("#infomationList").css('opacity','1');
-			}, { offset: '75%' });
+			}, { offset: '70%' });
 			
 			
 			$('#processImg').waypoint(function() {
 			  $("#processImg").addClass('animated slideInUp');
 			  $("#processImg").css('opacity','1');
-			}, { offset: '75%' });
+			}, { offset: '70%' });
 			
-			$('#strengthsList1').waypoint(function() {
-			  $("#strengthsList1").addClass('animated slideInUp');
-			  $("#strengthsList1").css('opacity','1');
-			}, { offset: '75%' });
-			$('#strengthsList2').waypoint(function() {
-			  $("#strengthsList2").addClass('animated slideInUp');
-			  $("#strengthsList2").css('opacity','1');
-			}, { offset: '75%' });
-			$('#strengthsList3').waypoint(function() {
-			  $("#strengthsList3").addClass('animated slideInUp');
-			  $("#strengthsList3").css('opacity','1');
-			}, { offset: '75%' });
-			$('#strengthsList4').waypoint(function() {
-			  $("#strengthsList4").addClass('animated slideInUp');
-			  $("#strengthsList4").css('opacity','1');
-			}, { offset: '75%' });
+			$('.strengths-item').css('opacity','0');
+	 		$('.strengths-item').waypoint(function() {
+				$(".strengths-item").each(function(k) {
+		            var el = $(this);
+		            setTimeout(function() {
+		                el.addClass('fadeInDown animated');
+		                el.css('opacity','1');
+		            }, k * 400, 'easeInOutExpo');
+		
+		        });
+			}, { offset: '70%' });
+			
+			
 			$('#menuList').waypoint(function() {
 			  $("#menuList").addClass('animated slideInUp');
 			  $("#menuList").css('opacity','1');
-			}, { offset: '75%' });	
-	
+			}, { offset: '70%' });	
+			
+			
+			
+			$('.service-list').waypoint(function(){
+				$('.service-list').addClass('animated slideInUp');
+				$('.service-list').css('opacity','1');
+			},{offset:'70%'});
+			
+			
 	  </script>
 	
 	<script type="text/javascript">
