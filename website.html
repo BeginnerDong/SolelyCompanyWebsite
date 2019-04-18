@@ -23,6 +23,7 @@
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
 		<script src="js/jquery.waypoints.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -224,8 +225,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="map">
-					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				<div>
+					<include src="map.html"></include>
 				</div>
 				<div class="consult">
 					<div class="consult_cont">
@@ -304,7 +305,7 @@
 	<script type="text/javascript">
 		var app = new Vue({
 			el: '#app',
-			data() {
+			data:function() {
 				return {
 					banner_index: 0,
 					is_toggle: true,
@@ -343,7 +344,7 @@
 					]
 				}
 			},
-			created() {
+			created:function() {
 				const self = this;
 				self.init()
 			},
@@ -412,13 +413,13 @@
 
 				},
 
-				changePage(e) {
+				changePage:function(e) {
 					var self = this;
 					var dataSet = window.base.getDataSet(e);
 					window.base.changePage(dataSet, self);
 				},
 
-				linkTo(e) {
+				linkTo:function(e) {
 					var self = this;
 					console.log(e);
 					self.linkPage = window.base.getDataSet(e).page;
@@ -432,18 +433,18 @@
 					var self = this;
 					self.is_show = false;
 				},
-				enter(index) {
+				enter:function(index) {
 					var self = this;
 					var cursorId = index;
 					self.wx_show = cursorId;
 
 				},
-				leave(index) {
+				leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;
 				},
-				click_leave(index) {
+				click_leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;

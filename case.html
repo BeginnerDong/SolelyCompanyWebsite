@@ -148,9 +148,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="map">
-					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
-				</div>
+				
 				<div class="consult">
 					<div class="consult_cont">
 						<div class="consult_top" @mouseover="enter(9)">
@@ -230,7 +228,7 @@
 	<script type="text/javascript">
 		var app = new Vue({
 			el: '#app',
-			data() {
+			data:function() {
 				return {
 					banner_index: 0,
 					is_toggle: true,
@@ -271,14 +269,14 @@
 					]
 				}
 			},
-			created() {
-				const self = this;
+			created:function() {
+				var self = this;
 				self.init()
 			},
 
 
 			phoneMarketing: function(index) {
-				const self = this;
+				var self = this;
 				if (index == self.wx_show) {
 					self.wx_show = 2
 				} else {
@@ -291,7 +289,7 @@
 
 			methods: {
 				init: function(e) {
-					const self = this;
+					var self = this;
 					console.log(666);
 					console.log(self.banner_info);
 					self.getMainData();
@@ -299,7 +297,7 @@
 					self.getLabelDataTwo()
 				},
 
-				getLabelData() {
+				getLabelData:function() {
 					var self = this;
 					var postData = {};
 					postData.searchItem = {
@@ -326,7 +324,7 @@
 					window.base.labelGet(postData, callback);
 				},
 
-				getLabelDataTwo() {
+				getLabelDataTwo:function() {
 					var self = this;
 
 					var postData = {};
@@ -382,8 +380,8 @@
 					window.base.articleList(postData, callback);
 				},
 
-				this_choose(id) {
-					const self = this;
+				this_choose:function(id) {
+					var self = this;
 
 					var position = self.menu_array.indexOf(id);
 					if (position >= 0) {
@@ -398,8 +396,8 @@
 					self.getMainData()
 				},
 
-				this_chooseTwo(id) {
-					const self = this;
+				this_chooseTwo:function(id) {
+					var self = this;
 
 					var position = self.menu_arrayTwo.indexOf(id);
 					if (position >= 0) {
@@ -416,7 +414,7 @@
 
 
 				changeBanner: function(type) {
-					const self = this;
+					var self = this;
 
 					if (type == '+') {
 						console.log(8852)
@@ -435,13 +433,13 @@
 
 				},
 
-				changePage(e) {
+				changePage:function(e) {
 					var self = this;
 					var dataSet = window.base.getDataSet(e);
 					window.base.changePage(dataSet, self);
 				},
 
-				linkTo(e) {
+				linkTo:function(e) {
 					var self = this;
 					console.log(e);
 					self.linkPage = window.base.getDataSet(e).page;
@@ -449,7 +447,7 @@
 				},
 
 				intoPath: function(url, id) {
-					const self = this;
+					var self = this;
 					var toUrl = url;
 					console.log(toUrl);
 					window.location.href = toUrl + '?id=' + id;
@@ -463,18 +461,18 @@
 					var self = this;
 					self.is_show = false;
 				},
-				enter(index) {
+				enter:function(index) {
 					var self = this;
 					var cursorId = index;
 					self.wx_show = cursorId;
 
 				},
-				leave(index) {
+				leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;
 				},
-				click_leave(index) {
+				click_leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;

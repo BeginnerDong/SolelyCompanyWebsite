@@ -13,7 +13,7 @@ window.base = {
 				thirdapp_id: 2,
 				code: param.code,
 			};
-			var c_callback = (res) => {
+			var c_callback = function(res){
 				console.log(res)
 				if (res.token) {
 					localStorage.setItem('user_token', res.token);
@@ -38,7 +38,7 @@ window.base = {
 
 	},
 
-	realPay(param, callback) {
+	realPay:function(param, callback) {
 
 		function onBridgeReady(param) {
 			WeixinJSBridge.invoke(
@@ -99,7 +99,7 @@ window.base = {
 	    this.getData(allParams)
 	},
 
-	addItemInArray(array, fieldName) {
+	addItemInArray:function(array, fieldName) {
 		var count = 0;
 		for (var i = 0; i < array.length; i++) {
 			if (array[i][fieldName]) {
@@ -147,7 +147,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	getQrCommonCode(param, callback) {
+	getQrCommonCode:function(param, callback) {
 		var allParams = {
 			url: 'Base/Qr/CommonQrGet',
 			type: 'post',
@@ -159,7 +159,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	qrcodeGet(param, callback) {
+	qrcodeGet:function(param, callback) {
 		var allParams = {
 			url: 'Common/Qrcode/get',
 			type: 'post',
@@ -171,7 +171,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	qrcodeUpdate(param, callback) {
+	qrcodeUpdate:function(param, callback) {
 		var allParams = {
 			url: 'Common/Qrcode/update',
 			type: 'post',
@@ -496,7 +496,7 @@ window.base = {
 		this.getData(allParams)
 	},
 
-	addOrder(param, callback) {
+	addOrder:function(param, callback) {
 		var allParams = {
 			url: 'Func/Order/addOrder',
 			type: 'post',
@@ -663,7 +663,7 @@ window.base = {
 		this.getData(allParams)
 	},
 
-	flowLogCompute(param, callback) {
+	flowLogCompute:function(param, callback) {
 		var allParams = {
 			url: 'Common/FlowLog/compute',
 			type: 'post',
@@ -675,7 +675,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	flowLogGet(param, callback) {
+	flowLogGet:function(param, callback) {
 		var allParams = {
 			url: 'Common/FlowLog/get',
 			type: 'post',
@@ -687,7 +687,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	flowLogUpdate(param, callback) {
+	flowLogUpdate:function(param, callback) {
 		var allParams = {
 			url: 'Common/FlowLog/update',
 			type: 'post',
@@ -699,7 +699,7 @@ window.base = {
 		this.getData(allParams);
 	},
 
-	flowLogAdd(param, callback) {
+	flowLogAdd:function(param, callback) {
 		var allParams = {
 			url: 'Common/FlowLog/add',
 			type: 'post',
@@ -811,7 +811,7 @@ window.base = {
 	        console.log(pass);
 	    }, */
 
-	checkComplete(obj) {
+	checkComplete:function(obj) {
 		var pass = true;
 		for (var key in obj) {
 			if (!obj[key] || JSON.stringify(obj[key]) == '[]' || JSON.stringify(obj[key]) == '{}') {
@@ -980,7 +980,7 @@ window.base = {
 		return theRequest;
 	},
 
-	getUrlVars() {
+	getUrlVars:function() {
 		var vars = [],
 			hash;
 		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -1050,7 +1050,7 @@ window.base = {
 
 	},
 
-	dealRes(res) {
+	dealRes:function(res) {
 		if (res.solely_code == 100000) {
 
 			wx.showToast({
@@ -1073,8 +1073,8 @@ window.base = {
 		}
 	},
 
-	footOne(res, name, limit, objName) {
-		const self = this;
+	footOne:function(res, name, limit, objName) {
+		var self = this;
 		if (localStorage.getItem(objName)) {
 			var history = localStorage.getItem(objName);
 			var limitSum = self.getJsonLength(history);
@@ -1087,7 +1087,7 @@ window.base = {
 				if (limitSum < limit) {
 					history[res[name]] = res;
 				} else {
-					const historyArray = self.jsonToArray(history, 'push');
+					var historyArray = self.jsonToArray(history, 'push');
 					historyArray.splice(0, 1);
 					historyArray.push(res);
 					var history = {};
@@ -1107,8 +1107,8 @@ window.base = {
 
 	},
 
-	updateFootOne(name, objName, fieldName, field) {
-		const self = this;
+	updateFootOne:function(name, objName, fieldName, field) {
+		var self = this;
 		if (localStorage.getItem(objName)) {
 			var history = localStorage.getItem(objName);
 			console.log(history);
@@ -1122,8 +1122,8 @@ window.base = {
 
 	},
 
-	deleteFootOne(name, objName) {
-		const self = this;
+	deleteFootOne:function(name, objName) {
+		var self = this;
 		if (localStorage.getItem(objName)) {
 			var history = localStorage.getItem(objName);
 			console.log(history);
@@ -1137,7 +1137,7 @@ window.base = {
 
 	},
 
-	getJsonLength(json) {
+	getJsonLength:function(json) {
 		var length = 0;
 		for (var item in json) {
 			length++
@@ -1145,10 +1145,10 @@ window.base = {
 		return length;
 	},
 
-	jsonToArray(obj, type) {
+	jsonToArray:function(obj, type) {
 
-		const result = [];
-		for (let key in obj) {
+		var result = [];
+		for (var key in obj) {
 			//result.push(key);
 			if (type == 'push') {
 				result.push(obj[key]);
@@ -1163,8 +1163,8 @@ window.base = {
 		return result;
 	},
 
-	getStorageArray(storageName, key, value) {
-		const self = this;
+	getStorageArray:function(storageName, key, value) {
+		var self = this;
 		var array = JSON.parse(localStorage.getItem(storageName));
 		if (key && value && array) {
 			var index = self.findItemInArray(array, key, value)[0];
@@ -1176,9 +1176,10 @@ window.base = {
 		};
 	},
 
-	setStorageArray(storageName, item, key, limit, type = 'unshift') {
+	setStorageArray:function(storageName, item, key, limit, type ) {
 
-		const self = this;
+		var self = this;
+		if(!type)type = 'unshift';
 		if (localStorage.getItem(storageName)) {
 			var array = JSON.parse(localStorage.getItem(storageName));
 			if (array.length < limit) {
@@ -1201,9 +1202,9 @@ window.base = {
 
 	},
 
-	delStorageArray(storageName, item, key) {
+	delStorageArray:function(storageName, item, key) {
 
-		const self = this;
+		var self = this;
 		var array = JSON.parse(localStorage.getItem(storageName));
 		var index = self.findItemInArray(array, key, item[key])[0];
 		array.splice(index, 1);
@@ -1214,7 +1215,7 @@ window.base = {
 	},
 
 
-	findItemInArray(array, fieldName, field) {
+	findItemInArray:function(array, fieldName, field) {
 
 		for (var i = 0; i < array.length; i++) {
 			if (array[i][fieldName] == field) {
@@ -1225,7 +1226,8 @@ window.base = {
 
 	},
 
-	setItemInArray(array, item, fieldName, type = 'push') {
+	setItemInArray:function(array, item, fieldName, type) {
+		if(!type)type = 'push';
 		var findI = -1;
 		for (var i = 0; i < array.length; i++) {
 			if (array[i][fieldName] == item[fieldName]) {
@@ -1241,7 +1243,7 @@ window.base = {
 	},
 
 
-	timestampToTime(timestamp) {
+	timestampToTime:function(timestamp) {
 
 		timestamp = parseInt(timestamp);
 		var date = new Date(timestamp * 1000);
@@ -1264,15 +1266,14 @@ window.base = {
 
 	},
 
-	throttle(method, context){
+	throttle:function(method, context){
 	    clearTimeout(method.tId);
 	    method.tId = setTimeout(function(){
 	        method.call(context);
 	    }, 500);
 	},
 
-	debounce(method,delay,context){
-		console.log('debounce',method)
+	debounce:function(method,delay,context){
 		if(!context[method.tId]){
 			context[method.tId] = true;
 			context[method.tId] = setTimeout(function(){

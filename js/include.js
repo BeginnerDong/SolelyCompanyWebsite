@@ -30,11 +30,17 @@
             return objE.childNodes;
         },
         executeScript: function(content) {
-            console.log('executeScript')
             var mac = /<script type="text\/javascript">([\s\S]*?)<\/script>/g;
             var r = "";
             while(r = mac.exec(content)) {
-                eval(r[1]);
+                
+                if(window.execScript){
+                    window.execScript(r[1]);
+                }else if(window.eval){
+                    window.eval(r[1]);
+                }else{
+                    eval(r[1])
+                }
             }
         },
         loadScript: function(content){
@@ -42,8 +48,6 @@
             var mac = /<script\s*?src="([\s\S]*?)"/ig;
             var r = "";
             var filePath = this.getFilePath();
-
-
             if(content.match(mac)){
                 var length = content.match(mac).length;
                 while(r = mac.exec(content)) {
@@ -107,7 +111,7 @@
             var $this = this;
             var filePath = $this.getFilePath();
             var includeTals = document.getElementsByTagName("include");
-            console.log('includeTals',includeTals)
+
             this.forEach(includeTals, function() {
 
                 //拿到路径
@@ -131,8 +135,22 @@
             })
         }
     }
-    window.onload = function() {
+    var loadInclude = function() {
         new Include39485748323().replaceIncludeElements();
+    };
+    if(document.addEventListener){      //标准浏览器
+        document.addEventListener('DOMContentLoaded',function(){
+            //注销时间，避免重复触发
+            document.removeEventListener('DOMContentLoaded',arguments.callee,false);
+            loadInclude();       //运行函数
+        },false);
+    }else if(document.attachEvent){     //IE浏览器
+        document.attachEvent('onreadystatechange',function(){
+            if(document.readyState=='complete'){
+                document.detachEvent('onreadystatechange',arguments.callee);
+                loadInclude();       //函数运行
+            }
+        });
     }
 })(window, document)
 

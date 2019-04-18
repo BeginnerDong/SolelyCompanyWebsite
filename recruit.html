@@ -25,7 +25,6 @@
 		<script src="js/include.js"></script>
 		<script src="js/jquery.waypoints.min.js"></script>
 		<script type="text/javascript " src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true&ak=M9C0DhYUo81Io76oZlaPQ1xoZcycRqwB"></script>
 	</head>
 	<body style="background:#fff;">
 		<header>
@@ -132,9 +131,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="map">
-					<div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
-				</div>
+			
 				<div class="consult">
 					<div class="consult_cont">
 						<div class="consult_top" @mouseover="enter(9)">
@@ -212,7 +209,7 @@
 	<script type="text/javascript">
 		var app = new Vue({
 			el: '#app',
-			data() {
+			data:function() {
 				return {
 					banner_index: 0,
 					is_toggle: true,
@@ -245,14 +242,14 @@
 					]
 				}
 			},
-			created() {
-				const self = this;
+			created:function() {
+				var self = this;
 				self.init()
 			},
 
 			methods: {
 				init: function(e) {
-					const self = this;
+					var self = this;
 					console.log(666);
 					console.log(self.banner_info);
 					self.getMainData();
@@ -286,7 +283,7 @@
 				
 							
 				phoneMarketing:function(index){
-					const self = this;
+					var self = this;
 					if(index==self.wx_show){
 						self.wx_show =2
 					}else{
@@ -299,7 +296,7 @@
 
 
 				changeBanner: function(type) {
-					const self = this;
+					var self = this;
 
 					if (type == '+') {
 						console.log(8852)
@@ -325,18 +322,18 @@
 					var self = this;
 					self.is_show = false;
 				},
-				enter(index) {
+				enter:function(index) {
 					var self = this;
 					var cursorId = index;
 					self.wx_show = cursorId;
 
 				},
-				leave(index) {
+				leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;
 				},
-				click_leave(index) {
+				click_leave:function(index) {
 					var self = this;
 					var cursorId1 = index;
 					self.wx_show = cursorId1;
@@ -349,137 +346,7 @@
 			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		}
 	</script>
-	<script type="text/javascript">
-		function initMap() {
-			createMap();
-			setMapEvent();
-			addMapControl();
-			addMarker();
-		}
 
-		function createMap() {
-			var map = new BMap.Map("dituContent");
-
-			var point = new BMap.Point(108.900502, 34.24334);
-			map.centerAndZoom(point, 17);
-			window.map = map;
-
-
-		}
-
-		function setMapEvent() {
-			map.enableDragging();
-			map.enableScrollWheelZoom();
-			map.enableDoubleClickZoom();
-			map.enableKeyboard();
-			map.setMapStyle({
-				styleJson: [{
-					"featureType": "all",
-					"elementType": "all",
-					"stylers": {
-						"lightness": 10,
-						"saturation": -100
-					}
-				}]
-			});
-		}
-
-		function addMapControl() {
-			var ctrl_nav = new BMap.NavigationControl({
-				anchor: BMAP_ANCHOR_TOP_LEFT,
-				type: BMAP_NAVIGATION_CONTROL_LARGE
-			});
-			map.addControl(ctrl_nav);
-			var ctrl_ove = new BMap.OverviewMapControl({
-				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
-				isOpen: 1
-			});
-			map.addControl(ctrl_ove);
-			var ctrl_sca = new BMap.ScaleControl({
-				anchor: BMAP_ANCHOR_BOTTOM_LEFT
-			});
-			map.addControl(ctrl_sca);
-
-		}
-		var markerArr = [{
-			title: "纯粹云信息科技有限公司",
-			content: "电话:18092651090",
-			point: "108.900502|34.24334",
-			isOpen: 0,
-			icon: {
-				w: 23,
-				h: 25,
-				l: 46,
-				t: 21,
-				x: 9,
-				lb: 12
-			}
-		}];
-
-		function addMarker() {
-			for (var i = 0; i < markerArr.length; i++) {
-				var json = markerArr[i];
-				var p0 = json.point.split("|")[0];
-				var p1 = json.point.split("|")[1];
-				var point = new BMap.Point(p0, p1);
-				var iconImg = createIcon(json.icon);
-				var marker = new BMap.Marker(point, {
-					icon: iconImg
-				});
-				var iw = createInfoWindow(i);
-				var label = new BMap.Label(json.title, {
-					"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
-				});
-				marker.setLabel(label);
-				map.addOverlay(marker);
-				label.setStyle({
-					borderColor: "transparent",
-					color: "#000",
-					cursor: "pointer",
-				});
-
-				(function() {
-					var index = i;
-					var _iw = createInfoWindow(i);
-					var _marker = marker;
-					_marker.addEventListener("click", function() {
-						this.openInfoWindow(_iw);
-					});
-					_iw.addEventListener("open", function() {
-						_marker.getLabel().hide();
-					})
-					_iw.addEventListener("close", function() {
-						_marker.getLabel().show();
-					})
-					label.addEventListener("click", function() {
-						_marker.openInfoWindow(_iw);
-					})
-					if (!!json.isOpen) {
-						label.hide();
-						_marker.openInfoWindow(_iw);
-					}
-				})()
-			}
-		}
-
-		function createInfoWindow(i) {
-			var json = markerArr[i];
-			var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
-				"</b><div class='iw_poi_content'>" + json.content + "</div>");
-			return iw;
-		}
-
-		function createIcon(json) {
-			var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
-				imageOffset: new BMap.Size(-json.l, -json.t),
-				infoWindowOffset: new BMap.Size(json.lb + 5, 1),
-				offset: new BMap.Size(json.x, json.h)
-			})
-			return icon;
-		}
-
-		initMap();
-	</script>
 	<script type="text/javascript">
 		$('.recruit-item').css('opacity','0');
 		$('.recruit-item').waypoint(function() {

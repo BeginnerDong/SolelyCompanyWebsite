@@ -75,7 +75,7 @@
 		<div id="app">	
 			<div class="container">
 				<div class="banner clearfix" v-for="(item,index) in banner_info" v-show="index==banner_index">
-					<image :src="item.url" />
+					<img :src="item.url" />
 					<div  class="banner-item">
 						<div  class="animated bounceInLeft banner-mainTitle">
 							<div  class="banner-title" >{{item.title}}</div>
@@ -83,13 +83,13 @@
 						</div>
 						
 						<div  class="animated bounceInRight banner-imgIcon">					
-							<image :src="item.iconUrl" />	
+							<img :src="item.iconUrl" />	
 						</div>	
 						<div style="position: absolute;right:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('+')">
-							<image src="images/icon-right.png" />
+							<img src="images/icon-right.png" />
 						</div>
 						<div style="position: absolute;left:20px;top:50%;z-index:999;cursor: pointer" @click="changeBanner('-')">
-							<image src="images/icon-left.png" />
+							<img src="images/icon-left.png" />
 						</div>
 					</div>
 					
@@ -104,7 +104,7 @@
 						</div>
 						<div class="menu-item-right">
 							<div class="menu-item-right-img">
-								<image src="images/icon.png" />
+								<img src="images/icon.png" />
 							</div>
 						</div>
 					</div>
@@ -117,7 +117,7 @@
 						</div>
 						<div class="menu-item-right ">
 							<div class="menu-item-right-img">
-								<image src="images/icon1.png" />
+								<img src="images/icon1.png" />
 							</div>
 						</div>
 					</div>
@@ -130,7 +130,7 @@
 						</div>
 						<div class="menu-item-right">
 							<div class="menu-item-right-img">
-								<image src="images/icon2.png" />
+								<img src="images/icon2.png" />
 							</div>
 						</div>
 					</div>
@@ -143,7 +143,7 @@
 						</div>
 						<div class="menu-item-right">
 							<div class="menu-item-right-img">
-								<image src="images/icon3.png" />
+								<img src="images/icon3.png" />
 							</div>
 						</div>
 					</div>
@@ -156,36 +156,36 @@
 						<p class="font18  margin-30 color-7a">西安纯粹云信息科技有限公司是一家专致于服务中高端定制软件项目的互联网公司，创始人团队全部源于技术条线，以完善的团队，先进的技术，助力企业实现互联网转型。</p>
 						<div class="contact-item-right-textCopy">
 							<div class="qrcodeCopy flexRowBetween">
-								<image src="images/qrcode.png">
-								<image src="images/qrcode.png">
+								<img src="images/qrcode.png">
+								<img src="images/qrcode.png">
 							</div>
 						</div>
 					</div>
 					<div class="about-us-right clearfix">
 						<div class="about-us-right-img clearfix">
-							<image src="images/jing.png" />
+							<img src="images/jing.png" />
 						</div>
 					</div>
 				</div>
 				<div class="strengths clearfix" >
 				
 						<div class="strengths-item" id="strengthsList1">
-							<image src="images/icon4.png" >
+							<img src="images/icon4.png" >
 							<p class="font24  margin-50 color-fff">开发架构</p>
 							<p class="font16  margin-30 color-fff">基于目前流行的WEB2.0架构（php+mysql），拥有成熟、稳定的技术解决方案。</p>
 						</div>
 						<div class="strengths-item" id="strengthsList2">
-							<image src="images/icon5.png">
+							<img src="images/icon5.png">
 							<p class="font24  margin-50 color-fff">系统可控性</p>
 							<p class="font16  margin-30 color-fff">源码透明、开放，一切的数据及资源都架设在自己的服务器上，保证独立性、安全性及可控性。</p>
 						</div>
 						<div class="strengths-item" id="strengthsList3">
-							<image src="images/icon6.png">
+							<img src="images/icon6.png">
 							<p class="font24  margin-50 color-fff">开放的生态理念</p>
 							<p class="font16  margin-30 color-fff">活跃的开发者及设计团队、依托现有生态，轻松扩展。</p>
 						</div>
 						<div class="strengths-item" id="strengthsList4">
-							<image src="images/icon7.png">
+							<img src="images/icon7.png">
 							<p class="font24  margin-50 color-fff">完善的售后体系</p>
 							<p class="font16  margin-30 color-fff">优质的客服人员、技术工程师解决使用中的各种疑难问题。</p>
 						</div>
@@ -204,10 +204,10 @@
 					<div class="product-list margin-50 clearfix " id="productList">
 						<div class="product-item margin-30 to_animate_one"  v-for="(item,index) in mainData"  style="position: relative;" @click="intoPath('caseDetail.html',item.id)">
 							<div class="product-item-mainimg">
-								<image :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
+								<img :src="item.mainImg&&item.mainImg[0]?item.mainImg[0].url:''">
 								<div class="product-item-mainimg-mask">
 									<div class="mask-qrcode">
-										<image :src="item.bannerImg&&item.bannerImg[2]?item.bannerImg[2].url:''">
+										<img :src="item.bannerImg&&item.bannerImg[2]?item.bannerImg[2].url:''">
 									</div>
 								</div>
 							</div>
@@ -217,7 +217,7 @@
 									<p class="font14  margin-10 color-666">用户体验/微信小程序开发</p>
 								</div>
 								<div class="product-item-img">
-									<image src="images/icon10.png">
+									<img src="images/icon10.png">
 								</div>
 							</div>
 
@@ -228,12 +228,12 @@
 				
 				<div class="process">
 					
-						<image src="images/icon11.png" class="process-img" id="processImg">
+						<img src="images/icon11.png" class="process-img" id="processImg">
 					
 					
 				</div>
 				<div class="processTwo">
-					<image src="images/new/phone-icon3.png">
+					<img src="images/new/phone-icon3.png">
 				</div>
 				<div class="service">
 					<div class="service-title">
@@ -336,7 +336,7 @@
 					<div class="partner-list margin-40 clearfix " id="partnerList">
 						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
-								<image src="images/index-logo1.png">
+								<img src="images/index-logo1.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">金鳙鱼头</p>
@@ -344,7 +344,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
-								<image src="images/index-logo2.png">
+								<img src="images/index-logo2.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">红芋头</p>
@@ -352,7 +352,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
-								<image src="images/index-logo3.png">
+								<img src="images/index-logo3.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">维尼熊儿童摄影</p>
@@ -360,7 +360,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-left">
 							<div class="partner-item-img">
-								<image src="images/index-logo4.png">
+								<img src="images/index-logo4.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">英泰思</p>
@@ -368,7 +368,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
-								<image src="images/index-logo5.png">
+								<img src="images/index-logo5.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">交大人居学院</p>
@@ -376,7 +376,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
-								<image src="images/index-logo6.png">
+								<img src="images/index-logo6.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">天度云</p>
@@ -384,7 +384,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
-								<image src="images/index-logo7.png">
+								<img src="images/index-logo7.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">支条条</p>
@@ -392,7 +392,7 @@
 						</div>
 						<div class="partner-item margin-50 partner-item-right">
 							<div class="partner-item-img">
-								<image src="images/index-logo8.png">
+								<img src="images/index-logo8.png">
 							</div>
 							<div class="partner-item-text">
 								<p class="font18   color-666">雷诺</p>
@@ -433,11 +433,11 @@
 									<div class="button clearfix">
 										
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<img src ="images/icon14.png" style="margin-right: 0.1rem;">
 											<p style="margin-left: 0.1rem;">合作咨询</p>
 										</a>
 										<a class="button-item" href="tencent://message/?uin=877854886&Site=Sambow&Menu=yes">
-											<image src ="images/icon14.png" style="margin-right: 0.1rem;">
+											<img src ="images/icon14.png" style="margin-right: 0.1rem;">
 											<p style="margin-left: 0.1rem;">技术服务</p>
 										</a>
 									</div>
@@ -452,17 +452,16 @@
 								<p class="font16 color-333">Wechat</p>
 								<div class="contact-item-right-text">
 									<div class="qrcode clearfix">
-										<image src ="images/qrcode.png">
-										<image src ="images/qrcode.png" style="margin-left: 0.3rem;">
+										<img src ="images/qrcode.png">
+										<img src ="images/qrcode.png" style="margin-left: 0.3rem;">
 									</div>
-									
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="map">
-				    <div id="dituContent" style="min-height:5.15rem;overflow:hidden;"></div>
+				<div>
+					<include src="map.html"></include>
 				</div>
 				<div class="consult">
 				    <div class="consult_cont">
@@ -618,7 +617,7 @@
 	<script type="text/javascript">
 		var app = new Vue({
 		    el: '#app',
-		    data(){
+		    data:function(){
 		        return {
 		        	banner_index:0,
 		        	is_toggle:false,
@@ -652,14 +651,14 @@
 					]
 		        }
 		    },
-		    created () {
-		        const self = this;
+		    created:function () {
+		        var self = this;
 				self.init()
 		    },
 			
 		    methods: {
 		        init: function (e) {
-		            const self = this;
+		            var self = this;
 					setTimeout(function()
 					{
 						self.showBj();
@@ -688,7 +687,7 @@
 							condition:'in',
 						},
 					};
-				    var callback = (res) => {
+				    var callback = function(res){
 				        console.log('getMainData', res);
 				        self.mainData.push.apply(self.mainData,res.info.data)
 				       
@@ -713,7 +712,7 @@
 					    condition:'in',
 						},
 					};
-				    var callback = (res) => {
+				    var callback = function(res) {
 				        
 				        self.newsData.push.apply(self.newsData,res.info.data)
 						for (var i = 0; i < self.newsData.length; i++) {
@@ -726,7 +725,7 @@
 				},
 
 		    	changeBanner: function(type) {
-		    		const self = this;
+		    		var self = this;
 		    	
 		    		if(type=='+'){
 		    			console.log(8852)
@@ -746,7 +745,7 @@
 		    	},
 				
 				intoPath:function(url,id){
-				    const self = this;
+				    var self = this;
 				    var toUrl = url;
 				    console.log(toUrl);
 				    window.location.href= toUrl+'?id='+id;
@@ -754,7 +753,7 @@
 				},
 				
 				phoneMarketing:function(index){
-					const self = this;
+					var self = this;
 					if(index==self.wx_show){
 						self.wx_show =2
 					}else{
@@ -764,25 +763,25 @@
 					console.log('self.wx_show',self.wx_show)
 				},
 				
-				submit(){
-					const self = this;
+				submit:function(){
+					var self = this;
 					self.isShowBj = false;
 					self.comBj = true;
 				},
 				
-				comfirm(){
-					const self = this;
+				comfirm:function(){
+					var self = this;
 					
 					self.comBj = false;
 				},
 				
-				closeBj(){
-					const self = this;
+				closeBj:function(){
+					var self = this;
 					self.isShowBj = false;
 					
 				},
-				showBj(){
-					const self = this;
+				showBj:function(){
+					var self = this;
 					self.isShowBj = true;
 					
 				},
@@ -794,66 +793,60 @@
 				    var self = this;
 				    self.is_show = false;
 				},
-				enter(index) {
+				enter:function(index) {
 				    var self = this;
 				    var cursorId = index;
 				        self.wx_show =cursorId;
 				 
 				},
-				leave(index) {
+				leave:function(index) {
 				    var self = this;
 				    var cursorId1 = index;
 				    self.wx_show = cursorId1;                                         
 				},
-				click_leave(index){
+				click_leave:function(index){
 				    var self = this;
 				    var cursorId1 = index;
 				        self.wx_show =cursorId1;
 				},
-				
-				
-				
 				
 		    }
 		});
 	</script>
 	<script>
 	    function back_top(){
-	     document.body.scrollTop = document.documentElement.scrollTop = 0;
-	     }
-	 </script>
-	 <script>
-	 		$('.menu-item').css('opacity','0');
-	 		$('.menu-item').waypoint(function() {
-				$(".menu-item").each(function(k) {
-		            var el = $(this);
-					console.log('test');
-		            setTimeout(function() {
-		                el.addClass('fadeInRight animated');
-		                el.css('opacity','1');
-		            }, k * 400, 'easeInOutExpo');
-		
-		        });
-			}, { offset: '70%' });
+	    	document.body.scrollTop = document.documentElement.scrollTop = 0;
+	    }
+	</script>
+	<script>
+ 		$('.menu-item').css('opacity','0');
+ 		$('.menu-item').waypoint(function() {
+			$(".menu-item").each(function(k) {
+	            var el = $(this);
+	            setTimeout(function() {
+	                el.addClass('fadeInRight animated');
+	                el.css('opacity','1');
+	            }, k * 400, 'easeInOutExpo');
+	        });
+		}, { offset: '70%' });
 	 	
-		 	$('#productList').waypoint(function() {
-				$('#productList').css('opacity','1');
-				$("#productList .to_animate_one").each(function(k) {
-		            var el = $(this);
-					console.log('test');
-		            setTimeout(function() {
-		                el.addClass('fadeInUp animated');
-		                el.css('opacity','1');
-		            }, k * 300, 'easeInOutExpo');
-		
-		        });
-			}, { offset: '70%' });
+	 	$('#productList').waypoint(function() {
+			$('#productList').css('opacity','1');
+			$("#productList .to_animate_one").each(function(k) {
+	            var el = $(this);
+
+	            setTimeout(function() {
+	                el.addClass('fadeInUp animated');
+	                el.css('opacity','1');
+	            }, k * 300, 'easeInOutExpo');
+	
+	        });
+		}, { offset: '70%' });
 				
 			$('.service-list-item').css('opacity','0');
 	 		$('.service-list-item').waypoint(function() {
 				$(".service-list-item").each(function(k) {
 		            var el = $(this);
-					console.log('test');
 		            setTimeout(function() {
 		                el.addClass('flipInX animated');
 		                el.css('opacity','1');
@@ -883,7 +876,6 @@
 			  $("#infomationList").css('opacity','1');
 			}, { offset: '70%' });
 			
-			
 			$('#processImg').waypoint(function() {
 			  $("#processImg").addClass('animated slideInUp');
 			  $("#processImg").css('opacity','1');
@@ -901,114 +893,18 @@
 		        });
 			}, { offset: '70%' });
 			
-			
 			$('#menuList').waypoint(function() {
 			  $("#menuList").addClass('animated slideInUp');
 			  $("#menuList").css('opacity','1');
 			}, { offset: '70%' });	
-			
-			
 			
 			$('.service-list').waypoint(function(){
 				$('.service-list').addClass('animated slideInUp');
 				$('.service-list').css('opacity','1');
 			},{offset:'70%'});
 			
-			
 	  </script>
 	
-	<script type="text/javascript">
 
-	
-	    function initMap(){
-	        createMap();
-	        setMapEvent();
-	        addMapControl();
-	        addMarker();
-	    }
-	    
-	    function createMap(){
-	        var map = new BMap.Map("dituContent");
-
-	        var point = new BMap.Point(108.900502,34.24334);
-	        map.centerAndZoom(point,17);
-	        window.map = map;
-			
-		
-	    }
-	    
-	    function setMapEvent(){
-	        map.enableDragging();
-	        map.enableScrollWheelZoom();
-	        map.enableDoubleClickZoom();
-	        map.enableKeyboard();
-
-	    }
-	    
-	    function addMapControl(){ 
-	    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-	    map.addControl(ctrl_nav);
-	    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-	    map.addControl(ctrl_ove);
-	    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-	    map.addControl(ctrl_sca);
-		
-	    }
-		var markerArr = [{title:"纯粹云信息科技有限公司",content:"电话:18092651090",point:"108.900502|34.24334",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-	     ];
-	    
-	    function addMarker(){
-	        for(var i=0;i<markerArr.length;i++){
-	            var json = markerArr[i];
-	            var p0 = json.point.split("|")[0];
-	            var p1 = json.point.split("|")[1];
-	            var point = new BMap.Point(p0,p1);
-	            var iconImg = createIcon(json.icon);
-	            var marker = new BMap.Marker(point,{icon:iconImg});
-	            var iw = createInfoWindow(i);
-	            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-	            marker.setLabel(label);
-	            map.addOverlay(marker);
-	            label.setStyle({
-	                        borderColor:"transparent",
-	                        color:"#000",
-	                        cursor:"pointer",
-	            });
-	            
-	            (function(){
-	                var index = i;
-	                var _iw = createInfoWindow(i);
-	                var _marker = marker;
-	                _marker.addEventListener("click",function(){
-	                    this.openInfoWindow(_iw);
-	                });
-	                _iw.addEventListener("open",function(){
-	                    _marker.getLabel().hide();
-	                })
-	                _iw.addEventListener("close",function(){
-	                    _marker.getLabel().show();
-	                })
-	                label.addEventListener("click",function(){
-	                    _marker.openInfoWindow(_iw);
-	                })
-	                if(!!json.isOpen){
-	                    label.hide();
-	                    _marker.openInfoWindow(_iw);
-	                }
-	            })()
-	        }
-	    }
-	    function createInfoWindow(i){
-	        var json = markerArr[i];
-	        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-	        return iw;
-	    }
-	    function createIcon(json){
-	        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-	        return icon;
-	    }
-	    
-	    initMap();
-	</script>
 
 </html>
